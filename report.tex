@@ -1,0 +1,160 @@
+\documentclass[journal,transmag]{IEEEtran}
+
+% ..........................................................................
+% Packages, configuration settings, and macro definitions.
+
+\usepackage[pdftex]{graphicx}
+\graphicspath{figures}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+\usepackage[pdftex,rgb,dvipsnames,svgnames,hyperref,table]{xcolor}
+
+\usepackage[pdftex,breaklinks=true,colorlinks=true,
+  bookmarks=false,pdfhighlight=/O,
+  urlcolor=darkblue,citecolor=darkred,linkcolor=darkblue]{hyperref}
+
+\usepackage[cmex10]{amsmath}
+\interdisplaylinepenalty=2500
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{accsupp}
+\usepackage{array}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{soul}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{hyphenat}
+\usepackage{truncate}
+\usepackage[english]{babel}
+\usepackage{dblfloatfix}
+
+% Correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% ..........................................................................
+% Body.
+
+\begin{document}
+
+\markboth{IEEE Transactions on Biomedical Engineering}%
+{Whole Cell Summer School Meeting Report}
+
+\title{Whole Cell Summer School}
+
+\author{\IEEEauthorblockN{%
+Dagmar Waltemath\IEEEauthorrefmark{1},
+Falk Schreiber\IEEEauthorrefmark{2}, and
+Other People}%
+\IEEEauthorblockA{\IEEEauthorrefmark{1}University of Rostock}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Monash University}%
+\thanks{Corresponding author email: dagmar.waltemath@uni-rostock.de}}
+
+\IEEEtitleabstractindextext{%
+
+\begin{abstract}
+The abstract goes here.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Systems Biology, Simulation, Computational Modeling, Standards
+\end{IEEEkeywords}
+%
+}
+
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps.
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{T}{his} is a report of the VW Whole Cell Summer School held in Rostock during April, 2015.
+
+
+\subsection{Subsections}
+
+\subsection{Subsections}
+
+\section{Conclusion}
+The conclusion goes here.
+
+\section*{Acknowledgment}
+
+The authors would like to thank...
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,report}
+
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+% \begin{IEEEbiography}{Michael Shell}
+% Biography text here.
+% \end{IEEEbiography}
+
+% if you will not have a photo at all:
+% \begin{IEEEbiographynophoto}{John Doe}
+% Biography text here.
+% \end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+% \begin{IEEEbiographynophoto}{Jane Doe}
+% Biography text here.
+% \end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% ..........................................................................
+% End.
+
+\end{document}
