@@ -9,7 +9,7 @@
 
 # Change the following to the file name of the main LaTeX file.
 
-MAIN_FILE = test.tex
+MAIN_FILE = report.tex
 
 # .............................................................................
 # The rest below is generic and probably does not need to be changed.
