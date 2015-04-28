@@ -14,7 +14,7 @@
 # terms of the GNU Lesser General Public License as published by the Free
 # Software Foundation.  A copy of the license agreement is provided in the
 # file named "LICENSE.txt" included with this software distribution and also
-# available at http://sbml.org/Software/SBML_Test_Suite/license.html
+# available at https://github.com/mhucka/vireo/LICENSE.txt.
 #------------------------------------------------------------------------- -->
 
 # This was originally inspired by https://github.com/logsol/Github-Auto-Deploy
