@@ -157,7 +157,7 @@ class VireoLogger(object):
         self.logger.info(msg)
 
     def fail(self, *args):
-        msg = 'ERROR: ' + msg
+        msg = 'ERROR: ' + ' '.join(args)
         logger.error(msg)
         logger.error('Exiting.')
         raise SystemExit(msg)
