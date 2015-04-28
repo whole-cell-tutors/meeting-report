@@ -9,7 +9,7 @@
 
 # Change the following to the file name of the main LaTeX file.
 
-MAIN_FILE = report.tex
+MAIN_FILE = test.tex
 
 # .............................................................................
 # The rest below is generic and probably does not need to be changed.
@@ -19,8 +19,10 @@ pdf_file = $(addsuffix .pdf,$(basename))
 md5_file = $(addsuffix .md5,$(basename))
 
 update:;
+	git checkout gh-pages
 	git stash
-	git pull origin master
+	git fetch --all
+	git reset --hard origin/master
 	make $(pdf_file)
 	md5sum $(pdf_file) > $(md5_file)
 	git add $(pdf_file) $(md5_file)
