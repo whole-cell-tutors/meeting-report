@@ -13,12 +13,10 @@
     var vireo_pdf_file = "report.pdf";
 
     /* The name of the log file.  Put the file name in double quotes.  Note:
-     * if you are running vireo-server.py in combination with LaTeX, do NOT
-     * make this the LaTeX output log for the document.  Point this to the
-     * log file for vireo-server.py instead, because its log will capture
-     * both the LaTeX output and Vireo's output.
+     * if you are running vireo-server.py in combination with LaTeX, you will
+     * want to make this the LaTeX output log for the document, not Vireo's log.
      */
-    var vireo_log_file = "vireo.log";
+    var vireo_log_file = "report.log";
 
     /* Refresh interval, in seconds.  BEWARE!  Every window open on this page
        will repeatedly contact the server after this many seconds elapses.
