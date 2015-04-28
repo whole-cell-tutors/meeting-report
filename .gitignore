@@ -12,4 +12,4 @@ auto
 *.mp
 .git/COMMIT_EDITMSG
 venv
-report.pdf
+
