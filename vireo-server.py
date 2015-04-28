@@ -98,10 +98,10 @@ def main(dir=None, port=None, cmd=None, logfile=None, daemon=False, quiet=False)
         logger.fail('Cannot change to directory "{}"'.format(dir))
 
     # Check command after changing dir, in case it's a relative path.
-    if not command:
+    if not cmd:
         logger.fail('Cannot proceed without a command or script.')
-    if command.find(os.sep) >= 0 and not valid_file(command):
-        logger.fail('Unable to find file "{}"'.format(command))
+    if cmd.find(os.sep) >= 0 and not valid_file(cmd):
+        logger.fail('Unable to find file "{}"'.format(cmd))
 
     if daemon:
         pid = os.fork()
@@ -117,7 +117,7 @@ def main(dir=None, port=None, cmd=None, logfile=None, daemon=False, quiet=False)
             logger.info('Vireo running in directory "{}"'.format(str(dir)))
             logger.info('Listening on port {}'.format(port))
         httpd = VireoHTTPServer(('', port_num), VireoHandler)
-        httpd.serve_forever(dir, command, port, quiet, logger)
+        httpd.serve_forever(dir, cmd, port, quiet, logger)
     except (KeyboardInterrupt, SystemExit) as e:
         if e:
             logger.info(str(e))
