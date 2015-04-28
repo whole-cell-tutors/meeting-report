@@ -180,7 +180,7 @@ def valid_file(file):
 # Argument annotation follows (help, kind, abbrev, type, choices, metavar) convention
 main.__annotations__ = dict(
     dir     = ('document directory (default: current dir)',      'option', 'd'),
-    command = ('command to execute',                             'option', 'c'),
+    cmd     = ('command to execute',                             'option', 'c'),
     logfile = ('log file (default: log to stdout)',              'option', 'l'),
     port    = ('port to listen on',                              'option', 'p'),
     daemon  = ('fork and run in daemon mode',                    'flag',   'o'),
