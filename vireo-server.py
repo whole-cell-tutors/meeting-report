@@ -29,6 +29,7 @@ import sys
 import plac
 import setproctitle
 import logging
+import json
 
 
 # Server code.
@@ -48,7 +49,28 @@ class VireoHandler(BaseHTTPRequestHandler):
 
 
     def do_POST(self):
-        self.logger.info('Received post request on port {}'.format(self.port))
+        self.logger.info('Received POST request on port {}'.format(self.port))
+        if self.headers.getheader('X-GitHub-Event') != 'push':
+            self.logger.info('Request lacks X-GitHub-Event header -- ignoring it.')
+            self.respond(403)
+            return
+        length = self.headers.getheader('content-length')
+        if not length:
+            self.logger.info('Request lacks content-length header -- ignoring it.')
+            self.respond(411)
+            return
+        body = self.rfile.read(int(length))
+        payload = json.loads(body)
+        branch = payload['ref']
+        if branch == 'refs/heads/gh-pages':
+            # GitHub triggers the webhook on every push, which will cause a
+            # loop when the command we invoke below pushes to the gh-pages
+            # branch.  To avoid that, we ignore pushes to the gh-pages branch.
+            self.logger.info('Push involves gh-pages branch -- ignoring it.')
+            self.respond(412)
+            return
+
+        # OK, let's do it.
         self.respond(204)
         self.run_command()
 
