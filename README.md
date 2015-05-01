@@ -64,3 +64,5 @@ If you edit files on your local computer, you will probably want to change your 
 
 
 ## Setting up word-oriented diffs
+
+A wrinkle with the modern soft-wrapping approach is that the standard "diff" utility is line-oriented, not word-oriented, and it is difficult to read the results.  You can get `git` to use word-oriented diffs in several ways.  Here is one: simply use the option `--color-words` to the `git diff` command.  There are other approaches.  For example, see [this posting on StackOverflow](http://stackoverflow.com/questions/7542543/use-gits-word-diff-for-latex-files) and [this one on tex.stackexchange.com](http://tex.stackexchange.com/questions/1325/using-latexdiff-with-git).
