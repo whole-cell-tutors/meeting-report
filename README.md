@@ -1,6 +1,6 @@
 For purposes of collaborative editing, a server located at Caltech automatically runs LaTeX after every commit to this repository, and publishes the resulting PDF at the following location:
 
-<div style="text-align: center">
+<div style="margin-left: auto; margin-right: auto">
   http://whole-cell-tutors.github.io/meeting-report/
 </div>
 
