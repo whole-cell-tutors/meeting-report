@@ -1,12 +1,12 @@
-This repository contains the source files for the meeting report.
-
-For purposes of collaborative editing, a server located at Caltech automatically runs latex after every commit to this repository, and publishes the result at the following location:
+For purposes of collaborative editing, a server located at Caltech automatically runs LaTeX after every commit to this repository, and publishes the resulting PDF at the following location:
 
   http://whole-cell-tutors.github.io/meeting-report/
 
-There is a delay of roughly 10&ndash;15 seconds between the time a commit is received by GitHub and the time the document is refreshed.  This preview is useful if you want to edit files online (see below).  If you prefer to clone the repository and edit the document on your local computer in your favorite editor, you do not need to watch the auto-generated preview, since you can use your normal previewing tools and see the same results (and faster).
+You can keep a browser window open on this page, and when a new version is generated, the top of the page will turn red to notify you.  Click on the "reload" button to refresh the PDF.  Note that there is a delay of roughly 10&ndash;15 seconds between the time a commit is received by GitHub and the time the document is refreshed.
 
-## Important tips
+The preview at the location above is useful if you want to edit files online (see below).  If you prefer to clone the repository and edit the document on your local computer in your favorite editor, you do not need to watch the auto-generated preview, since you can use your normal previewing tools and see the same results (and faster).
+
+## Notification of changes
 
 If you are editing in your local editor, you will want to be notified when changes have been committed to the master repository.  In order to notify people when changes have been made, we have set up a mailing list which receives every commit message to the respository.  You can subscribe yourself to this mailing list here:
 
@@ -15,9 +15,9 @@ If you are editing in your local editor, you will want to be notified when chang
 ## Options for editing this file
 
 
-### If you want to edit LaTeX files directly on GitHub in your browser
+### If you want to edit directly in your browser
 
-Click on the file name in the list above.  GitHub will present an editing interface.  Look near the top of the file for the pencil icon,
+GitHub's online editor does not have very many features, but it is serviceable.  Click on a file name in this repository above.  GitHub will present an editing interface.  Look near the top of the file for the pencil icon,
 
 ![github-edit-buttons](https://github.com/mhucka/vireo/raw/master/.readme/github-edit-buttons.png)
 
@@ -50,9 +50,11 @@ To learn how to use git, here are two good resources:
 
 ## Conventions used in the LaTeX file
 
-The LaTeX file uses "soft" line wrapping: instead of using a hard newline to end each text line at some fixed column (e.g., 78 columns), people's editing environments are assumed to soft-wrap lines at whatever column individual people prefer.  Newlines are only used to separate paragraphs.  (Specifically, two newlines are used to separate paragraphs.)
+*Line wrapping*: The LaTeX file uses "soft" line wrapping: instead of using a hard newline to end each text line at some fixed column (e.g., 78 columns), people's editing environments are assumed to soft-wrap lines at whatever column individual people prefer.  Newlines are only used to separate paragraphs.  (Specifically, two newlines are used to separate paragraphs.)
 
-If you use this convention, and edit locally, you will want to change your git configuration to use word-oriented diffs instead of line-oriented diffs.  Tips for doing this are described in a separate section below.
+With the soft-wrapping convention, if you edit files on your local computer, you will want to change your git configuration to use word-oriented diffs instead of line-oriented diffs.  Tips for doing this are described in a separate section below.
+
+*Tabs*: please use spaces instead of tabs to indicate indentation.  This is necessary because not everyone may uses the same convention for how many spaces equal a tab, and if tags and spaces are mixed (which invariably happens), then indentation becomes inconsistent and confusing.
 
 
 ## Setting up word-oriented diffs
