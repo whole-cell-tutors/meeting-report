@@ -4,16 +4,18 @@ For purposes of collaborative editing, a server located at Caltech automatically
   http://whole-cell-tutors.github.io/meeting-report/
 </p>
 
-You can keep a browser window open on this page, and when a new version is generated, the top of the page will turn red to notify you.  Click on the "reload" button to refresh the PDF.  Note that there is a delay of roughly 10&ndash;15 seconds between the time a commit is received by GitHub and the time the document is refreshed.
+You can keep a browser window open on that page, and when a new version is generated, the top of that page will turn red to notify you.  Click on the "reload" button to refresh the PDF.  Note that there is a delay of roughly 10&ndash;15 seconds between the time a commit is received by GitHub and the time the document is refreshed.
 
-The preview at the location above is useful if you want to edit files online (see below).  If you prefer to clone the repository and edit the document on your local computer in your favorite editor, you do not need to watch the auto-generated preview, since you can use your normal previewing tools and see the same results (and faster).
+The auto-generated preview is useful if you want to edit files online (see below).  If you prefer to edit the files on your local computer in your favorite editor, you do not need to watch the auto-generated preview, since you can use your normal previewing tools and see the same results (and faster).
 
 
 ## Notification of changes
 
-If you are editing in your local editor, you will want to be notified when changes have been committed to the master repository.  In order to notify people when changes have been made, we have set up a mailing list which receives every commit message to the respository.  You can subscribe to this mailing list here:
+You will want to be notified when changes have been made to the master repository, especially if you are editing in your local editor.  In order to notify everyone when changes have been made, we have set up a mailing list that receives auto-generated email for every commit to the respository:
 
+<p align="center">
   https://groups.google.com/forum/#!forum/whole-cell-report-github
+</p>
 
 
 ## Options for editing this file
@@ -40,7 +42,7 @@ Do 3 things: (1) click the "nowrap" button and select "Soft wrap" from the pop-u
 
 ### If you want to edit in a desktop editor
 
-You will need to git clone the repository, push your changes back to the repository, regularly check for updates to the repository and git pull updates when needed.  If this is unfamiliar, you may want to download one of the following desktop git clients, which provide nice GUI interfaces for these tasks and monitor the repository for remote changes.
+You will need to `git clone` the repository, push your changes back to the repository, regularly check for updates to the repository and `git pull` updates when needed.  If this is unfamiliar, you may want to download one of the following desktop git clients, which provide nice GUI interfaces for these tasks and monitor the repository for remote changes.
 
 * [Windows GitHub client](https://windows.github.com)
 * [Mac GitHub  client](https://mac.github.com)
@@ -52,15 +54,13 @@ To learn how to use git, here are two good resources:
 * [http://git-scm.com](http://git-scm.com)
 
 
+## Conventions used in the LaTeX files
 
+**Line wrapping**: The LaTeX file uses "soft" line wrapping: instead of using a hard newline to end each text line at some fixed column (e.g., 78 columns), there are no end-of-line newlines, and people's editing environments are assumed to soft-wrap lines at whatever column individual people prefer.  Newlines are only used to separate paragraphs.  (Specifically, two newlines are used to separate paragraphs.)
 
-## Conventions used in the LaTeX file
+If you edit files on your local computer, you will probably want to change your git configuration to use *word-oriented* diffs instead of line-oriented diffs.  Tips for doing this are described in a separate section below.
 
-**Line wrapping**: The LaTeX file uses "soft" line wrapping: instead of using a hard newline to end each text line at some fixed column (e.g., 78 columns), people's editing environments are assumed to soft-wrap lines at whatever column individual people prefer.  Newlines are only used to separate paragraphs.  (Specifically, two newlines are used to separate paragraphs.)
-
-With the soft-wrapping convention, if you edit files on your local computer, you will want to change your git configuration to use word-oriented diffs instead of line-oriented diffs.  Tips for doing this are described in a separate section below.
-
-**Tabs**: please use spaces instead of tabs to indicate indentation.  This is necessary because not everyone may uses the same convention for how many spaces equal a tab, and if tags and spaces are mixed (which invariably happens), then indentation becomes inconsistent and confusing.
+**Tabs**: please use spaces instead of tabs to indicate indentation.  This is necessary because different people configure their editors to have tabs equal a different number of spaces, and if tabs and spaces are mixed (which *invariably* happens), then indentation becomes inconsistent and confusing.
 
 
 ## Setting up word-oriented diffs
