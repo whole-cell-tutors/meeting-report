@@ -15,7 +15,7 @@ If you are editing in your local editor, you will want to be notified when chang
 ## Options for editing this file
 
 
-### If you want to edit directly in your browser
+**If you want to edit directly in your browser**
 
 GitHub's online editor does not have very many features, but it is serviceable.  Click on a file name in this repository above.  GitHub will present an editing interface.  Look near the top of the file for the pencil icon,
 
@@ -32,7 +32,7 @@ Do 3 things: (1) click the "nowrap" button and select "Soft wrap" from the pop-u
 (Sorry, there's no way to set defaults for GitHub's editor.)
 
 
-### If you want to edit in a desktop editor
+**If you want to edit in a desktop editor**
 
 You will need to git clone the repository, push your changes back to the repository, regularly check for updates to the repository and git pull updates when needed.  If this is unfamiliar, you may want to download one of the following desktop git clients, which provide nice GUI interfaces for these tasks and monitor the repository for remote changes.
 
