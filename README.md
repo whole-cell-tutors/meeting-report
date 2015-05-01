@@ -1,8 +1,8 @@
 For purposes of collaborative editing, a server located at Caltech automatically runs LaTeX after every commit to this repository, and publishes the resulting PDF at the following location:
 
-<center>
+<div style="text-align: center">
   http://whole-cell-tutors.github.io/meeting-report/
-</center>
+</div>
 
 You can keep a browser window open on this page, and when a new version is generated, the top of the page will turn red to notify you.  Click on the "reload" button to refresh the PDF.  Note that there is a delay of roughly 10&ndash;15 seconds between the time a commit is received by GitHub and the time the document is refreshed.
 
