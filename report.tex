@@ -42,7 +42,7 @@
 \markboth{IEEE Transactions on Biomedical Engineering}%
 {Whole Cell Summer School Meeting Report}
 
-\title{Whole Cell Summer School}
+\title{Combining Standards for today’s models: Meeting report of the 2015 Whole Cell summer school}
 
 \author{\IEEEauthorblockN{%
 Dagmar Waltemath\IEEEauthorrefmark{1},
@@ -55,7 +55,15 @@ Other People}%
 \IEEEtitleabstractindextext{%
 
 \begin{abstract}
-The abstract goes here.
+As impressively shown by the 2013 Nobel prize for Chemistry, modeling and simulation have become standard
+techniques in the life sciences to support research about biological, chemical, and more recently medical
+questions. A prominent example of how complex and yet exciting computational models can be is the recent
+“whole-cell model” published in Cell by Karr et al. 
+The international and interdisciplinary summer school “Combining standards for today’s models” brought together
+standard developers and modelers from the field of computational biology to collaboratively show the benefits 
+and limitations of current standards used to represent models, simulations, data, and semantics in the life
+sciences.
+% One major criticism of these standards is that they lag behind current developments and thereby may not be suitable to fully encode today’s models. To overcome this problem, the applicants, under the guidance of the COMBINE effort, will organize a summer school for standard developers and modelers, i.e., users of these standards. The main goal is to explore the expressivity of current standard formats using the example of the famous whole cell model, which has not yet been encoded in a standard format.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -86,20 +94,187 @@ Systems Biology, Simulation, Computational Modeling, Standards
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{his} is a report of the VW Whole Cell Summer School held in Rostock during April, 2015.
+% is a report of the VW Whole Cell Summer School held in Rostock during April, 2015.
+\IEEEPARstart{T}{he} scientific goals of this summer school were to investigate strengths and weaknesses of today’s systems biology standards and improve the reusability of one prominent model in the
+life sciences, the whole-cell model. 
+The model comprises experimental and simulation studies of the cell cycle at different levels of detail, using a plethora of state-of-the-art modeling techniques, ranging from ODEs to Boolean networks to constraint-based modeling. 
+It is used as a case study at computational biology courses at universities. 
+To date, the model is available in the MATLAB format, a proprietary storage format that can only be read and used by the MATLAB software. 
+However, MATLAB is an expensive commercial software and therefore not easily available. 
+In addition, this very specific representation does not allow for simple reuse, model composition and model extension. 
+Consequently, the model code needed to be modified in order to be ready for use in the summer school. This example motivates the need for standards and open software tools.
+
+Major aims of the summer school were:
+\begin{enumerate}
+\item teach standard formats for modeling and simulation in the life sciences, thereby
+\item encouraging junior researchers to employ these standards to enhance the quality of
+scientific investigations and the exchange of information,
+\item encourage junior researchers to the contribute to the standard development
+process, and
+\item show that standards are powerful enough to provide a uniform representation of
+complex models.
+\end{enumerate}
+
+\section{Running a summer school on reproducing a complex model of the whole cell}
+
+\subsection{Format}
+Two scientific invited talks were held at the summer school. 
+The first speaker was Dr. Mike Hucka (California Institute of Technology, CA, USA). 
+He gave an overview of the COMBINE initiative, COMBINE standards and tools supporting these standards. 
+The focus of his talk was on formats that were also needed throughout the summer school. 
+%Dr. Hucka is one of the founders of SBML and COMBINE.
+The second speaker was Dr. Jonathan Karr (Mt Sinai School of Medicine, NY, USA). 
+He presented the Whole Cell model, which had been the main contribution to his own Ph.D. 
+The participants of the summer school learnt more about the single modules, the experimental design and the general field of whole cell modeling. The talk concluded with possible research projects that could be conducted on the basis of the whole-cell model, particularly in bioengineering. 
+%Dr. Karr's inspiring talk set the basis for re-encoding his model. His talk was
+
+The poster session on Tuesday was an opportunity for the workshop participants to present their daily research. 
+Particularly the Ph.D. students used this session to present their research projects, many of which were related to whole cell modeling, or modeling in general. 
+27 poster abstracts were submitted, and included in the abstract booklet, and about 30 posters were presented.
+
+The principal organisation of the workshop was as follows: 
+We worked in eight teams of four to six students and one tutor. 
+Each team focused on one part of the Whole Cell model. 
+A ninth team, called “floating”, focused on tasks such as explaining the biology of the model, helping with drawing the SBGN diagrams, or documenting the results of
+the summer school. 
+The goal of each team was to provide a running module of their part of the model, together with the necessary inputs and outputs for the other groups. 
+Finally, one group, called “Integration”, coordinated the overall integration of all modules.
+We chose this format deliberately to have mixed groups of standard developers (mostly the tutors) with modelers (mostly the students). 
+At the same time we arranged students in groups so that their expertise matched the specific module, and so that the groups themselves consisted of heterogeneous scientists in terms of education. Finally, another aspect for building the groups was that we did not want the participants to know each other before (to enhance the network experience for everybody) and internationality of the groups, whenever possible. 
+The resulting groups thus were divergent in many aspects. 
+However, the surrounding and the frame of the summer school led to a communicative environment. 
+All students were open to learn new tools and methods, and they were willing to contribute with their own expertise to the overall task.
+Throughout the meeting, each participant presented at least once during a plenum session.
+
+At the final meeting, all tutors agreed that the goals of the summer school could not have been achieved without the interdisciplinary mix of expertises. 
+The internationality helped to see the task from different angles, and certainly it allowed us to try very different approaches to solving a problem (from brute force, to working with design thinking methods). 
+In the opening to the summer school, we spoke of the effect of swarm intelligence, and this is what happened during the week of work.
+
+\subsection{Education of young scientists}
+One of the major intentions of this summer school was educating young scientists. 
+The Whole Cell model is now one of the standard models in computational biology. 
+It is therefore also important for young researchers to be informed about the model, its capabilities, the insights it gives and how it can be used and reused. 
+We were glad to have Jonathan Karr of the Mount Sinai School of Medicine to present his model at the summer school. 
+He was also teaching the students about the single modules throughout the summer school (days 2-5). 
+Jonathan Karr was a member of the floating team. He visited the different groups and answered questions both on the modeling and on the biology. 
+His permanent availability throughout the workshop was a great opportunity for all students to learn the details about the model and to ask any kind of questions about whole-cell modeling in general. 
+Jonathan Karr was certainly also an inspiring figure for those who are in the process of acquiring their Ph.D. 
+He demonstrated nicely how influential the work of a Ph.D. can become. 
+For example, during his invited talk, Karr mentioned in front of the students that he felt honored to see his work gaining so much attention in the modeling community.
+
+It became very clear in the beginning of the workshop, that the students were well-prepared for the workshop. 
+Many had already attended the pre-course classes via Google Hangouts. 
+We had organised these classes with all tutors, starting from December 2014. 
+That was the point in time when we had selected and received acceptance notes from all participants. 
+Most of the students had by that time already run the model. 
+Due to the complexity of the model, this is not a trivial task in itself. 
+After the summer school, many students said that they learnt a lot about using open software for modeling throughout the week. 
+They were particularly mentioning the increased understanding of SBML, and the better awareness of reproducibility issues.
+Another important aspect of the summer school was, both for the tutors and the students, to advertise open positions in their labs and to look for open positions respectively. 
+Some students left the summer school with the perspective to get a position at a tutor’s lab. 
+Furthermore the young scientists got to know about upcoming events and workshops that may be of interest to them. 
+One example is the announcement of a 2nd whole-cell modeling workshop, which will be held in Barcelona by the Karr group next year. 
+The focus of that workshop will be on the actual theory behind whole-cell models. 
+Other examples included workshops run by the tutors of the summer school throughout the coming year.
+Finally, the poster session gave all students the opportunity to receive valuable feedback from domain experts, and to connect with other young researchers working in similar fields. 
+The poster session was also attended by scientists from the University of Rostock, opening even further space for discussions.
+
+\subsection{Setting the goal}
+The goal to encode the whole-cell model was ambitious from the beginning, but the expectations have been more than met. 
+All participants dedicated their full time to working on the project, preparing initial results weeks beforehand, and even worked long hours. 
+The achieved results are of high quality and the spirit at the summer school was very positive over the whole week. 
+With 3 more days on the same project, we would have been able to test and then publish the 28 modules. 
+The final state after one week is that all material is there, but the modules need to be tested and integrated. 
+Several weeks after the summer school, the activity on the Git project is still high, and it can be expected that we will finish these two tasks before summer. 
+The modules shall be published in BioModels Database by autumn 2015. 
+
+\subsection{Major achievements}
+\textbf{We successfully taught standard formats and rebuilt the major part of the Whole Cell model using open standards (COMBINE standards) and open software (COMBINE-
+compliant software).} 
+COMBINE, the COmputational Modeling in BIology NEtwork \cite{} is the umbrella organisation for various standardisation initiatives, including SBML \cite{}, CellML \cite{}, SED-ML \cite{}, and SBGN \cite{}. 
+All formats are \emph{de facto} standards. 
+SBML represents networks in biology; CellML represents networks in physiology; SED-ML encodes simulation descriptions; and SBGN encodes the graphical representation of networks. 
+Together, these standards allow for the encoding of virtual experiments \cite{} in biology. 
+Many so-called COMBINE-compliant software exist to run these experiments. 
+Popular software, used during the summer school, are COPASI \cite{}, BioUML \cite{}, VANTED \cite{}, and iBioSim \cite{}. 
+We enhanced the exchange of information and developed 28 new modules in COMBINE formats that represent the majority of the Whole Cell model, and which can be run in open-
+source software. 
+We keep all modules and generated code in two public Git repositories at \emph{http://github.com/dagwa} and \emph{http://github.com/wholecell-tutors}. 
+The modules can be downloaded from these web resources and run in COMBINE-compliant software. 
+As anticipated in the original proposal, we confirm that the scientific community will benefit from open-access, reusable versions of the single modules that make up the model. 
+A majority of the results shown in the original paper could be reproduced and the code will become accessible to the research community through BioModels Database 12 . However, the single modules are not readily integrated to be run “with a single click”. 
+Some small parts of the model need to be finalised, a task to which the different working groups committed and which will be finished in the next months. 
+This shows that standards are powerful enough to provide a uniform representation of complex models. 
+An overview of progress in the single modules is shown in Table~1. 
+% TODO: Insert table of progress here
+Sometimes, the COMBINE modules have been implemented with reduced complexity. 
+The problems that occurred will be reported during the upcoming COMBINE community meeting, HARMONY, in April 20-24 2015 in Wittenberg. 
+With this action, we also contribute actively to the standard development in systems biology. 
+Specific issues included the representation of the different states of the binding sites (summing up to 1 Mio in the SBML file), the lack of
+representation of arrays in core SBML, the generation of random numbers and the sharing of variables across modules, and how to determine the order of execution of single processes during simulation.
+
+The second reason for the delay in encoding is the lack of concepts to represent large arrays of data in SBML. 
+We faced serious problems in representing, for example, variations in DNA binding sites. 
+While MATLAB does have concepts for the representation of arrays and vectors, SBML lacks comprehensive ways of encoding these. 
+Here, the discussions between modelers, standard developers and tool developers were particularly interesting, as arguments were provided from very different view points.
+
+\textbf{The positive effect on the standardisation community became immediately visible:} 
+The summer school offered a great opportunity for standard developers to receive feedback on the usability of COMBINE standards and associated software. 
+This connection, between tool developers, standard developers and modelers is essential and yet usually missing. 
+The single groups do have their own meetings and it happens that the communication between them is rather sparse. 
+This summer school, however, offered a new channel of communication, through a very concrete task. 
+The fact that modelers openly and directly pointed at lacks in existing standards, and that this criticism was converted into positive action on the developers site is for
+us the biggest achievement of the summer school. 
+We hope that the summer school will inspire more events like this, where modelers and standard developers work together to solve a biological problem.
 
 
-\subsection{Subsections}
-Some other paragraph.
+\section{Future directions}
+The participants of the summer school agreed to continue working in their single groups even after the close of the school. 
+Specifically, the groups decided to meet virtually, e.g., in Google Hangouts, to finalise the representation of the modules, the annotations, and the graphical
+maps. 
+First meetings did already take place, and further code has been released through the Git repositories.
+A priority task is the publication of all running modules in BioModels Database. 
+Having the modules published in BioModels Database will guarantee a long-time availability of the outcomes of this summer school. 
+The BioModels Database is the major database for computational models of biological systems. 
+We are therefore happy that the BioModels Database team has already agreed to publish our modules. 
+Jonathan Karr furthermore announced yet another summer school on whole cell models, taking place in Barcelona in 2016, but with a focus on the theory behind modeling whole cells. 
+We believe that this summer school set the path for a new series of meetings related to whole cell modeling.
+In addition, lessons learned from the summer school and weaknesses of COMBINE standards will be discussed during the next standardisation meeting (HARMONY) in April this year. 
+It will therefore foster further standard development in systems biology. 
+Finally, we hope that this summer school will become a prime example for modern educational events, showcasing how standard development can happen in close interaction with the end-users. 
+The experiences of this summer school will be reported at this year's HARMONY and COMBINE meetings (as invited talks, opening the two major standardisation meetings for
+systems biology). 
+We do also aim to give feedback through our European networks, such as EraNet SysBio \cite{}, CaSYM \cite{} and ISBE \cite{}.
 
-\subsection{Subsections}
+\section{Further observations}
+During the selection of the participants we were surprised how hard it had been to pre-calculate the traveling costs in advance. 
+While the calculation of hotel costs and conference rooms met almost exactly the numbers that we had provided in the original application, the travel costs
+were much higher than anticipated. 
+As a result, we had to slightly reduce the number of participants (53 instead of 60), and we had to take travel costs into account when selecting the
+last candidates (e.g., we had many good applications from US, but these participants were then too expensive in terms of travel costs).
+We were also not satisfied with the ratio of female scientists attending the workshop. 
+Two selected female participants had to cancel their participation, meaning out of the 53 participants we had only 7 women. 
+Among the tutors, three out of nine were female.
+
+From the feedback that we received, we conclude that the summer school was well perceived. 
+Most participants thought that the format was unusual, but gave them the opportunity to learn a lot. 
+The schedule was completely free, and each group was left to organise themselves throughout the days. 
+In the mornings and in the evenings, we had one plenum session to first discuss the day and then summarise the results of that day. 
+The evening activities provided room to network, socialise and discuss about the work in a more informal setting, and specifically with participants from other groups. 
+However, two participants mentioned that they had not been satisfied with the format, they said that they would have wished for a tighter schedule with more lectures. 
+To meet this need, we introduced two break-out sessions with discussions on SBML-specific topics.
+We finished the last day with a long session on “How to move on”, asking each group to make a plan on how to continue after the workshop. 
+Here, it proved valuable to have all code available in a Git repository that is accessible to everyone. 
+All participants of the workshop said that they would like to finalise the project. 
+We plan to publish a workshop report right now, and a scientific paper on the COMBINE-compliant model in autumn with all contributors as co-authors.
+
 
 \section{Conclusion}
 The conclusion goes here.
 
 \section*{Acknowledgment}
 
-The authors would like to thank...
+The workshop organisers would like to thank the Volkswagen Foundation for funding this event. 
 
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
