@@ -9,6 +9,8 @@ auto
 *.out
 *.toc
 *.loc
+*.upa
+*.upb
 *.mp
 .git/COMMIT_EDITMSG
 venv
