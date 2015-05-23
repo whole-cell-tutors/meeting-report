@@ -143,16 +143,16 @@ var crc32 = function(str) {
     return (crc ^ (-1)) >>> 0;
 }
 
-var anti_cache = '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />'
-    + '<meta http-equiv="Pragma" content="no-cache" />'
-    + '<meta http-equiv="Expires" content="0" />';
-
 function openLog(base, path) {
     last_slash = base.lastIndexOf('/');
     url = base.substring(0, last_slash + 1) + vireo_log_file;
     var win = window.open('');
     $.get(url, function(data) {
-        $(win.document.body).html('<html><head>' + anti_cache + '</head>'
+        $(win.document.body).html('<html><head>' 
+                                  + '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />'
+                                  + '<meta http-equiv="Pragma" content="no-cache" />'
+                                  + '<meta http-equiv="Expires" content="0" />'
+                                  + '</head>'
                                   + '<body><div id="log"><pre>' + data
                                   + '</pre></div></body></html>');
     });
