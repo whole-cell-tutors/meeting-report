@@ -23,7 +23,7 @@ latex_options = -interaction=nonstopmode -file-line-error
 
 $(pdf_file): $(MAIN_FILE) Makefile $(wildcard *.tex) $(wildcard *.bib)
 	-pdflatex $(latex_options) -draftmode $(MAIN_FILE)
-	-bibtex $(MAIN_FILE)
+	-bibtex $(basename)
 	-pdflatex $(latex_options) -draftmode $(MAIN_FILE)
 	-pdflatex $(latex_options) $(MAIN_FILE)
 
