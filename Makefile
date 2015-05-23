@@ -19,11 +19,13 @@ pdf_file = $(addsuffix .pdf,$(basename))
 md5_file = $(addsuffix .md5,$(basename))
 log_file = $(addsuffix .log,$(basename))
 
+latex_options = -interaction=nonstopmode -file-line-error
+
 $(pdf_file): $(MAIN_FILE) Makefile $(wildcard *.tex) $(wildcard *.bib)
-	-pdflatex $(MAIN_FILE)
+	-pdflatex $(latex_options) -draftmode $(MAIN_FILE)
 	-bibtex $(MAIN_FILE)
-	-pdflatex $(MAIN_FILE)
-	-pdflatex $(MAIN_FILE)
+	-pdflatex $(latex_options) -draftmode $(MAIN_FILE)
+	-pdflatex $(latex_options) $(MAIN_FILE)
 
 update:;
 	git checkout gh-pages
