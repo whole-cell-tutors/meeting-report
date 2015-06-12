@@ -108,52 +108,72 @@ This has enabled other researchers to expand the model and use it for their own 
 
 Although MATLAB is commonly used by academic researchers, it is proprietary and expensive. In addition, because many of the biological details of the model are intertwined with the MATLAB code, significant domain expertise is required to understand, modify, and expand the model. 
 A more transparent, standardized implementation is needed to enable more researchers to use the existing whole-cell model, as well as to contribute to whole-cell modeling. 
-In turn, this would enable researchers to develop faster and more efficient whole-cell model simulators, more deeply explore whole-cell model predictions, and more rigorously evaluate whole-cell models; therby accelerating the whole-cell modeling field.
+In turn, this would enable researchers to develop faster and more efficient whole-cell model simulators, more deeply explore whole-cell model predictions, and more rigorously evaluate whole-cell models; thereby accelerating the whole-cell modeling field.
 
-
-We used standard formats using open standards (COMBINE standards) and open software (COMBINE-compliant software).
-COMBINE, the COmputational Modeling in BIology NEtwork~\cite{LeNovere2011} is the umbrella organisation for various standardisation initiatives, including SBML~\cite{hucka2003}, CellML~\cite{hedley_2001b}, SED-ML~\cite{sedml2011}, and SBGN~\cite{LeNovereHMMSS09}. 
-All formats are \textit{de facto} standards. 
-SBML represents networks in biology; CellML represents networks in physiology; SED-ML encodes simulation descriptions; and SBGN encodes the graphical representation of networks. 
+The COmputational Modeling in BIology NEtwork (COMBINE~\cite{LeNovere2011}) is the umbrella organisation for various standardization initiatives in computational biology and beyond.
+It provides  to the community a set of data formats that allow software tools to exchange models (in SBML~\cite{hucka2003} or CellML~\cite{hedley_2001b}), simulation experiment descriptions (in SED-ML~\cite{sedml2011}), maps (in SBGN~~\cite{LeNovereHMMSS09}), and even reproducible simulation setups (as COMBINE Archives \cite{Bergmann2014combine}).  
+% We used standard formats using open standards (COMBINE standards) and open software (COMBINE-compliant software)., including SBML~, CellML~\cite{hedley_2001b}, SED-ML~\cite{sedml2011}, and SBGN~\cite{LeNovereHMMSS09}. 
+%All formats are \textit{de facto} standards. 
+%SBML represents networks in biology; CellML represents networks in physiology; SED-ML encodes simulation descriptions; and SBGN encodes the graphical representation of networks. 
 Together, these standards allow for the encoding of virtual experiments in biology. 
 Many so-called COMBINE-compliant software exist to run these experiments. 
-Popular software, used during the summer school, are COPASI~\cite{Mendes2009}, BioUML~\cite{Kolpakov2006}, VANTED~\cite{Rohn2012}, and iBioSim~\cite{Stevens2013}.
-
 The Systems Biology Markup Language (SBML) and the Cell Markup Language (CellML) are the most commonly used systems biology modeling standards. 
 Both languages can be used to develop a wide variety of models including ordinary differential equation, logical, and flux balance analysis models, and both have been used to build hundreds of models. 
 However, neither language supports several of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. 
 In addition, the System Biology Graphical Notation (SBGN) is the language to encode the visual representation of a model, but has currently also restrictions regarding the visualization of whole-cell models. 
 Consequently, further work is needed to expand the SBML, CellML, and SBGN languages to support whole-cell models.
 
-We organized the 2015 whole-cell modeling summer school to train students in whole-cell modeling to expand the whole-cell modeling field, as well as to initiate the further development of the SBML and SBGN languages to support whole-cell modeling. 
+To analyse the shortcomings of current standards for whole-cell modeling, we organized the \emph{2015 whole-cell modeling summer school}. 
+The summer school aimed to train students in whole-cell modeling, as well as to initiate the further development of the SBML and SBGN languages to support whole-cell modeling.  
 The goals of the school were three-fold: 
 First and foremost, the goal of the course was to train young researchers how to build whole-cell models, how to develop sub-models of individual cellular pathways using different mathematical formalisms and encode them using SBML and graphically encode them using SBGN, and how to combine sub-models into a single model. 
-The second goal of the course was to identify the features that must be added to the SBML and SBGN languages to support whole-cell models. 
+The second goal of the course was to identify the features that must be added to the SBML and SBGN languages to support whole-cell models, and state-of-the-art models in general. 
 The third goal of the course was to initiate the recoding of the \textit{M. genitalium} whole-cell model into SBML and SBGN.
 
 Here, we summarize the educational and scientific outcomes of the summer school. The paper is structured as follows: 
-Section II presents the format of the summer school, the progress towards SBML and SBGN models, and the limitations of SBML and SBGN. 
-Section III presents the lessons we learned from the summer school and Section IV discusses future directions. 
+Section II presents the format of the summer school, and the progress towards SBML and SBGN models.  
+Section III presents the lessons we learned from the summer school and , specifically  the limitations of SBML and SBGN. 
+Section IV discusses future directions. 
 We finish with a conclusion in Section V. 
 
 \section{The 2015 whole-cell modeling summer school}
 
-\subsection{Format}
+The idea for this summer school was born at the 2012 COMBINE meeting (\url{http://co.mbine.org/events/COMBINE_2012}) in Toronto. During that meeting, the first COMBINE tutorial took place. It was intended at modelers working with COMBINE standards and COMBINE-compliant software tools. 
+While the tutorial room was full, a short survey reveiled that not many core modelers were actually sitting in the room.  
+This awareness led to a longer discussion about how to best reach the end-users of the COMBINE standards. 
+During that discussion, the idea of a summer school on translating a famous model into a COMBINE-compliant representation was born. 
+Two years later, the Volkswagen Foundation funded this undertaking and we invited 50 students to join us in a week of hacking and coding, exploring the whole-cell model, networking and learning more about the importance of reproducible science.
+ 
+%%% GOAL %%%
+
+%%% TEAM BUILDING %%%
 In preparation of the summer school the students were assigned to eight research groups, each led by a tutor invited prior to the summer school. 
 There was a preparation phase before the meeting through Google hangout and code sharing through GitHub. During this phase, students got used to the MATLAB whole-cell model and started to think about their specific sub-model(s), especially the interfaces.
 The summer school week itself was structured in two invited talks, daily working sessions, a daily wrap-up (summary) presentation of each working group, a poster session, and a final presentation of results on the last day.
 
+
+
+
+\subsection{Invited talks}
 Two scientific invited talks were held at the summer school. 
 The first speaker was Dr. Michael Hucka from the California Institute of Technology, USA. 
 He provided an overview of the COMBINE initiative, COMBINE standards and tools supporting these standards. 
-His talked focused on the formats most relevant to whole-cell modeling. 
+His talk focused on the formats most relevant to whole-cell modeling. 
 %Dr. Hucka is one of the founders of SBML and COMBINE.
 The second speaker was Dr. Jonathan Karr from the Icahn School of Medicine at Mount Sinai School, USA. 
 He  provided overviews of the whole-cell modeling field, of his own research toward developing and applying whole-cell models for scientific discovery and engineering, and of the \textit{M. genitalium} whole-cell model which he and his colleagues recently developed.
 Dr. Karr concluded his talk by outlining several research projects which his own group is pursuing to expand the scope of whole-cell models and use whole-cell models to engineer faster growing bacteria.
 %Dr. Karr's inspiring talk set the basis for re-coding his model.
 
-\comment{The principal organisation of the course was as follows:}{Karr}{These next couple paragraphs are disorganized. First introduce the goal. Then how students were divided into groups to achieve this. Talk about how much time groups had to work. Summarize how the groups were intended to coordinate with each other and provide summaries each day at the plenary session.} 
+\subsection{Daily working sessions}
+% How much time did students have to work?
+% Coordination of group work
+% Summaries at plenary sessions 
+
+\subsection{Poster session}
+
+%\comment{The principal organisation of the course was as follows:}{Karr}{These next couple paragraphs are disorganized. First introduce the goal. Then how students were divided into groups to achieve this. Talk about how much time groups had to work. Summarize how the groups were intended to coordinate with each other and provide summaries each day at the plenary session.} 
+
 We worked in eight teams of four to six students and one tutor. 
 Each team focused on one part of the whole-cell model. 
 The course included three additional ``floating'' tutors which were not assigned to specific teams. These tutors shared their expertise in systems modeling, model documentation, and SBGN with all of the teams.
@@ -225,6 +245,16 @@ The scientific community will benefit from these open-access, reusable versions 
 Further work is needed to integrate these sub-models into a single model. 
 We hope to achieve this over the next several months.
 
+\subsection{Software used}
+Popular software, used during the summer school, are COPASI~\cite{Mendes2009}, BioUML~\cite{Kolpakov2006}, VANTED~\cite{Rohn2012}, and iBioSim~\cite{Stevens2013}.
+
+\section{Lessons learned}
+From the feedback that we received, we conclude that the summer school was well perceived. 
+There were many aspects which contributed to the success: selection of team members (to ensure that there are no cliques within a team and that different backgrounds are available within a team), mentoring by expert-tutors (which are well established scientists in the field), flexibility in the schedule, daily wrap-ups to discuss the progress of the different teams, and social activities during the summer school.
+Most participants thought that the was unusual for a summer school, but gave them the opportunity to learn a lot. 
+However, two participants mentioned that they had not been satisfied with the format, they said that they would have wished for a tighter schedule with more lectures. 
+To meet this need, we introduced two break-out sessions with discussions on SBML-specific topics.
+
 \subsection{Limitations of SBML and SBGN for whole-cell modeling}
 SBML and SBGN has never been applied before to such a large and complex model, and therefore using those standards for the whole-cell model provided interesting insights. 
 Specific issues included the representation of large, combinatorial state spaces (such as different states of the binding sites) summing up to over one million in the SBML file, the lack of representation of arrays in core SBML, the generation of random numbers, and the sharing of variables across modules. In SBGN the size and (automatic) layout of some diagrams provided challenges and there arose a need to have mixed diagrams containing more than one SBGN language (SBGN has three sub-languages: Process description, Entity Relationship and Activity Flow).
@@ -243,12 +273,6 @@ The fact that modelers openly and directly pointed at lacks in existing standard
 us the biggest achievement of the summer school. 
 \comment{We hope that the summer school will inspire more events like this, where modelers and standard developers work together to solve a biological problem.}{Karr}{These comments at the end of this paragraph could be moved to the conclusion/discussion}
 
-\section{Lessons learned}
-From the feedback that we received, we conclude that the summer school was well perceived. 
-There were many aspects which contributed to the success: selection of team members (to ensure that there are no cliques within a team and that different backgrounds are available within a team), mentoring by expert-tutors (which are well established scientists in the field), flexibility in the schedule, daily wrap-ups to discuss the progress of the different teams, and social activities during the summer school.
-Most participants thought that the was unusual for a summer school, but gave them the opportunity to learn a lot. 
-However, two participants mentioned that they had not been satisfied with the format, they said that they would have wished for a tighter schedule with more lectures. 
-To meet this need, we introduced two break-out sessions with discussions on SBML-specific topics.
 
 \section{Future directions}
 \comment{The goal is to construct SBML-encoded versions of all 28 sub-models and to publish them in the BioModels database.}{Karr}{Start with the goals. This discussion should also include expanding SBML and the simulators. Then get into specifics of how this will be achieved.}
@@ -265,6 +289,8 @@ We hope to publish a scientific paper on the COMBINE-compliant model in autumn w
 
 In addition, lessons learned from the summer school and weaknesses of COMBINE standards will be discussed during the next standardisation meeting (HARMONY) in April this year. 
 It will therefore foster further standard development in systems biology. 
+
+We will continue the project in a second Whole-Cell workshop, which takes place as a satellite meeting to the 2015 COMBINE conference in Salt Lake City, October 2015.
 
 \section{Conclusion}
 Computational modeling is increasingly important for biological discovery, bioengineering, and medicine, and whole-cell models are expected to become a standard in the future. 
