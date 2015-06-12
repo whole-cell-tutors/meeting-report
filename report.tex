@@ -110,10 +110,19 @@ Although MATLAB is commonly used by academic researchers, it is proprietary and 
 A more transparent, standardized implementation is needed to enable more researchers to use the existing whole-cell model, as well as to contribute to whole-cell modeling. 
 In turn, this would enable researchers to develop faster and more efficient whole-cell model simulators, more deeply explore whole-cell model predictions, and more rigorously evaluate whole-cell models; therby accelerating the whole-cell modeling field.
 
-The Systems Biology Markup Language (SBML)~\cite{hucka2003} and the Cell Markup Language (CellML)~\cite{hedley_2001b} are the most commonly used systems biology modeling standards. 
+
+We used standard formats using open standards (COMBINE standards) and open software (COMBINE-compliant software).
+COMBINE, the COmputational Modeling in BIology NEtwork~\cite{LeNovere2011} is the umbrella organisation for various standardisation initiatives, including SBML~\cite{hucka2003}, CellML~\cite{hedley_2001b}, SED-ML~\cite{sedml2011}, and SBGN~\cite{LeNovereHMMSS09}. 
+All formats are \textit{de facto} standards. 
+SBML represents networks in biology; CellML represents networks in physiology; SED-ML encodes simulation descriptions; and SBGN encodes the graphical representation of networks. 
+Together, these standards allow for the encoding of virtual experiments in biology. 
+Many so-called COMBINE-compliant software exist to run these experiments. 
+Popular software, used during the summer school, are COPASI~\cite{Mendes2009}, BioUML~\cite{Kolpakov2006}, VANTED~\cite{Rohn2012}, and iBioSim~\cite{Stevens2013}.
+
+The Systems Biology Markup Language (SBML) and the Cell Markup Language (CellML) are the most commonly used systems biology modeling standards. 
 Both languages can be used to develop a wide variety of models including ordinary differential equation, logical, and flux balance analysis models, and both have been used to build hundreds of models. 
 However, neither language supports several of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. 
-In addition, the System Biology Graphical Notation (SBGN)~\cite{LeNovereHMMSS09} is the language to encode the visual representation of a model, but has currently also restrictions regarding the visualization of whole-cell models. 
+In addition, the System Biology Graphical Notation (SBGN) is the language to encode the visual representation of a model, but has currently also restrictions regarding the visualization of whole-cell models. 
 Consequently, further work is needed to expand the SBML, CellML, and SBGN languages to support whole-cell models.
 
 We organized the 2015 whole-cell modeling summer school to train students in whole-cell modeling to expand the whole-cell modeling field, as well as to initiate the further development of the SBML and SBGN languages to support whole-cell modeling. 
@@ -127,7 +136,6 @@ Section II presents the format of the summer school, the progress towards SBML a
 Section III presents the lessons we learned from the summer school and Section IV discusses future directions. 
 We finish with a conclusion in Section V. 
 
-
 \section{The 2015 whole-cell modeling summer school}
 
 \subsection{Format}
@@ -140,7 +148,6 @@ The first speaker was Dr. Michael Hucka from the California Institute of Technol
 He provided an overview of the COMBINE initiative, COMBINE standards and tools supporting these standards. 
 His talked focused on the formats most relevant to whole-cell modeling. 
 %Dr. Hucka is one of the founders of SBML and COMBINE.
-
 The second speaker was Dr. Jonathan Karr from the Icahn School of Medicine at Mount Sinai School, USA. 
 He  provided overviews of the whole-cell modeling field, of his own research toward developing and applying whole-cell models for scientific discovery and engineering, and of the \textit{M. genitalium} whole-cell model which he and his colleagues recently developed.
 Dr. Karr concluded his talk by outlining several research projects which his own group is pursuing to expand the scope of whole-cell models and use whole-cell models to engineer faster growing bacteria.
@@ -161,22 +168,22 @@ However, the surrounding and the frame of the summer school led to a communicati
 All students were open to learn new tools and methods, and they were willing to contribute with their own expertise to the overall task.
 Throughout the meeting, each participant presented at least once during a plenum session.
 
-\comment{The schedule was completely free, and each group was left to organise themselves throughout the days.}{Karr}{Moved this information from further observations section}
+The schedule was completely free, and each group was left to organise themselves throughout the days.
 In the evenings, we had one plenum session to first discuss the day and then summarise the results of that day. 
 The evening activities provided room to network, socialise and discuss about the work in a more informal setting, and specifically with participants from other groups. 
 
-At the final meeting, all tutors agreed that the goals of the summer school could not have been achieved without the interdisciplinary mix of expertises. 
-The interdisciplinarity helped to see the task from different angles, and certainly it allowed us to try very different approaches to solving a problem (from brute force, to working with design thinking methods). 
-In the opening to the summer school, we spoke of the effect of swarm intelligence, and this is what happened during the week of work.
-
 The poster session enabled participants to present their own research. 
 27 students presented posters. Many of the students presented projects on whole-cell modeling or other computational systems biology projects.
+
+At the final meeting, all tutors agreed that the goals of the summer school could not have been achieved without the interdisciplinary mix of expertises. 
+The interdisciplinarity helped to see the task from different angles, and certainly it allowed us to try very different approaches to solving a problem (from brute force, to working with design thinking methods). 
+In the opening to the summer school we spoke of the effect of swarm intelligence, and this is what happened during the week of work.
 
 \subsection{Educating young systems biologists}
 One of the major intentions of this summer school was to educate young scientists. 
 The whole-cell model is now one of the standard models in computational biology. 
 It is therefore also important for young researchers to be informed about the model, its capabilities, the insights it gives and how it can be used and reused. 
-Special focus was on making  the participants familiar with cell biology, common modeling methods (such as ODE, FBA, and Boolean), model integration, and modeling standards ( SBML, SED-ML, and SGBN).
+Special focus was on making  the participants familiar with cell biology, common modeling methods (such as ODE, FBA, and Boolean), model integration, and modeling standards (SBML, SED-ML, and SGBN).
 
 \comment{We were glad to have Dr. Karr present his model at the summer school.}{Outline more specifically what students did learn, and how this was taught through the small group interactions, intro lectures, and popup seminars}
 He also taught students about the single sub-models throughout the school. 
@@ -187,12 +194,12 @@ Many had already attended the pre-course classes via Google Hangouts.
 Prior to the course, most of the students had already run the whole-cell model. 
 
 After the summer school, many students reported that they learned a lot about using open-source modeling software. 
-In particular, \comment{many}{Karr}{Are there other survey statistic that can be mentioned?} students reported increased understanding of SBML, and better awareness of reproducibility issues.
+In particular, students reported increased understanding of SBML and SBGN, and better awareness of reproducibility issues.
 
 The course was also a great networking event for both the students and tutors. 
 Students had opportunities to connect with other young computational systems biology researchers from around the world.
 The poster session provided students an opportunity to share their own work and get valuable feedback from each other, the tutors, and other scientists from the University of Rostock.
-Several of the tutors advertised open positions in the labs, as well as upcoming courses and meetings including the April 2016 whole-cell modeling summer school which  Jonathan Karr, Luis Serrano, Maria Lluch-Senar, and Javier Carrera are organizing in Barcelona, Spain.
+Several of the tutors advertised open positions in the labs, as well as upcoming courses and meetings including the April 2016 whole-cell modeling summer school which Jonathan Karr, Luis Serrano, Maria Lluch-Senar, and Javier Carrera are organizing in Barcelona, Spain.
 
 \subsection{\comment{Setting the goal}{Karr}{I would probably eliminate this section and merge the thoughts about code committed to GitHub with the following section. 
 If the goal was to create a working model, then the goal wasn't met and likely will never be met. Probably very few of the SBML sub-models actually work. 
@@ -208,17 +215,7 @@ The modules shall be published in BioModels Database by autumn 2015.
 
 \subsection{Progress toward an SBML whole-cell model}
 In addition to training young systems biology researchers, the course produced preliminary SBML encoded versions of each of the whole-cell models sub-models.
-
-\comment{We taught standard formats using open standards (COMBINE standards) and open software (COMBINE-compliant software).}{Karr}{This paragraph belongs in the introduction and in the teaching section}
-COMBINE, the COmputational Modeling in BIology NEtwork \cite{LeNovere2011} is the umbrella organisation for various standardisation initiatives, including SBML \cite{hucka2003}, CellML \cite{hedley_2001b}, SED-ML \cite{sedml2011}, and SBGN \cite{LeNovereHMMSS09}. 
-All formats are \textit{de facto} standards. 
-SBML represents networks in biology; CellML represents networks in physiology; SED-ML encodes simulation descriptions; and SBGN encodes the graphical representation of networks. 
-Together, these standards allow for the encoding of virtual experiments in biology. 
-Many so-called COMBINE-compliant software exist to run these experiments. 
-Popular software, used during the summer school, are COPASI \cite{Mendes2009}, BioUML \cite{Kolpakov2006}, VANTED \cite{Rohn2012}, and iBioSim \cite{Stevens2013}.
-
 We enhanced the exchange of information and developed 28 new modules in COMBINE formats that represent the majority of the whole-cell model, and which can be run in open-source software.
-
 An overview of progress in the single modules is shown in Table~1. 
 The sub-models are available open-source at \url{http://github.com/dagwa} and \url{https://github.com/whole-cell-tutors/wholecell}. 
 The scientific community will benefit from these open-access, reusable versions of the sub-models that make up the model.
@@ -246,9 +243,10 @@ The fact that modelers openly and directly pointed at lacks in existing standard
 us the biggest achievement of the summer school. 
 \comment{We hope that the summer school will inspire more events like this, where modelers and standard developers work together to solve a biological problem.}{Karr}{These comments at the end of this paragraph could be moved to the conclusion/discussion}
 
-\section{\comment{Lessons learned}{Karr}{Remove the details about funding and focus on lessons that would be useful to other summer school organizers. In particular, focus on the unique format and the advantages of this.}}
+\section{Lessons learned}
 From the feedback that we received, we conclude that the summer school was well perceived. 
-Most participants thought that the \comment{format}{Karr}{elaborate on this format and how it might be good for other scientific communities} was unusual, but gave them the opportunity to learn a lot. 
+There were many aspects which contributed to the success: selection of team members (to ensure that there are no cliques within a team and that different backgrounds are available within a team), mentoring by expert-tutors (which are well established scientists in the field), flexibility in the schedule, daily wrap-ups to discuss the progress of the different teams, and social activities during the summer school.
+Most participants thought that the was unusual for a summer school, but gave them the opportunity to learn a lot. 
 However, two participants mentioned that they had not been satisfied with the format, they said that they would have wished for a tighter schedule with more lectures. 
 To meet this need, we introduced two break-out sessions with discussions on SBML-specific topics.
 
@@ -300,7 +298,7 @@ The course was supported by a grant from the Volkswagen Foundation to DW and FS.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/schreiber.jpg}}]{Falk Schreiber}
- is a professor at Monash University's Faculty of IT and an adjunct professor at Martin Luther University Halle-Wittenberg's Institute of Computer Science. His interests are visual computing and visual analytics of biological data, analysis of structure and dynamics of biological networks, integration of multimodal data, standards for systems biology, as well as modelling and analysis of metabolism.
+ is a professor at Monash University's Faculty of IT and an adjunct professor at Martin Luther University Halle-Wittenberg's Institute of Computer Science. His interests are visual computing and visual analytics of biological data, analysis of structure and dynamics of biological networks, integration of multimodal data, standards for systems biology, as well as modeling and analysis of metabolism.
 Contact him at falk.schreiber@monash.edu.
 \end{IEEEbiography}
 
