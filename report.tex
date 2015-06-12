@@ -10,8 +10,8 @@
 \usepackage[pdftex,rgb,dvipsnames,svgnames,hyperref,table]{xcolor}
 
 \usepackage[pdftex,breaklinks=true,colorlinks=true,
-  bookmarks=false,pdfhighlight=/O,
-  urlcolor=DarkBlue,citecolor=DarkRed,linkcolor=DarkBlue]{hyperref}
+	bookmarks=false,pdfhighlight=/O,
+	urlcolor=DarkBlue,citecolor=DarkRed,linkcolor=DarkBlue]{hyperref}
 
 \usepackage[cmex10]{amsmath}
 \interdisplaylinepenalty=2500
@@ -27,7 +27,6 @@
 \usepackage{xspace}
 \usepackage{soul}
 \usepackage{url}
-%\usepackage{natbib}
 \usepackage{hyphenat}
 \usepackage[english]{babel}
 
@@ -42,86 +41,108 @@
 
 \begin{document}
 
-\markboth{IEEE Transactions on Biomedical Engineering}%
-{2015 whole-cell modeling summer school meeting report}
+\markboth{IEEE Transactions on Biomedical Engineering}{2015 whole-cell modeling summer school meeting report}
 
-\title{Combining standards for \comment{tomorrow's}{Karr}{focus on the future} models: Report of the 2015 whole-cell modeling summer school}
+\title{Combining standards for tomorrow's models: Report of the 2015 whole-cell modeling summer school}
 
-\author{\IEEEauthorblockN{%
-Dagmar Waltemath\IEEEauthorrefmark{1},
-Falk Schreiber\IEEEauthorrefmark{2}, 
-Jonathan R. Karr\IEEEauthorrefmark{3}, and
-Other People}%
-\IEEEauthorblockA{\IEEEauthorrefmark{1}University of Rostock}
-\IEEEauthorblockA{\IEEEauthorrefmark{2}Monash University}%
-\IEEEauthorblockA{\IEEEauthorrefmark{3}Department of Genetics \& Genomic Sciences, Icahn School of Medicine at Mount Sinai} %New York, NY 10029 USA\\Email: \href{mailto:karr@mssm.edu}{karr@mssm.edu}}
-\thanks{Corresponding author email: dagmar.waltemath@uni-rostock.de}}
+\author{
+	\IEEEauthorblockN{
+		Dagmar Waltemath\IEEEauthorrefmark{1},
+		Falk Schreiber\IEEEauthorrefmark{2}, 
+		Jonathan R. Karr\IEEEauthorrefmark{3}, and
+		Other People
+	}
+	
+	\IEEEauthorblockA{\IEEEauthorrefmark{1}University of Rostock}
+	\IEEEauthorblockA{\IEEEauthorrefmark{2}Faculty of IT, Monash University}
+	\IEEEauthorblockA{\IEEEauthorrefmark{3}Department of Genetics \& Genomic Sciences, Icahn School of Medicine at Mount Sinai} %New York, NY 10029 USA\\Email: \href{mailto:karr@mssm.edu}{karr@mssm.edu}}
+	
+	\thanks{Corresponding author email: dagmar.waltemath@uni-rostock.de}
+}
 
-\IEEEtitleabstractindextext{%
-
-\begin{abstract}
-Computational modeling is an increasingly powerful and important tool for biological discovery, bioengeineering, and medicine. 
-Recently, researchers developed the first whole-cell model computational model which represents every individual gene.
-However, significant work remains to develop fully complete and accurate models of cells. 
-We organized the 2015 whole-cell modeling summer school to teach students the latest cell modeling methods, as well as to bring the computational systems biology community together to assess the need and limitations of our current standards for whole-cell modeling.
-We found that a whole-cell modeling standard would accelerate the development of whole-cell models, and that more work is needed to expand our current standards to support whole-cell models.
-% One major criticism of these standards is that they lag behind current developments and thereby may not be suitable to fully encode today's models. To overcome this problem, the applicants, under the guidance of the COMBINE effort, will organize a summer school for standard developers and modelers, i.e., users of these standards. The main goal is to explore the expressivity of current standard formats using the example of the famous whole-cell model, which has not yet been encoded in a standard format.
-\end{abstract}
-
-% Note that keywords are not normally used for peer review papers.
-\begin{IEEEkeywords}
-Whole-cell modeling, Systems biology, Simulation, Computational modeling, Standards, Education
-\end{IEEEkeywords}
-%
+\IEEEtitleabstractindextext{
+	\begin{abstract}
+	Computational modeling is an increasingly powerful and important tool for biological discovery, bioengineering, and medicine. 
+	Recently, researchers developed the first whole-cell model computational model which represents every individual gene.
+	However, significant work remains to develop fully complete and accurate models of cells. 
+	We organized the 2015 whole-cell modeling summer school to teach students the latest cell modeling methods, as well as to bring the computational systems biology community together to assess the need and limitations of our current standards for whole-cell modeling.
+	We found that a whole-cell modeling standard would accelerate the development of whole-cell models, and that more work is needed to expand our current standards to support whole-cell models.
+	% One major criticism of these standards is that they lag behind current developments and thereby may not be suitable to fully encode today's models. To overcome this problem, the applicants, under the guidance of the COMBINE effort, will organize a summer school for standard developers and modelers, i.e., users of these standards. The main goal is to explore the expressivity of current standard formats using the example of the famous whole-cell model, which has not yet been encoded in a standard format.
+	\end{abstract}
+	
+	% Note that keywords are not normally used for peer review papers.
+	\begin{IEEEkeywords}
+	Whole-cell modeling, Systems biology, Simulation, Computational modeling, Standards, Education
+	\end{IEEEkeywords}
 }
 
 \maketitle
 \IEEEdisplaynontitleabstractindextext
 \IEEEpeerreviewmaketitle
 
-
 \section{Introduction}
-% The very first letter is a 2 line initial drop letter followed
-% by the rest of the first word in caps.
+% The very first letter is a 2 line initial drop letter followed by the rest of the first word in caps.
 % 
 % form to use if the first word consists of a single letter:
 % \IEEEPARstart{A}{demo} file is ....
 % 
-% form to use if you need the single drop letter followed by
-% normal text (unknown if ever used by IEEE):
+% form to use if you need the single drop letter followed by normal text (unknown if ever used by IEEE):
 % \IEEEPARstart{A}{}demo file is ....
 % 
 % Some journals put the first two words in caps:
 % \IEEEPARstart{T}{his demo} file is ....
 % 
-% Here we have the typical use of a "T" for an initial drop letter
-% and "HIS" in caps to complete the first word.
+% Here we have the typical use of a "T" for an initial drop letter and "HIS" in caps to complete the first word.
 % is a report of the VW Whole-cell Summer School held in Rostock during April, 2015.
-\IEEEPARstart{C}{omputational} \comment{modeling is an promising tool for biological discovery, bioengeineering, and medicine.}{Karr}{provide scientific, engineering, and medical motivation for the course, expanding SBML, and for an SBML-encoded whole-cell model} Computational modeling has already been used to identify new metabolic genes \cite{Reed2006}, add metabolic pathways to bacteria \cite{Lee2009}, and identify potential new antimicrobial drug targets \cite{Lee2012}. Computational models also have the potential to enable bioengineers to design entirely new strains of bacteria optimized for industrial tasks such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to design individualized medical therapies tailored to each patient's unique genome. Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype \cite{Macklin2014, Karr2015}.
 
-Recently, researchers at Stanford University developed the first whole-cell model of the gram-positive bacterium \textit{Mycoplasma genitalium} \cite{Karr2012}. The model represents the life cycle of a single cell including the copy number of each metabolite, RNA, and protein species and accounts for every known gene function. The model is comprised of multiple sub-models, each of which was implemented using different mathematical representations such as ordinary differential equations, flux balance analysis, and Boolean rules and trained using different experimental data. 
+\IEEEPARstart{R}{esearch} in the life sciences is increasingly computational, and computational modeling is a promising tool for biological discovery, bioengineering, and medicine. Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, add metabolic pathways to bacteria~\cite{Lee2009}, and identify potential new antimicrobial drug targets~\cite{Lee2012}. 
+Computational models also have the potential to enable bioengineers to design entirely new strains of bacteria optimized for industrial tasks such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to design individualized medical therapies tailored to each patient's unique genome. 
+Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype, but also standardized ways to exchange model description, modeling parameters as well as model visualizations~\cite{Macklin2014,Karr2015,Klipp07}.
 
-The \textit{M. genitalium} whole-cell model was implemented in MATLAB, is available open-source under the MIT license, and was extensively documented. This has enabled other researchers to expand the model and use the model for their own research, as well as use the model as a teaching tool in university systems biology courses across the world. 
+Recently, researchers at Stanford University developed the first whole-cell model of the gram-positive bacterium \textit{Mycoplasma genitalium}~\cite{Karr2012}. 
+The model represents the life cycle of a single cell including the copy number of each metabolite, RNA, and protein species, and it accounts for every known gene function. 
+The model is comprised of multiple sub-models, each of which was implemented using different mathematical representations such as ordinary differential equations, flux balance analysis, and Boolean rules and trained using different experimental data. 
 
-Although MATLAB is commonly used by academic researchers, MATLAB is proprietary and expensive. In addition, because many of the biological details of the model are intertwined with the MATLAB code, significant domain expertise is required to understand, modify, and expand the model. A more transparent, standardized implementation is needed to enable more researchers to use the existing whole-cell model, as well as to contribute to whole-cell modeling. In turn, this would enable researchers to develop faster and more efficient whole-cell model simulators, more deeply explore whole-cell model predictions, and more rigorously evaluate whole-cell models. \comment{Ultimately, this would accelerate the whole-cell modeling field and enable more researchers to realize the full potential of whole-cell modeling for science, engineering, and medicine.}{Karr}{Its important to emphasize the goal is not just to recode an existing model, but to accelerate the whole-cell modeling field}
+The \textit{M. genitalium} whole-cell model was implemented in MATLAB, is available open-source under the MIT license, and was extensively documented. 
+This has enabled other researchers to expand the model and use it for their own research, as well as use it as a teaching tool in systems biology courses in universities across the world. 
 
-The Systems Biology Markup Language (SBML) \cite{hucka2003} and the Cell Markup Language (CellML) \cite{hedley_2001b} are the most commonly used systems biology modeling standards. Both languages can be used to develop a wide variety of models including ordinary differential equation, logical, and flux balance analysis models, and both languages have been used to build hundreds of models. However, neither language supports many of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. Consequently, further work is needed to expand the SBML and CellML languages to support whole-cell models.
+Although MATLAB is commonly used by academic researchers, it is proprietary and expensive. In addition, because many of the biological details of the model are intertwined with the MATLAB code, significant domain expertise is required to understand, modify, and expand the model. 
+A more transparent, standardized implementation is needed to enable more researchers to use the existing whole-cell model, as well as to contribute to whole-cell modeling. 
+In turn, this would enable researchers to develop faster and more efficient whole-cell model simulators, more deeply explore whole-cell model predictions, and more rigorously evaluate whole-cell models; therby accelerating the whole-cell modeling field.
 
-We organized the 2015 whole-cell modeling summer school to train students in whole-cell modeling to expand the whole-cell modeling field, as well as to begin to expand the SBML language to support whole-cell modeling. The goals of the school were three-fold. First and foremost, the goal of the course was to train young researchers how to build whole-cell models including how to develop sub-models of individual cellular pathways using different mathematical formalisms and encode them using SBML, as well as how to combine sub-models into a single multi-algorithm model. The second goal of the course was to identify the features that must be added to the SBML language to support whole-cell models. The third goal of the course was to initiate the recoding of the \textit{M. genitalium} whole-cell model into SBML.
+The Systems Biology Markup Language (SBML)~\cite{hucka2003} and the Cell Markup Language (CellML)~\cite{hedley_2001b} are the most commonly used systems biology modeling standards. 
+Both languages can be used to develop a wide variety of models including ordinary differential equation, logical, and flux balance analysis models, and both have been used to build hundreds of models. 
+However, neither language supports several of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. 
+In addition, the System Biology Graphical Notation (SBGN)~\cite{LeNovereHMMSS09} is the language to encode the visual representation of a model, but has currently also restrictions regarding the visualization of whole-cell models. 
+Consequently, further work is needed to expand the SBML, CellML, and SBGN languages to support whole-cell models.
 
-\comment{Here, we summarize the educational and scientific outcomes of the summer school. First, we describe the content and organization of the school. Second, we describe the educational successes of the courses in training new computational systems biologists. Third, we describe the limitations of SBML for whole-cell modeling which we identified through the course. Fourth, we describe our early progress toward developing a SBML-encoded whole-cell model. Lastly, we outline the further research that is needed to expand the SBML language to support whole-cell modeling, as well as the further work that is needed to recode the \textit{M. genitalium} model using SBML.}{Karr}{Outline the rest of the paper here}
+We organized the 2015 whole-cell modeling summer school to train students in whole-cell modeling to expand the whole-cell modeling field, as well as to initiate the further development of the SBML and SBGN languages to support whole-cell modeling. 
+The goals of the school were three-fold: 
+First and foremost, the goal of the course was to train young researchers how to build whole-cell models, how to develop sub-models of individual cellular pathways using different mathematical formalisms and encode them using SBML and graphically encode them using SBGN, and how to combine sub-models into a single model. 
+The second goal of the course was to identify the features that must be added to the SBML and SBGN languages to support whole-cell models. 
+The third goal of the course was to initiate the recoding of the \textit{M. genitalium} whole-cell model into SBML and SBGN.
+
+Here, we summarize the educational and scientific outcomes of the summer school. The paper is structured as follows: 
+Section II presents the format of the summer school, the progress towards SBML and SBGN models, and the limitations of SBML and SBGN. 
+Section III presents the lessons we learned from the summer school and Section IV discusses future directions. 
+We finish with a conclusion in Section V. 
+
 
 \section{The 2015 whole-cell modeling summer school}
 
 \subsection{Format}
-\comment{Two scientific invited talks were held at the summer school.}{Karr}{Prior to this provide overview of meeting: (1) talks, (2) division into groups led by tutors, (3) working sessions, (4) summary presentations, (5) final presentations, (6) poster session. Also introduce pre-prep through google hangouts and code sharing through GitHub.} 
+In preparation of the summer school the students were assigned to eight research groups, each led by a tutor invited prior to the summer school. 
+There was a preparation phase before the meeting through Google hangout and code sharing through GitHub. During this phase, students got used to the MATLAB whole-cell model and started to think about their specific sub-model(s), especially the interfaces.
+The summer school week itself was structured in two invited talks, daily working sessions, a daily wrap-up (summary) presentation of each working group, a poster session, and a final presentation of results on the last day.
+
+Two scientific invited talks were held at the summer school. 
 The first speaker was Dr. Michael Hucka from the California Institute of Technology, USA. 
-Dr. Hucka provided an overview of the COMBINE initiative, COMBINE standards and tools supporting these standards. 
+He provided an overview of the COMBINE initiative, COMBINE standards and tools supporting these standards. 
 His talked focused on the formats most relevant to whole-cell modeling. 
 %Dr. Hucka is one of the founders of SBML and COMBINE.
 
 The second speaker was Dr. Jonathan Karr from the Icahn School of Medicine at Mount Sinai School, USA. 
-Dr. Karr provided overviews of the whole-cell modeling field, of his own research toward developing and applying whole-cell models for scientific discovery and engineering, and of the \textit{M. genitalium} whole-cell model which he and his colleagues recently developed.
+He  provided overviews of the whole-cell modeling field, of his own research toward developing and applying whole-cell models for scientific discovery and engineering, and of the \textit{M. genitalium} whole-cell model which he and his colleagues recently developed.
 Dr. Karr concluded his talk by outlining several research projects which his own group is pursuing to expand the scope of whole-cell models and use whole-cell models to engineer faster growing bacteria.
 %Dr. Karr's inspiring talk set the basis for re-coding his model.
 
@@ -154,7 +175,8 @@ The poster session enabled participants to present their own research.
 \subsection{Educating young systems biologists}
 One of the major intentions of this summer school was to educate young scientists. 
 The whole-cell model is now one of the standard models in computational biology. 
-\comment{It is therefore also important for young researchers to be informed about the model, its capabilities, the insights it gives and how it can be used and reused.}{Karr}{Outline more specific skills/knowledge that the course was intended to teach: (1) cell biology, (2) modeling methods: ODE, FBA, Boolean, etc. (3) model integration, (4) standards: SBML, SED-ML, SGBN}
+It is therefore also important for young researchers to be informed about the model, its capabilities, the insights it gives and how it can be used and reused. 
+Special focus was on making  the participants familiar with cell biology, common modeling methods (such as ODE, FBA, and Boolean), model integration, and modeling standards ( SBML, SED-ML, and SGBN).
 
 \comment{We were glad to have Dr. Karr present his model at the summer school.}{Outline more specifically what students did learn, and how this was taught through the small group interactions, intro lectures, and popup seminars}
 He also taught students about the single sub-models throughout the school. 
@@ -172,7 +194,10 @@ Students had opportunities to connect with other young computational systems bio
 The poster session provided students an opportunity to share their own work and get valuable feedback from each other, the tutors, and other scientists from the University of Rostock.
 Several of the tutors advertised open positions in the labs, as well as upcoming courses and meetings including the April 2016 whole-cell modeling summer school which  Jonathan Karr, Luis Serrano, Maria Lluch-Senar, and Javier Carrera are organizing in Barcelona, Spain.
 
-\subsection{\comment{Setting the goal}{Karr}{I would probably eliminate this section and merge the thoughts about code committed to GitHub with the following section. If the goal was to create a working model, then the goal wasn't met and likely will never be met. Probably very few of the SBML sub-models actually work. None of them have been tested to any degree. And a lot of work remains to integrate them. I definitely wouldn't claim the sub-models will be published by the fall because this is not likely to happen.}}
+\subsection{\comment{Setting the goal}{Karr}{I would probably eliminate this section and merge the thoughts about code committed to GitHub with the following section. 
+If the goal was to create a working model, then the goal wasn't met and likely will never be met. Probably very few of the SBML sub-models actually work. 
+None of them have been tested to any degree. And a lot of work remains to integrate them. 
+I definitely wouldn't claim the sub-models will be published by the fall because this is not likely to happen.}}
 The goal to encode the whole-cell model was ambitious from the beginning, but the expectations have been more than met. 
 All participants dedicated their full time to working on the project, preparing initial results weeks beforehand, and even worked long hours. 
 The achieved results are of high quality and the spirit at the summer school was very positive over the whole week. 
@@ -185,7 +210,7 @@ The modules shall be published in BioModels Database by autumn 2015.
 In addition to training young systems biology researchers, the course produced preliminary SBML encoded versions of each of the whole-cell models sub-models.
 
 \comment{We taught standard formats using open standards (COMBINE standards) and open software (COMBINE-compliant software).}{Karr}{This paragraph belongs in the introduction and in the teaching section}
-COMBINE, the COmputational Modeling in BIology NEtwork \cite{LeNovere2011} is the umbrella organisation for various standardisation initiatives, including SBML \cite{hucka2003}, CellML \cite{hedley_2001b}, SED-ML \cite{sedml2011}, and SBGN \cite{le2009systems}. 
+COMBINE, the COmputational Modeling in BIology NEtwork \cite{LeNovere2011} is the umbrella organisation for various standardisation initiatives, including SBML \cite{hucka2003}, CellML \cite{hedley_2001b}, SED-ML \cite{sedml2011}, and SBGN \cite{LeNovereHMMSS09}. 
 All formats are \textit{de facto} standards. 
 SBML represents networks in biology; CellML represents networks in physiology; SED-ML encodes simulation descriptions; and SBGN encodes the graphical representation of networks. 
 Together, these standards allow for the encoding of virtual experiments in biology. 
@@ -203,9 +228,9 @@ The scientific community will benefit from these open-access, reusable versions 
 Further work is needed to integrate these sub-models into a single model. 
 We hope to achieve this over the next several months.
 
-\subsection{Limitations of SBML for whole-cell modeling}
-\comment{Specific issues}{Karr}{Provide introduction to the limitations of our present standards for whole-cell modeling} included the representation of the \comment{different states of the binding sites}{Karr}{generalize this discussion to all large, combinatorial state spaces} (summing up to 1 Mio in the SBML file), the lack of
-representation of arrays in core SBML, the generation of random numbers and the sharing of variables across modules, and how to \comment{determine the order of execution}{Karr}{This is a difference between programming and numerical integration, but not necessarily a limit of sBML} of single processes during simulation.
+\subsection{Limitations of SBML and SBGN for whole-cell modeling}
+SBML and SBGN has never been applied before to such a large and complex model, and therefore using those standards for the whole-cell model provided interesting insights. 
+Specific issues included the representation of large, combinatorial state spaces (such as different states of the binding sites) summing up to over one million in the SBML file, the lack of representation of arrays in core SBML, the generation of random numbers, and the sharing of variables across modules. In SBGN the size and (automatic) layout of some diagrams provided challenges and there arose a need to have mixed diagrams containing more than one SBGN language (SBGN has three sub-languages: Process description, Entity Relationship and Activity Flow).
 
 \comment{The second reason for the delay in encoding is the lack of concepts to represent large arrays of data in SBML.}{Karr}{This isn't necessarily a problem, except that it might make computations slow. The real problem is the inability to represent state large state spaces sparsely. Instead, SBML forces you to enumerate the entire space, which is very inefficient for combinatorially large spaces. Arrays alone would not solve this problem.}
 We faced serious problems in representing, for example, variations in DNA binding sites. 
@@ -243,20 +268,21 @@ We hope to publish a scientific paper on the COMBINE-compliant model in autumn w
 In addition, lessons learned from the summer school and weaknesses of COMBINE standards will be discussed during the next standardisation meeting (HARMONY) in April this year. 
 It will therefore foster further standard development in systems biology. 
 
-\section{\comment{Conclusion}{Karr}{Broaden conclusion. Circle back to scientific/engineering/medicineg goals}}
-\comment{Lastly, we hope that this summer school will become a prime example for modern educational events, showcasing how standard development can happen in close interaction with the end-users.}{Karr}{These sentences belong in the conclusion}
+\section{Conclusion}
+Computational modeling is increasingly important for biological discovery, bioengineering, and medicine, and whole-cell models are expected to become a standard in the future. 
+The whole-cell modelling summer school targeted this critical area and  provided  training to young researchers how to build whole-cell models (including how to develop sub-models, encode them using SBML and SBGN, and  combine them into a single model), identified features that must be added to the SBML and SBGN languages to support  whole-cell models, and initiated the recoding of the \textit{M. genitalium} whole-cell model into SBML and SBGN.
+
 The experiences of this summer school will be reported at this year's HARMONY and COMBINE meetings (as invited talks, opening the two major standardisation meetings for
 systems biology). 
-We do also aim to give feedback through our European networks, such as EraNet SysBio \cite{ERASysBio2015}, CaSYM \cite{CaSYM2015} and ISBE \cite{Wolkenhauer2009}.
-
-\comment{Jonathan Karr furthermore announced yet another summer school on whole-cell models, taking place in Barcelona in 2016, but with a focus on the theory behind modeling whole cells.}{This doesn't directly relate to the course. I would move this to the conclusion}
+We also aim to give feedback through our European networks, such as EraNet SysBio \cite{ERASysBio2015}, CaSYM \cite{CaSYM2015} and ISBE \cite{Wolkenhauer2009}.
+Jonathan Karr furthermore announced yet another summer school on whole-cell models, taking place in Barcelona in 2016, but with a focus on the theory behind modeling whole cells.
 We believe that this summer school set the path for a new series of meetings related to whole-cell modeling.
+Lastly, we hope that this summer school will become a prime example for modern educational events, showcasing how standard development can happen in close interaction with the end-users.
 
 \section*{Acknowledgment}
 The course was supported by a grant from the Volkswagen Foundation to DW and FS. 
 
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
+% Can use something like this to put references on a page by themselves when using endfloat and the captionsoff option.
 \ifCLASSOPTIONcaptionsoff
   \newpage
 \fi
@@ -264,59 +290,33 @@ The course was supported by a grant from the Volkswagen Foundation to DW and FS.
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,report}
 
-
 % biography section
 % 
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things simpler here.)
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/waltemath.jpg}}]{Dagmar Waltemath}
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/schreiber.jpg}}]{Falk Schreiber}
+ is a professor at Monash University's Faculty of IT and an adjunct professor at Martin Luther University Halle-Wittenberg's Institute of Computer Science. His interests are visual computing and visual analytics of biological data, analysis of structure and dynamics of biological networks, integration of multimodal data, standards for systems biology, as well as modelling and analysis of metabolism.
+Contact him at falk.schreiber@monash.edu.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/karr.jpg}}]{Jonathan R. Karr}
-received the Ph.D. degree in Biophysics and the M.S. degree in Medicine from Stanford University, Stanford, CA, USA in 2014 and the S.B. degrees in Physics and Brain \& Cognitive Sciences from the Massachusetts Institute of Technology, Cambridge, MA, USA in 2006.
+received the Ph.D. degree in Biophysics and the M.S. degree in Medicine from Stanford University, Stanford, CA, USA in 2014 and the S.B. degrees in Physics and Brain \& Cognitive Sciences from the Massachusetts Institute of Technology, Cambridge, MA, USA in 2006. 
 
-Dr. Karr is currently a Fellow at the Icahn School of Medicine at Mount Sinai in New York, NY, USA. His research focuses on the development of comprehensive whole-cell computational models and their applications to bioengineering and medicine.
+Dr. Karr is currently a Fellow at the Icahn School of Medicine at Mount Sinai in New York, NY, USA. His research focuses on the development of comprehensive whole-cell computational models and their applications to bioengineering and medicine. Contact him at jkarr@stanford.edu.
 \end{IEEEbiography}
-% or if you just want to reserve a space for a photo:
 
-% \begin{IEEEbiography}{Michael Shell}
-% Biography text here.
-% \end{IEEEbiography}
-
-% if you will not have a photo at all:
-% \begin{IEEEbiographynophoto}{John Doe}
-% Biography text here.
-% \end{IEEEbiographynophoto}
-
-% insert where needed to balance the two columns on the last page with
-% biographies
-%\newpage
-
-% \begin{IEEEbiographynophoto}{Jane Doe}
-% Biography text here.
-% \end{IEEEbiographynophoto}
-
-% You can push biographies down or up by placing
-% a \vfill before or after them. The appropriate
-% use of \vfill depends on what kind of text is
-% on the last page and whether or not the columns
-% are being equalized.
+% You can push biographies down or up by placing a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is on the last page and whether or not the columns are being equalized.
 
 %\vfill
 
-% Can be used to pull up biographies so that the bottom of the last one
-% is flush with the other column.
+% Can be used to pull up biographies so that the bottom of the last one is flush with the other column.
 %\enlargethispage{-5in}
-
-
 
 % ..........................................................................
 % End.
