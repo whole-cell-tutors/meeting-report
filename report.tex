@@ -142,16 +142,19 @@ The idea for this summer school was born at the 2012 COMBINE meeting (\url{http:
 While the tutorial room was full, a short survey reveiled that not many core modelers were actually sitting in the room.  
 This awareness led to a longer discussion about how to best reach the end-users of the COMBINE standards. 
 During that discussion, the idea of a summer school on translating a famous model into a COMBINE-compliant representation was born. 
-Two years later, the Volkswagen Foundation funded this undertaking and we invited 50 students to join us in a week of hacking and coding, exploring the whole-cell model, networking and learning more about the importance of reproducible science.
- 
+Two years later, the Volkswagen Foundation funded this undertaking. 
+We selected 10 tutors to support us in preparing and organising the event. 
+Among the applicants, we selected 50 students  who joined us in a week of hacking and coding, exploring the whole-cell model, networking and learning more about the importance of reproducible science.
+
 %%% GOAL %%%
-
+The set goal for the summer school was to re-build the Karr model using only standard representation formats and open software tools. 
+This ambitious goal demanded much work ahead of the summer school itself:  
 %%% TEAM BUILDING %%%
-In preparation of the summer school the students were assigned to eight research groups, each led by a tutor invited prior to the summer school. 
-There was a preparation phase before the meeting through Google hangout and code sharing through GitHub. During this phase, students got used to the MATLAB whole-cell model and started to think about their specific sub-model(s), especially the interfaces.
+In preparation of the summer school the tutors decomposed the model into submodules. They assigned the students assigned to eight research groups, each led by a tutor and each \comment{responsable for one submodule}{Waltemath}{We could add the overview figure of the Karr model here, split into the eight submodules; or we could add the overview of all groups and participants here, but maybe this is a bit too unusual?}.  
+During  meetings through Google hangout and using code sharing through GitHub,  students got used to the MATLAB whole-cell model and started to think about their specific sub-model(s), especially the interfaces. 
+The groups got to know each other and distributed the preparatory tasks, discussed the software tools they intended to use and planned their workshop days. 
+ 
 The summer school week itself was structured in two invited talks, daily working sessions, a daily wrap-up (summary) presentation of each working group, a poster session, and a final presentation of results on the last day.
-
-
 
 
 \subsection{Invited talks}
@@ -166,7 +169,35 @@ Dr. Karr concluded his talk by outlining several research projects which his own
 %Dr. Karr's inspiring talk set the basis for re-coding his model.
 
 \subsection{Daily working sessions}
+The working sessions ran from Tuesday until Friday. 
+The goal of each team was to provide a running module of their part of the model, together with the necessary inputs and outputs for the other groups. 
+
+Each day started with a plenary session, which summarized the goals for the day. 
+The remaining time, students worked in their own groups of five to seven people, working on their single modules. 
+Two additional groups were formed to coordinate on the meta-level: 
+The Integration group developed an integration mechanism for the single submodules, using the software iBioSim~\cite{Stevens2013}. 
+They defined the interfaces between modules, how to select processes, and they discussed how to run the model as a whole.
+The Floating group consisted of experts in specific areas needed by all other groups.
+For example, Jonathan Karr visited every group to advise on the biology and modeling part. 
+Falk Schreiber visited the groups to discuss issues with the SBGN representations of the model. 
+
+It was very  interesting to observe how the single groups  approached the general problem of converting an existing model into a COMBINE-compliant representation. 
+Some groups started by reading the supplemental material and drawing an SBGN map from that, using software tools such as  Cell Designer \cite{funahashi2008celldesigner} or VANTED~\cite{Rohn2012}. 
+Based on the SBGN-ML code they then scripted a transformation into SBML. 
+Other groups started by going through the MATLAB code and converting it into SBML. 
+Other teams rebuilt the model directly in software tools such as  COPASI~\cite{Mendes2009} or BioUML~\cite{Kolpakov2006}, again based on the original publication.  
+
+%Popular software, used during the summer school, are COPASI~\cite{Mendes2009}, BioUML~\cite{Kolpakov2006}, VANTED~\cite{Rohn2012}, and iBioSim~\cite{Stevens2013}.
+Each day closed with  a pleanry session where the single groups presented their results of the day, got feedback from the whole group, and further topics for discussion were planned.
+Throughout the workshop, each student presented at least once.  
 % How much time did students have to work?
+
+% Special sessions
+Additionally, we arranged for spontaneuous discussion rounds whenever problems occured in more than one team. 
+For example, many groups needed to represent DNA binding sites in SBML. 
+The XML code of the SBML got very large when trying to represent every possible state of the system at each time point. 
+Therefore, a break out session was organized that discussed the various solutions. 
+\comment{tbw}{Waltemath}{I guess Chris is the one to write some more here? Please note that the issue is mentioned again further down in the discussions though} 
 % Coordination of group work
 % Summaries at plenary sessions 
 
@@ -174,30 +205,16 @@ Dr. Karr concluded his talk by outlining several research projects which his own
 
 %\comment{The principal organisation of the course was as follows:}{Karr}{These next couple paragraphs are disorganized. First introduce the goal. Then how students were divided into groups to achieve this. Talk about how much time groups had to work. Summarize how the groups were intended to coordinate with each other and provide summaries each day at the plenary session.} 
 
-We worked in eight teams of four to six students and one tutor. 
-Each team focused on one part of the whole-cell model. 
-The course included three additional ``floating'' tutors which were not assigned to specific teams. These tutors shared their expertise in systems modeling, model documentation, and SBGN with all of the teams.
+%We worked in eight teams of four to six students and one tutor. 
+%Each team focused on one part of the whole-cell model. 
+%The course included three additional ``floating'' tutors which were not assigned to specific teams. These tutors shared their expertise in systems modeling, model documentation, and SBGN with all of the teams.
 
-The goal of each team was to provide a running module of their part of the model, together with the necessary inputs and outputs for the other groups. 
-Lastly, one group, called ``Integration'', coordinated the overall integration of all modules.
 
-We chose this format deliberately to have mixed groups of standard developers (mostly the tutors) with modelers (mostly the students). 
-At the same time we arranged students in groups so that their expertise matched the specific module, and so that the groups themselves consisted of heterogeneous scientists in terms of education. Lastly, another aspect for building the groups was that we did not want the participants to know each other before (to enhance the network experience for everybody) and internationality of the groups, whenever possible. 
-The resulting groups thus were divergent in many aspects. 
-However, the surrounding and the frame of the summer school led to a communicative environment. 
-All students were open to learn new tools and methods, and they were willing to contribute with their own expertise to the overall task.
-Throughout the meeting, each participant presented at least once during a plenum session.
+%Lastly, one group, called ``Integration'', coordinated the overall integration of all modules.
 
-The schedule was completely free, and each group was left to organise themselves throughout the days.
-In the evenings, we had one plenum session to first discuss the day and then summarise the results of that day. 
-The evening activities provided room to network, socialise and discuss about the work in a more informal setting, and specifically with participants from other groups. 
 
 The poster session enabled participants to present their own research. 
 27 students presented posters. Many of the students presented projects on whole-cell modeling or other computational systems biology projects.
-
-At the final meeting, all tutors agreed that the goals of the summer school could not have been achieved without the interdisciplinary mix of expertises. 
-The interdisciplinarity helped to see the task from different angles, and certainly it allowed us to try very different approaches to solving a problem (from brute force, to working with design thinking methods). 
-In the opening to the summer school we spoke of the effect of swarm intelligence, and this is what happened during the week of work.
 
 \subsection{Educating young systems biologists}
 One of the major intentions of this summer school was to educate young scientists. 
@@ -205,11 +222,12 @@ The whole-cell model is now one of the standard models in computational biology.
 It is therefore also important for young researchers to be informed about the model, its capabilities, the insights it gives and how it can be used and reused. 
 Special focus was on making  the participants familiar with cell biology, common modeling methods (such as ODE, FBA, and Boolean), model integration, and modeling standards (SBML, SED-ML, and SGBN).
 
-\comment{We were glad to have Dr. Karr present his model at the summer school.}{Outline more specifically what students did learn, and how this was taught through the small group interactions, intro lectures, and popup seminars}
+\comment{We were glad to have Dr. Karr present his model at the summer school.}{Jonathan, would you write this: Outline more specifically what students did learn, and how this was taught through the small group interactions, intro lectures, and popup seminars}
 He also taught students about the single sub-models throughout the school. 
 As a floating tutor, Dr. Karr was a member of the floating team. He visited the different groups and answered questions both on the modeling and on the biology. 
 
 \comment{The students were well-prepared for the course.}{Karr}{elaborate on what computational systems biology knowledge students already had: (1) modeling, (2) programming, (3) systems biology, (4) standards}
+\comment{Elaborate background}{Waltemath}{Would like to ask Tom to help here, using the statistical data we have on background, degree of prior knowledge etc}
 Many had already attended the pre-course classes via Google Hangouts. 
 Prior to the course, most of the students had already run the whole-cell model. 
 
@@ -221,22 +239,24 @@ Students had opportunities to connect with other young computational systems bio
 The poster session provided students an opportunity to share their own work and get valuable feedback from each other, the tutors, and other scientists from the University of Rostock.
 Several of the tutors advertised open positions in the labs, as well as upcoming courses and meetings including the April 2016 whole-cell modeling summer school which Jonathan Karr, Luis Serrano, Maria Lluch-Senar, and Javier Carrera are organizing in Barcelona, Spain.
 
-\subsection{\comment{Setting the goal}{Karr}{I would probably eliminate this section and merge the thoughts about code committed to GitHub with the following section. 
-If the goal was to create a working model, then the goal wasn't met and likely will never be met. Probably very few of the SBML sub-models actually work. 
-None of them have been tested to any degree. And a lot of work remains to integrate them. 
-I definitely wouldn't claim the sub-models will be published by the fall because this is not likely to happen.}}
-The goal to encode the whole-cell model was ambitious from the beginning, but the expectations have been more than met. 
-All participants dedicated their full time to working on the project, preparing initial results weeks beforehand, and even worked long hours. 
-The achieved results are of high quality and the spirit at the summer school was very positive over the whole week. 
-With 3 more days on the same project, we would have been able to test and then publish the 28 modules. 
-The final state after one week is that all material is there, but the modules need to be tested and integrated. 
-Several weeks after the summer school, the activity on the Git project is still high, and it can be expected that we will finish these two tasks before summer. 
-The modules shall be published in BioModels Database by autumn 2015. 
+%\subsection{\comment{Setting the goal}{Karr}{I would probably eliminate this section and merge the thoughts about code committed to GitHub with the following section. 
+%If the goal was to create a working model, then the goal wasn't met and likely will never be met. Probably very few of the SBML sub-models actually work. 
+%None of them have been tested to any degree. And a lot of work remains to integrate them. 
+%I definitely wouldn't claim the sub-models will be published by the fall because this is not likely to happen.}}
+%\comment{Setting the goal}{Waltemath}{Agreed}
+
+%The goal to encode the whole-cell model was ambitious from the beginning, but the expectations have been more than met. 
+%All participants dedicated their full time to working on the project, preparing initial results weeks beforehand, and even worked long hours. 
+%The achieved results are of high quality and the spirit at the summer school was very positive over the whole week. 
+%With 3 more days on the same project, we would have been able to test and then publish the 28 modules. 
+%The final state after one week is that all material is there, but the modules need to be tested and integrated. 
+%Several weeks after the summer school, the activity on the Git project is still high, and it can be expected that we will finish these two tasks before summer. 
+%The modules shall be published in BioModels Database by autumn 2015. 
 
 \subsection{Progress toward an SBML whole-cell model}
 In addition to training young systems biology researchers, the course produced preliminary SBML encoded versions of each of the whole-cell models sub-models.
 We enhanced the exchange of information and developed 28 new modules in COMBINE formats that represent the majority of the whole-cell model, and which can be run in open-source software.
-An overview of progress in the single modules is shown in Table~1. 
+An overview of progress in the single modules is shown in \comment{Table~1}{Waltemath}{Are we going to put the table here? We could state that the data was gathered through  self-evaluation within the single teams}. 
 The sub-models are available open-source at \url{http://github.com/dagwa} and \url{https://github.com/whole-cell-tutors/wholecell}. 
 The scientific community will benefit from these open-access, reusable versions of the sub-models that make up the model.
 
@@ -245,8 +265,6 @@ The scientific community will benefit from these open-access, reusable versions 
 Further work is needed to integrate these sub-models into a single model. 
 We hope to achieve this over the next several months.
 
-\subsection{Software used}
-Popular software, used during the summer school, are COPASI~\cite{Mendes2009}, BioUML~\cite{Kolpakov2006}, VANTED~\cite{Rohn2012}, and iBioSim~\cite{Stevens2013}.
 
 \section{Lessons learned}
 From the feedback that we received, we conclude that the summer school was well perceived. 
@@ -259,25 +277,26 @@ To meet this need, we introduced two break-out sessions with discussions on SBML
 SBML and SBGN has never been applied before to such a large and complex model, and therefore using those standards for the whole-cell model provided interesting insights. 
 Specific issues included the representation of large, combinatorial state spaces (such as different states of the binding sites) summing up to over one million in the SBML file, the lack of representation of arrays in core SBML, the generation of random numbers, and the sharing of variables across modules. In SBGN the size and (automatic) layout of some diagrams provided challenges and there arose a need to have mixed diagrams containing more than one SBGN language (SBGN has three sub-languages: Process description, Entity Relationship and Activity Flow).
 
-\comment{The second reason for the delay in encoding is the lack of concepts to represent large arrays of data in SBML.}{Karr}{This isn't necessarily a problem, except that it might make computations slow. The real problem is the inability to represent state large state spaces sparsely. Instead, SBML forces you to enumerate the entire space, which is very inefficient for combinatorially large spaces. Arrays alone would not solve this problem.}
+The second reason for the delay in encoding is the lack of concepts to represent large state spaces sparsely. Currently, SBML enforced the enumeration of the entire space, whichi is inefficient for combinatorially large spaces. A first improvement is the introduction of arrays, as suggested in the specification of the SBML Arrays package~\cite{}. However, arrays alone will not solve this problem. 
 We faced serious problems in representing, for example, variations in DNA binding sites. 
 While MATLAB does have concepts for the representation of arrays and vectors, SBML lacks comprehensive ways of encoding these. 
 Here, the discussions between modelers, standard developers and tool developers were particularly interesting, as arguments were provided from very different view points.
 
-The positive effect on the standardisation community became immediately visible:
-\comment{The summer school offered a great opportunity for standard developers to receive feedback on the usability of COMBINE standards and associated software.}{Karr}{This is a bit confusing. Was this a course or a meeting? Who exactly was getting feedback -- students, tutors?}
-This connection, between tool developers, standard developers and modelers is essential and yet usually missing. 
-The single groups do have their own meetings and it happens that the communication between them is rather sparse. 
-This summer school, however, offered a new channel of communication, through a very concrete task. 
-The fact that modelers openly and directly pointed at lacks in existing standards, and that this criticism was converted into positive action on the developers site is for
-us the biggest achievement of the summer school. 
-\comment{We hope that the summer school will inspire more events like this, where modelers and standard developers work together to solve a biological problem.}{Karr}{These comments at the end of this paragraph could be moved to the conclusion/discussion}
+\subsection{Interaction with the modeling community}
+The positive effect on the standardization community became immediately visible:
+\comment{Throughout the summer school, the participants discussed features of existing standards, thereby providing feedback on the usability of COMBINE standards and associated software tools.
+This feedback is going to be forwarded into the COMBINE community, for example through presentations at the annual community meetings COMBINE and HARMONY.}{Waltemath}{Jonathan, I rewrote. Is your comment still valid: This is a bit confusing. Was this a course or a meeting? Who exactly was getting feedback -- students, tutors?}
 
+We deliberately formed mixed groups of standard developers (mostly the tutors) with modelers (mostly the students). 
+At the same time we arranged students in groups so that their expertise matched the specific module, and so that the groups themselves consisted of heterogeneous scientists in terms of education. Lastly, another aspect for building the groups was that we did not want the participants to know each other before (to enhance the network experience for everybody) and internationality of the groups, whenever possible. 
+The resulting groups thus were divergent in many aspects. 
+The benefit of this divergence was that all participants trained their competences in interdisciplinary work, and the surrounding and the frame of the summer school led to a communicative environment. 
+All students were open to learn new tools and methods, and they were willing to contribute with their own expertise to the overall task. 
 
 \section{Future directions}
 \comment{The goal is to construct SBML-encoded versions of all 28 sub-models and to publish them in the BioModels database.}{Karr}{Start with the goals. This discussion should also include expanding SBML and the simulators. Then get into specifics of how this will be achieved.}
 This will guarantee a long-time availability of the sub-models. 
-
+\comment{Help}{Waltemath}{Need help here, not sure how to structure this part}
 The participants of the summer school plan to continue working in their single groups even after the close of the school. 
 Specifically, the groups plan to meet virtually via Google Hangouts, to finalise the representation of the modules, the annotations, and the graphical
 maps. 
@@ -287,7 +306,7 @@ Here, it proved valuable to have all code available in a Git repository that is 
 All participants of the course said that they would like to finalise the project. 
 We hope to publish a scientific paper on the COMBINE-compliant model in autumn with all contributors as co-authors.
 
-In addition, lessons learned from the summer school and weaknesses of COMBINE standards will be discussed during the next standardisation meeting (HARMONY) in April this year. 
+In addition, lessons learned from the summer school and weaknesses of COMBINE standards are scheduled for the 2015 standardization meetings HARMONY and COMBINE. 
 It will therefore foster further standard development in systems biology. 
 
 We will continue the project in a second Whole-Cell workshop, which takes place as a satellite meeting to the 2015 COMBINE conference in Salt Lake City, October 2015.
@@ -296,12 +315,28 @@ We will continue the project in a second Whole-Cell workshop, which takes place 
 Computational modeling is increasingly important for biological discovery, bioengineering, and medicine, and whole-cell models are expected to become a standard in the future. 
 The whole-cell modelling summer school targeted this critical area and  provided  training to young researchers how to build whole-cell models (including how to develop sub-models, encode them using SBML and SBGN, and  combine them into a single model), identified features that must be added to the SBML and SBGN languages to support  whole-cell models, and initiated the recoding of the \textit{M. genitalium} whole-cell model into SBML and SBGN.
 
+The schedule of the summer school was completely free, and each group was left to organise themselves throughout the days.
+In the evenings, we had one plenum session to first discuss the day and then summarise the results of that day. 
+The evening activities provided room to network, socialise and discuss about the work in a more informal setting, and specifically with participants from other groups. 
+
+The close connection, between tool developers, standard developers and modelers is essential and yet usually missing. 
+The single groups do have their own meetings and it happens that the communication between them is rather sparse. 
+This summer school, however, offered a new channel of communication, through a very concrete task. 
+The fact that modelers openly and directly pointed at lacks in existing standards, and that this criticism was converted into positive action on the developers site is for
+us the biggest achievement of the summer school. 
+We hope that the summer school will inspire more events like this, where modelers and standard developers work together to solve a biological problem.
+
 The experiences of this summer school will be reported at this year's HARMONY and COMBINE meetings (as invited talks, opening the two major standardisation meetings for
 systems biology). 
 We also aim to give feedback through our European networks, such as EraNet SysBio \cite{ERASysBio2015}, CaSYM \cite{CaSYM2015} and ISBE \cite{Wolkenhauer2009}.
 Jonathan Karr furthermore announced yet another summer school on whole-cell models, taking place in Barcelona in 2016, but with a focus on the theory behind modeling whole cells.
 We believe that this summer school set the path for a new series of meetings related to whole-cell modeling.
 Lastly, we hope that this summer school will become a prime example for modern educational events, showcasing how standard development can happen in close interaction with the end-users.
+
+At the final plenum, all tutors agreed that the goals of the summer school could not have been achieved without the interdisciplinary mix of expertises. 
+The interdisciplinarity helped to see the task from different angles, and certainly it allowed us to try very different approaches to solving a problem (from brute force, to working with design thinking methods). 
+In the opening to the summer school we spoke of the effect of swarm intelligence, and this is what happened during the week of work.
+
 
 \section*{Acknowledgment}
 The course was supported by a grant from the Volkswagen Foundation to DW and FS. 
@@ -321,6 +356,12 @@ The course was supported by a grant from the Volkswagen Foundation to DW and FS.
 % your own custom macro containing the \includegraphics command to make things simpler here.)
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/waltemath.jpg}}]{Dagmar Waltemath}
+received her Ph.D. degree in Computer Science from the University of Rostock, Germany in 2011. 
+Her research focusses on tools and methods to improve the reproducibility of scientific results obtained from simulation models and in the field of computational biology. 
+Dr.~Waltemath is currently a junior research group leader at the Systems Biology and Bioinformatics group at the University of Rostock. 
+Her group develops methods for improved model management, model provenance, search and retrieval, and investigates means to integrate model-related information.  
+Dr.~Waltemath is an elected COMBINE coordinator and works as an SBML Editor. 
+Contact her at dagmar.waltemath@uni-rostock.de
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/schreiber.jpg}}]{Falk Schreiber}
