@@ -11,6 +11,12 @@
 
 MAIN_FILE = report.tex
 
+# Change the following to the name of the file you want to use to capture the
+# output of running "make" on the document.  Note: this is NOT the same as
+# LaTeX's own log file, and DO NOT name this the same as $(MAIN_FILE).log.
+
+CONSOLE_LOG = make.log
+
 # .............................................................................
 # The rest below is generic and probably does not need to be changed.
 
@@ -32,10 +38,11 @@ update:;
 	git stash
 	git fetch --all
 	git reset --hard origin/master
-	make $(pdf_file)
+	date > $(CONSOLE_LOG)
+	make $(pdf_file) >> $(CONSOLE_LOG) 2>&1
 	md5sum $(pdf_file) > $(md5_file)
 	git add $(pdf_file) $(md5_file)
-	-git add -f $(log_file)
+	-git add -f $(log_file) $(CONSOLE_LOG)
 	-git add index.html js css
 	-git commit -m "Latest build."
 	git push origin gh-pages -f
