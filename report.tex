@@ -35,7 +35,7 @@
 \hyphenation{op-tical net-works semi-conduc-tor ana-ly-tics}
 
 \usepackage{pdfcomment}
-\newcommand{\comment}[3]{\pdfmarkupcomment[markup=Highlight,color=yellow,author={#2}]{#1}{#3}}
+%\newcommand{\comment}[3]{\pdfmarkupcomment[markup=Highlight,color=yellow,author={#2}]{#1}{#3}}
 
 \usepackage{tabularx}
 % ..........................................................................
@@ -147,14 +147,14 @@ Although MATLAB is commonly used by academic researchers, it is proprietary and 
 Transparent whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and use whole-cell models for their own research. 
 Such standards would accelerate the whole-cell modeling field. They would enable researchers to develop models more quickly, more deeply explore model predictions, and more rigorously evaluate models. Furthermore, they would enable researchers to contribute whole-cell models to model repositories such as BioModels which in turn, would make models more searchable, retrievable, and comparable.
 
-Several systems biology standards have already been developed by the COmputational Modeling in BIology NEtwork (COMBINE)~\cite{le2011meeting} including the Systems Biology Markup Language (SBML)~\cite{hucka2003}, the Cell Markup Language (CellML)~\cite{hedley_2001b}, the Simulation Experiment Description Markup Language (SED-ML)~\cite{sedml2011}, and the Systems Biology Graphical Notation (SBGN)~\cite{IerselVCBBLDSDMFAMMKNS12}. SBML and CellML are standard languages for describing mathematical models including ODE, logical, and FBA models. Both have been used to build hundreds of models of various intracellular pathways. 
+Several systems biology standards have already been developed by the COmputational Modeling in BIology NEtwork (COMBINE)~\cite{le2011meeting} including the Systems Biology Markup Language (SBML)~\cite{hucka2003}, the Cell Markup Language (CellML)~\cite{hedley_2001b}, the Simulation Experiment Description Markup Language (SED-ML)~\cite{sedml2011}, and the Systems Biology Graphical Notation (SBGN)~\cite{LeNovereHMMSS09}. SBML and CellML are standard languages for describing mathematical models including ODE, logical, and FBA models. Both have been used to build hundreds of models of various intracellular pathways. 
 However, neither language supports several of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. 
 SED-ML is a standard language for describing computational experiments. SED-ML enables computational scientists to reproduce simulations by describing simulation setups in detail, including the simulation algorithm and every parameter value. 
-SBGN is a standard language for describing visual representations of models. \comment{SBGN also has restrictions regarding the visualization of whole-cell models.}{Karr}{Elaborate} 
+SBGN is a standard language for describing visual representations of models. SBGN also has some restrictions regarding the visualization of whole-cell models, in particular there is no support for mixed diagrams or for generic reactions.
 Taken together, further work is needed to expand the capabilities of the current systems biology standard languages to support whole-cell modeling.
 
 We organized the 2015 Whole-cell Modeling Summer School to train students in whole-cell modeling and assess the limitations of the current systems biology standards for whole-cell modeling. 
-The first and foremost goal of the school was to train young researchers how to build whole-cell models, including how to develop sub-models of individual cellular pathways using different mathematical formalisms; how to assemble sub-models into a single model; and how to encode models using SBML, simulate models using SED-ML, visualize models using SBGN, and link model entities to semantic annotations in controlled systems biology vocabularies \cite{courtot2011controlled}. 
+The first and foremost goal of the school was to train young researchers how to build whole-cell models, including how to develop sub-models of individual cellular pathways using different mathematical formalisms; how to assemble sub-models into a single model; and how to encode models using SBML, simulate models using SED-ML, visualize models using SBGN, and link model entities to semantic annotations in controlled systems biology vocabularies \cite{courtot2011a}. 
 The second goal of the school was to identify how the SBML, SED-ML, and SBGN languages must be expanded to support whole-cell and other state-of-the-art modeling.
 The third goal of the school was to reimplement the \textit{M. genitalium} whole-cell model using SBML.
 
@@ -245,9 +245,10 @@ Second, SBML does not support sparse representations of large, combinatorial sta
 Third, the core SBML language does not support arrays. Consequently, matrix operations that were efficiently implemented and executed in MATLAB, must be enumerated, resulting in verbose, opaque SBML files and inefficient simulations.
 Fourth, SBML does not support random number generation which is required to encode many of the sub-models. Consequently, many of the sub-models must be recast as Gillespie algorithm simulations to be supported by SBML.
 
-The summer school also revealed several limitations of SBGN for whole-cell models. 
+The summer school also revealed  limitations of SBGN for whole-cell models. 
 First, whole-cell modeling requires SBGN maps which contain a mixture of Process Description, Entity Relationship, and Activity Flow nodes. Currently, SBGN maps can only contain one of these three types of nodes.
-Second, whole-cell modeling demands improved support for automatic layout of large maps.
+Second, whole-cell modeling demands improved support for automatic layout of large maps. The layout algorithms available are mostly not tailored to the specific networks occurring within a whole-cell model. 
+Third, to reduce the complexity it would be helpful to provide generic forms of other entities in the same map, an issue already discussed within the SBGN community.
 
 Most importantly, the summer school facilitated discussions among modelers, software tools developers, and model curators about how to best overcome these limitations.
 
@@ -289,7 +290,7 @@ We also plan to propose extensions to the SBML language to support whole-cell mo
 Finally, we hope the summer school will be the first of many whole-cell modeling meetings and courses.
 
 \section*{Acknowledgments}
-The course was supported by a grant from the Volkswagen Foundation to D.W. and F.S. J.R.K. was supported by a James S. McDonnell Foundation Postdoctoral Fellowship Award in Studying Complex Systems.
+The course was supported by a grant from the Volkswagen Foundation to DW and FS. JRK was supported by a James S. McDonnell Foundation Postdoctoral Fellowship Award in Studying Complex Systems.
 
 \ifCLASSOPTIONcaptionsoff
   \newpage
@@ -314,9 +315,9 @@ Contact: \href{mailto:dagmar.waltemath@uni-rostock.de}{dagmar.waltemath@uni-rost
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/schreiber.jpg}}]{Falk Schreiber} 
 received his Ph.D. (2001) and habilitation (2006) in Computer Science from the University of Passau, Germany. 
-He is a Professor in the School of Information Technology at Monash University and an Adjunct Professor in the Institute of Computer Science at Martin Luther University Halle-Wittenberg. 
-His research is focused on visual computing and visual analysis of biological data, analysis of the structure and dynamics of biological networks, integration of multimodal data, and standards for systems biology, as well as modeling and analysis of metabolism. 
-He is a COMBINE Coordinator and has been an SBGN Editor.
+He is a Professor in the Faculty of Information Technology at Monash University, Australia, and an Adjunct Professor in the Institute of Computer Science at Martin Luther University Halle-Wittenberg, Germany. 
+His research is focused on visual computing and visual analysis of biological data, analysis of the structure and dynamics of biological networks, integration of multimodal data,  standards for systems biology and modeling of metabolism. 
+He is a COMBINE Coordinator and has been a SBGN Editor.
 Contact: \href{mailto:falk.schreiber@monash.edu}{falk.schreiber@monash.edu}.
 \end{IEEEbiography}
 
@@ -410,10 +411,10 @@ Contact: \href{mailto:pp305@cam.ac.uk}{pp305@cam.ac.uk}.
 \caption{2015 Whole-Cell Modeling Summer School Consortium members.}
 \begin{tabularx}{\textwidth}{l||l||X}\hline
 \bfseries Group        & \bfseries Participant            & \bfseries Affiliation\\\hline\hline
-Cytokinesis            & Daniel Alejandro Priego Espinosa & National Autonomous University of Mexico\\
+Cytokinesis   & Naveen Kumar Aranganathan        & University Paris-Sud, France\\
+                       & Daniel Alejandro Priego Espinosa & National Autonomous University of Mexico, Mexico\\
                        & Ilya Kiselev                     & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
-                       & Naveen Kumar Aranganathan        & University Paris-Sud\\
-                       & Wolfram Liebermeister            & Charit\'e Medical University of Berlin\\
+                       & Wolfram Liebermeister            & Charit\'e Medical University of Berlin, Germany\\
                        & Yan Zhu                          & Monash University, Australia\\\hline
 DNA repair             & Arne Bittig                      & University of Rostock, Germany\\
                        & Vijayalakshmi Chelliah           & European Bioinformatics Institute, UK\\
@@ -422,9 +423,9 @@ DNA repair             & Arne Bittig                      & University of Rostoc
                        & Namrata Tomar                    & Friedrich-Alexander University of Erlangen-N\"urnberg, Germany\\\hline
 Metabolism             & Kambiz Baghalian                 & University of Oxford, UK\\
                        & Frank T. Bergmann                & California Institute of Technology, USA\\
-                       & Matthias K\"onig                 & Charit\'e Medical University of Berlin\\
-                       & Kieran Smallbone                 & University of Manchester, UK\\
                        & Rafeal Sousa Costa               & University of Lisbon, Portugal\\
+                       & Matthias K\"onig                 & Charit\'e Medical University of Berlin, Germany\\
+                       & Kieran Smallbone                 & University of Manchester, UK\\
                        & Milenko Tokic                    & Swiss Federal Institute of Technology in Lausanne, Switzerland\\\hline
 Protein                & Begum Alaybeyoglu                & Bo\v{g}azi\c{c}i University, Turkey\\
                        & Matteo Cantarelli                & OpenWorm, UK\\
@@ -453,17 +454,17 @@ RNA                    & Tuure Hameri                     & Swiss Federal Instit
 Translation            & Joseph Cursons                   & University of Melbourne, Australia\\
                        & Muhammad Haseeb                  & Mohammad Ali Jinnah University, Pakistan\\
                        & Daniel Hernandez                 & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
-                       & Pedro Mendes                     & University of Manchester, UK\\
                        & Denis Kazakiewicz                & University of Hasselt, Belgium\\
+                       & Pedro Mendes                     & University of Manchester, UK\\
                        & Hojjat Naderi Meshkin            & Academic Center for Education, Culture and Research, Iran\\\hline
 Integration            & Paulo Eduardo Pinto Burke        & University of S\~{a}o Paulo, Brazil\\
                        & Tobias Czauderna                 & Monash University, Australia\\
                        & Bertrand Moreau                  & CoSMo Company, France\\
-                       & Thawfeek Mohamed Varusai         & University College Dublin, Ireland\\
                        & Chris J. Myers                   & University of Utah, USA\\
-                       & Argyris Zardilis                 & University of Edinburgh, UK\\\hline
+		    & Thawfeek Mohamed Varusai         & University College Dublin, Ireland\\
+		    & Argyris Zardilis                 & University of Edinburgh, UK\\\hline
 Visualization and      & Christian Kn\"upfer              & University of Jena, Germany\\
-documentation          & Falk Schreiber                   & Monash University, Germany\\
+documentation          & Falk Schreiber                   & Monash University, Australia\\
                        & Tom Theile                       & University of Rostock, Germany\\\hline
 Modeling tutor         & Jonathan R. Karr                 & Icahn School of Medicine at Mount Sinai, USA\\\hline
 \end{tabularx}
