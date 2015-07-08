@@ -59,9 +59,13 @@
 %        Marcus Krantz\IEEEauthorrefmark{10},
 %        Wolfram Liebermeister\IEEEauthorrefmark{11},
 %        Pedro Mendes\IEEEauthorrefmark{12--15},
-%        Pinar Pir\IEEEauthorrefmark{16} and\\
-        2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
-	}
+                %        Pinar Pir\IEEEauthorrefmark{16},
+                Rafael S. Costa\IEEEauthorrefmark{19},
+                Sucheendra K. Palaniappan\IEEEauthorrefmark{17}, \\
+                Kieran Smallbone\IEEEauthorrefmark{18}, 
+         Markus Wolfien\IEEEauthorrefmark{1}, and 
+         2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
+        }
 	
 	\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Systems Biology and Bioinformatics, University of Rostock}
 	\IEEEauthorblockA{\IEEEauthorrefmark{2}Clayton School of Information Technology, Monash University}
@@ -88,8 +92,14 @@
         %131 Princess Street, Manchester, M1 7DN, UK. pedro.mendes@manchester.ac.uk
         %Farmington, Connecticut, USA
 %    \IEEEauthorblockA{\IEEEauthorrefmark{16}Babraham Institute}
+    \IEEEauthorblockA{\IEEEauthorrefmark{17} INRIA, Campus de Beaulieu, Rennes, France}
+    %
+    \IEEEauthorblockA{\IEEEauthorrefmark{18}  Manchester Centre for Integrative Systems Biology, University of Manchester, U.K.}
+    %
+    \IEEEauthorblockA{\IEEEauthorrefmark{19}  IDMEC / IST - University of Lisbon, Portugal}
+    %
     \IEEEauthorblockA{\IEEEauthorrefmark{5}Membership of the 2015 Whole-Cell Modeling Summer School Consortium is listed in Table~SI}
-	
+    %
 	\thanks{Corresponding author email: \href{mailto:dagmar.waltemath@uni-rostock.de}{dagmar.waltemath@uni-rostock.de}}
 }
 
@@ -99,7 +109,7 @@
 	Recently, researchers developed the first whole-cell model which represents every individual molecular species and gene function.
 	However, significant work remains to develop fully complete and accurate models. 
 	We organized the 2015 Whole-Cell Modeling Summer School to teach students the latest cell modeling methods, as well as to assess the need for whole-cell modeling standards.
-	We found that standards would accelerate whole-cell modeling and that our current standards SBML, SED-ML, and SGBN must be expanded to support whole-cell modeling.
+	We found that standards would accelerate whole-cell modeling and that our current standards SBML, SED-ML, and SBGN must be expanded to support whole-cell modeling.
 	% One major criticism of these standards is that they lag behind current developments and thereby may not be suitable to fully encode today's models. 
     % To overcome this problem, the applicants, under the guidance of the COMBINE effort, will organize a summer school for standard developers and modelers, i.e., users of these standards. 
     % The main goal is to explore the expressivity of current standard formats using the example of the famous whole-cell model, which has not yet been encoded in a standard format.
@@ -145,7 +155,7 @@ This has enabled other researchers to use the model for their own research and e
 
 Although MATLAB is commonly used by academic researchers, it is proprietary and expensive. In addition, because many of the biological details of the model are intertwined with the MATLAB code, significant domain expertise is currently required to understand, use, or modify the Mycoplasma model or construct new whole-cell models. 
 Transparent whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and use whole-cell models for their own research. 
-Such standards would accelerate the whole-cell modeling field. They would enable researchers to develop models more quickly, more deeply explore model predictions, and more rigorously evaluate models. Furthermore, they would enable researchers to contribute whole-cell models to model repositories such as BioModels which in turn, would make models more searchable, retrievable, and comparable.
+Such standards would accelerate the whole-cell modeling field. They would enable researchers to develop models more quickly, more deeply explore model predictions, and more rigorously evaluate models. Furthermore, they would enable researchers to contribute whole-cell models to model repositories such as BioModels~\cite{li2010biomodels} which in turn, would make models more searchable, retrievable, and comparable.
 
 Several systems biology standards have already been developed by the COmputational Modeling in BIology NEtwork (COMBINE)~\cite{le2011meeting} including the Systems Biology Markup Language (SBML)~\cite{hucka2003}, the Cell Markup Language (CellML)~\cite{hedley_2001b}, the Simulation Experiment Description Markup Language (SED-ML)~\cite{sedml2011}, and the Systems Biology Graphical Notation (SBGN)~\cite{LeNovereHMMSS09}. SBML and CellML are standard languages for describing mathematical models including ODE, logical, and FBA models. Both have been used to build hundreds of models of various intracellular pathways. 
 However, neither language supports several of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. 
@@ -273,7 +283,7 @@ Chris Myers at the University of Utah, USA and Vincent Danos at the National Cen
 
 Additional summer schools and courses are needed to provide students deeper theoretical training in the mathematical foundation of whole-cell modeling, as well as practical training in the construction of large dynamical models. These courses should provide students opportunities to learn about techniques for integrating multiple sub-models and resolving conflicts including state locking, adaptive time-stepping, controllers and semaphores; how to identify the parameters of large models including numerical optimization, distributed optimization, and model reduction; and how to test models using unit testing and continuous integration. 
 
-The summer school made also significant strides toward reimplementing the \textit{M. genitalium} whole-cell model using SBML and COMBINE-compliant software. However, significant work remains to expand the SBML language to support whole-cell models, recode the \textit{M. genitalium} model using SMBL, and develop COMBINE-compliant software programs which are capable of efficiently simulating multi-algorithm models. Currently, we are working to finish recoding the sub-models using SBML and mapping each of the sub-models using SBGN. Since the Rostock meeting, the working groups have continued to meet virtually through Google Hangouts and share materials using GitHub and Google Drive. Several of the students and tutors also plan to participate in a second working meeting in conjunction with the COMBINE conference in Salt Lake City, USA in October 2015. We plan to publish these sub-models through the BioModels database~\cite{li2010biomodels} along with tests implemented using SED-ML. 
+The summer school made also significant strides toward reimplementing the \textit{M. genitalium} whole-cell model using SBML and COMBINE-compliant software. However, significant work remains to expand the SBML language to support whole-cell models, recode the \textit{M. genitalium} model using SMBL, and develop COMBINE-compliant software programs which are capable of efficiently simulating multi-algorithm models. Currently, we are working to finish recoding the sub-models using SBML and mapping each of the sub-models using SBGN. Since the Rostock meeting, the working groups have continued to meet virtually through Google Hangouts and share materials using GitHub and Google Drive. Several of the students and tutors also plan to participate in a second working meeting in conjunction with the COMBINE conference in Salt Lake City, USA in October 2015. We plan to publish these sub-models through the BioModels database along with tests implemented using SED-ML. 
 
 Ultimately, we hope to integrate the individual sub-models into a single SBML-encoded model using the SBML-comp package. To achieve this, we must expand the SBML language to support multi-algorithm models and efficiently represent large, combinatorial state spaces. We plan to present proposals to expand SBML to support these features at the 2015 COMBINE conference in Salt Lake City, USA.
 
@@ -282,7 +292,7 @@ We believe that whole-cell modeling has the potential to be an important tool fo
 Achieving this potential requires improved standards for transparently communicating whole-cell models, as well as COMBINE-compliant software for reproducibly simulating whole-cell models.
 In turn, this requires expanding the whole-cell modeling field including training young researchers in whole-cell modeling.
 
-We organized the 2015 Whole-Cell Modeling Summer School to train young researchers how to building whole-cell models using standardized languages through hands-on experience recoding the \textit{M. genitalium} whole-cell model using SBML. 
+We organized the 2015 Whole-Cell Modeling Summer School to train young researchers how to build whole-cell models using standardized languages through hands-on experience recoding the \textit{M. genitalium} whole-cell model using SBML. 
 The school brought together 45 students including modelers, modeling software developers, and model curators. 
 The school successfully trained 45 students, made significant progress toward recoding the \textit{M. genitalium} whole-cell model using SBML, and initiated a conversation about how to expand the SBML language to support multi-algorithm whole-cell models. 
 We plan to publish the recoded sub-models through the BioModels database in the Fall and hope to eventually combine the SBML-encoded sub-models into a single model. 
@@ -322,7 +332,7 @@ Contact: \href{mailto:falk.schreiber@monash.edu}{falk.schreiber@monash.edu}.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photos/karr.jpg}}]{Jonathan R. Karr}
-received his Ph.D. in Biophysics and M.S. in Medicine from Stanford University, USA in 2014 and his S.B.s in Physics and Brain \& Cognitive Sciences from the Massachusetts Institute of Technology, USA in 2006. 
+received his Ph.D. in Biophysics and M.S. in Medicine from Stanford University, USA in 2014 and his B.S.s in Physics and Brain \& Cognitive Sciences from the Massachusetts Institute of Technology, USA in 2006. 
 Dr. Karr is a Fellow at the Icahn School of Medicine at Mount Sinai, USA. 
 His research focuses on the development of comprehensive whole-cell computational models and their applications to bioengineering and medicine. 
 Contact: \href{mailto:karr@mssm.edu}{karr@mssm.edu}.
@@ -423,7 +433,7 @@ DNA repair             & Arne Bittig                      & University of Rostoc
                        & Namrata Tomar                    & Friedrich-Alexander University of Erlangen-N\"urnberg, Germany\\\hline
 Metabolism             & Kambiz Baghalian                 & University of Oxford, UK\\
                        & Frank T. Bergmann                & California Institute of Technology, USA\\
-                       & Rafeal Sousa Costa               & University of Lisbon, Portugal\\
+                       & Rafeal S. Costa               & IDMEC / IST - University of Lisbon, Portugal\\
                        & Matthias K\"onig                 & Charit\'e Medical University of Berlin, Germany\\
                        & Kieran Smallbone                 & University of Manchester, UK\\
                        & Milenko Tokic                    & Swiss Federal Institute of Technology in Lausanne, Switzerland\\\hline
