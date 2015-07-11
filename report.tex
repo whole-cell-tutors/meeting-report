@@ -64,9 +64,10 @@
                 Rafael S. Costa\IEEEauthorrefmark{19},\\
                 Muhammad Haseeb\IEEEauthorrefmark{22},
                 Vincent Knight-Schrijver\IEEEauthorrefmark{21},
-                Sucheendra K. Palaniappan\IEEEauthorrefmark{17}, 
-                Kieran Smallbone\IEEEauthorrefmark{18},\\
-         Markus Wolfien\IEEEauthorrefmark{1}, and 
+                Sucheendra K. Palaniappan\IEEEauthorrefmark{17},
+                Martin Scharm\IEEEauthorrefmark{1},\\
+                Kieran Smallbone\IEEEauthorrefmark{18},
+         Markus Wolfien\IEEEauthorrefmark{1}, and \\
          2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
         }
 	
@@ -177,7 +178,7 @@ The first and foremost goal of the school was to train young researchers how to 
 The second goal of the school was to identify how the SBML, SED-ML, and SBGN languages must be expanded to support whole-cell and other state-of-the-art modeling.
 The third goal of the school was to reimplement the \textit{M. genitalium} whole-cell model using SBML.
 
-The summer school arose from discussions at the 2012 COMBINE tutorial~\cite{COMBINE2012} about how to best engage and inform modelers about COMBINE standards. The discussions concluded that a summer school focused on a specific well-known model would be an excellent forum to educate young researchers on how to build models and encode them using COMBINE standards. Dagmar Waltemath and Falk Schreiber organized the school over the following three years, obtained funding for the school from the Volkswagen Foundation, recruited nine tutors with broad experience in computational systems biology and COMBINE standards to help teach the school, and selected 45 students to attend the school.
+The summer school arose from discussions at the 2012 COMBINE meeting~\cite{COMBINE2012} about how to best engage and inform modelers about COMBINE standards. The discussions concluded that a summer school focused on a specific well-known model would be an excellent forum to educate young researchers on how to build models and encode them using COMBINE standards. Dagmar Waltemath and Falk Schreiber organized the school over the following three years, obtained funding for the school from the Volkswagen Foundation, recruited nine tutors with broad experience in computational systems biology and COMBINE standards to help teach the school, and selected 45 students to attend the school.
 
 Here, we report the educational and scientific outcomes of the summer school. 
 First, we summarize the format and content of the summer school. 
@@ -201,7 +202,10 @@ We began the school with two lectures to introduce the students to whole-cell mo
 In addition to the introductory lectures, we organized three group discussions on three common SBML encoding problems. The first discussion focused on how to sample from random distributions within the context of SBML. The second discussion focused on the interfaces that sub-models must expose to facilitate integration into a single model. The third discussion focused on how to model large, sparsely occupied state spaces such as that which represents the locations of DNA-bound proteins.
 
 \subsection{Active learning sessions}
-The majority of days 2-4 of the school were dedicated to hands-on active learning sessions in which students learned about whole-cell modeling and the COMBINE standards by encoding parts of the \textit{M. genitalium} whole-cell model using SBML. Specifically, eight of the ten groups were responsible for encoding one or more sub-models. The ninth group focused on developing a standards-compliant scheme for integrating SBML-encoded sub-models into a single model. This group was responsible for defining the sub-model interfaces. The tenth group focused on helping the other groups document and visualize their sub-models using SBGN. Each group was led by an experienced tutor.
+The majority of days 2-4 of the school were dedicated to hands-on active learning sessions in which students learned about whole-cell modeling and the COMBINE standards by encoding parts of the \textit{M. genitalium} whole-cell model using SBML. Specifically, eight of the ten groups were responsible for encoding one or more sub-models. The ninth group focused on developing a standards-compliant scheme for integrating SBML-encoded sub-models into a single model. This group was responsible for defining the sub-model interfaces.
+The tenth group focused on helping the other groups.
+The group members advised with the modeling, developed a generic annotation scheme, helped visualize the sub-models using SBGN, and assisted in documentation.
+Each group was led by an experienced tutor.
 
 The groups pursued various strategies to encode the sub-models using COMBINE-compliant representations. Several of the groups encoded sub-models by first reading the sub-model documentation, second drawing pathway maps using software tools such as Cell Designer~\cite{funahashi2008celldesigner} and VANTED~\cite{Rohn2012}, and then writing scripts to automatically generate SBML representations from their maps. Other groups used modeling software tools such as COPASI~\cite{Mendes2009} and BioUML~\cite{Kolpakov2006} to encode sub-models based on their documentation. A third set of groups encoded sub-models by converting the original MATLAB code to SBML. These groups then automatically generated SBGN maps from their SBML to better understand their sub-models.
 
@@ -286,15 +290,15 @@ Lastly, we found that summer schools must have generous financial support. This 
 
 The summer school made significant strides toward expanding the whole-cell modeling field by educating 45 young scientists in multi-algorithm modeling. 
 The students had two introductory lectures which outlined the whole-cell modeling field and the existing systems biology standards; three discussions on model integration and how to efficiently represent large state spaces; and three full days of hands-on active learning exercises to recode sub-models using SBML. 
-We are organizing a second meeting in conjunction with the 2015 COMBINE conference in Salt Lake City, USA to finish recoding and testing the sub-models.
+We are organizing a second meeting in conjunction with the 2015 COMBINE meeting in Salt Lake City, USA to finish recoding and testing the sub-models.
 In addition, Jonathan Karr, Luis Serrano, Maria Lluch-Senar, and Javier Carrera are organizing a second whole-cell modeling summer course in Barcelona in April 2016 which will focus on the theory of whole-cell modeling. 
 Chris Myers at the University of Utah, USA and Vincent Danos at the National Centre for Scientific Research, France have also begun to offer graduate courses in whole-cell modeling.
 
 Additional summer schools and courses are needed to provide students deeper theoretical training in the mathematical foundation of whole-cell modeling, as well as practical training in the construction of large dynamical models. These courses should provide students opportunities to learn about techniques for integrating multiple sub-models and resolving conflicts including state locking, adaptive time-stepping, controllers and semaphores; how to identify the parameters of large models including numerical optimization, distributed optimization, and model reduction; and how to test models using unit testing and continuous integration. 
 
-The summer school made also significant strides toward reimplementing the \textit{M. genitalium} whole-cell model using SBML and COMBINE-compliant software. However, significant work remains to expand the SBML language to support whole-cell models, recode the \textit{M. genitalium} model using SMBL, and develop COMBINE-compliant software programs which are capable of efficiently simulating multi-algorithm models. Currently, we are working to finish recoding the sub-models using SBML and mapping each of the sub-models using SBGN. Since the Rostock meeting, the working groups have continued to meet virtually through Google Hangouts and share materials using GitHub and Google Drive. Several of the students and tutors also plan to participate in a second working meeting in conjunction with the COMBINE conference in Salt Lake City, USA in October 2015. We plan to publish these sub-models through the BioModels database along with tests implemented using SED-ML. 
+The summer school made also significant strides toward reimplementing the \textit{M. genitalium} whole-cell model using SBML and COMBINE-compliant software. However, significant work remains to expand the SBML language to support whole-cell models, recode the \textit{M. genitalium} model using SMBL, and develop COMBINE-compliant software programs which are capable of efficiently simulating multi-algorithm models. Currently, we are working to finish recoding the sub-models using SBML and mapping each of the sub-models using SBGN. Since the Rostock meeting, the working groups have continued to meet virtually through Google Hangouts and share materials using GitHub and Google Drive. Several of the students and tutors also plan to participate in a second working meeting in conjunction with the COMBINE meeting in Salt Lake City, USA in October 2015. We plan to publish these sub-models through the BioModels database along with tests implemented using SED-ML. 
 
-Ultimately, we hope to integrate the individual sub-models into a single SBML-encoded model using the SBML-comp package. To achieve this, we must expand the SBML language to support multi-algorithm models and efficiently represent large, combinatorial state spaces. We plan to present proposals to expand SBML to support these features at the 2015 COMBINE conference in Salt Lake City, USA.
+Ultimately, we hope to integrate the individual sub-models into a single SBML-encoded model using the SBML-comp package. To achieve this, we must expand the SBML language to support multi-algorithm models and efficiently represent large, combinatorial state spaces. We plan to present proposals to expand SBML to support these features at the 2015 COMBINE meeting in Salt Lake City, USA.
 
 \section{Conclusion}
 We believe that whole-cell modeling has the potential to be an important tool for biological discovery, bioengineering, and medicine.
