@@ -49,9 +49,9 @@
 
 \author{
 	\IEEEauthorblockN{
-		Dagmar Waltemath\IEEEauthorrefmark{1},
-		Falk Schreiber\IEEEauthorrefmark{2,3}, 
-		Jonathan R. Karr\IEEEauthorrefmark{4}, 
+	Dagmar Waltemath\IEEEauthorrefmark{1},
+	Falk Schreiber\IEEEauthorrefmark{2,3}, 
+	Jonathan R. Karr\IEEEauthorrefmark{4}, 
 %        Michael Hucka\IEEEauthorrefmark{5},
 %        Chris J. Myers\IEEEauthorrefmark{6},
 %        Frank T. Bergmann\IEEEauthorrefmark{5,7,8},\\
@@ -68,7 +68,8 @@
         Martin Scharm\IEEEauthorrefmark{1},\\
         Kieran Smallbone\IEEEauthorrefmark{21} and
         Markus Wolfien\IEEEauthorrefmark{1}
-%        2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
+        Christian Kn\"{u}pfer\IEEEauthorrefmark{22}
+        %        2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
         }
 	
 	\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Systems Biology and Bioinformatics, University of Rostock}
@@ -100,7 +101,8 @@
     \IEEEauthorblockA{\IEEEauthorrefmark{18}Instituto Superior T\'ecnico, University of Lisbon}
     \IEEEauthorblockA{\IEEEauthorrefmark{19}Department of Bioinformatics, Mohammad Ali Jinnah University}
     \IEEEauthorblockA{\IEEEauthorrefmark{20}Rennes - Bretagne Atlantique Research Centre, Institute for Research in Computer Science and Automation}
-    \IEEEauthorblockA{\IEEEauthorrefmark{21}Manchester Centre for Integrative Systems Biology, University of Manchester}    
+    \IEEEauthorblockA{\IEEEauthorrefmark{21}Manchester Centre for Integrative Systems Biology, University of Manchester}
+        \IEEEauthorblockA{\IEEEauthorrefmark{22}Institut für Informatik, Friedrich-Schiller-Universität Jena}
     %\IEEEauthorblockA{\IEEEauthorrefmark{5}Membership of the 2015 Whole-Cell Modeling Summer School Consortium is listed in Table~SI}
     %
 	\thanks{Corresponding author email: \href{mailto:dagmar.waltemath@uni-rostock.de}{dagmar.waltemath@uni-rostock.de}}
@@ -109,8 +111,8 @@
 \IEEEtitleabstractindextext{
 	\begin{abstract}
 	Computational modeling is an increasingly important tool for biological research, bioengineering, and medicine. 
-	Recently, researchers developed the first whole-cell model which represents every individual molecular species and gene function.
-	However, significant work remains to develop fully complete and accurate models. 
+	Recently, researchers developed the first whole-cell model which represents every individual molecular species and gene function of a Mycoplasma genitalium cell.
+	However, significant work remains to develop complete and accurate models. 
 	We organized the 2015 Whole-Cell Modeling Summer School to teach students the latest cell modeling methods, as well as to assess the need for whole-cell modeling standards.
 	We found that standards would accelerate whole-cell modeling and that our current standards SBML, SED-ML, and SBGN must be expanded to support whole-cell modeling.
 	% One major criticism of these standards is that they lag behind current developments and thereby may not be suitable to fully encode today's models. 
@@ -145,7 +147,7 @@
 % is a report of the VW Whole-cell Summer School held in Rostock during April 2015.
 
 \IEEEPARstart{O}{ver} the past twenty years, computational modeling has become an essential and powerful tool for biological research, bioengineering, and medicine to analyze high-throughput molecular measurements and understand the molecular details of complex biological systems. 
-Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, add metabolic pathways to bacteria~\cite{Lee2009}, and identify potential new antimicrobial drug targets~\cite{Lee2012}. 
+Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, to add metabolic pathways to bacteria~\cite{Lee2009}, and to identify potential new antimicrobial drug targets~\cite{Lee2012}. 
 Computational models also have the potential to enable bioengineers to design new microorganisms for industrial applications such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to design personalized medical therapies tailored to each individual patient's unique genome. 
 Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype, as well as standardized methods for exchanging models, simulation experiments, and model visualizations~\cite{Macklin2014,Karr2015,hucka2015promoting,Klipp07}.
 
@@ -156,9 +158,12 @@ The model is comprised of 28 sub-models, each of which was implemented using dif
 The \textit{M. genitalium} whole-cell model was implemented in MATLAB, is available open-source under the MIT license, and is extensively documented. 
 This has enabled other researchers to use the model for their own research and enabled educators to use the model to teach systems biology. 
 
-Although MATLAB is commonly used by academic researchers, it is proprietary and expensive. In addition, because many of the biological details of the model are intertwined with the MATLAB code, significant domain expertise is currently required to understand, use, or modify the Mycoplasma model or construct new whole-cell models. 
+Although MATLAB is commonly used by academic researchers, it is proprietary and expensive. In addition, because many of the biological details of the model are intertwined with the MATLAB code, significant domain expertise is currently required to understand, use, or modify the Mycoplasma model or construct new whole-cell models based on the model by Karr et~al.~\cite{Karr2012}. 
 Transparent whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and use whole-cell models for their own research. 
-Such standards would accelerate the whole-cell modeling field. They would enable researchers to develop models more quickly, more deeply explore model predictions, and more rigorously evaluate models. Furthermore, they would enable researchers to contribute whole-cell models to model repositories such as BioModels~\cite{li2010biomodels} which in turn, would make models more searchable, retrievable, reusable and comparable.
+Such standards would accelerate the whole-cell modeling field.
+They would enable researchers to develop models more quickly, to explore model predictions more deeply, and to evaluate models more rigorously.
+Furthermore, the standards simplify the submission process to model repositories such as BioModels~\cite{li2010biomodels}.
+This in turn, would make models more searchable, retrievable, reusable and comparable.
 
 Several systems biology standards have already been developed by the COmputational Modeling in BIology NEtwork (COMBINE)~\cite{le2011meeting} including the Systems Biology Markup Language (SBML)~\cite{hucka2003}, the Cell Markup Language (CellML)~\cite{hedley_2001b}, the Simulation Experiment Description Markup Language (SED-ML)~\cite{sedml2011}, and the Systems Biology Graphical Notation (SBGN)~\cite{LeNovereHMMSS09}. SBML and CellML are standard languages for describing mathematical models including ODE, logical, and FBA models. Both have been used to build thousands of models of various intracellular pathways. 
 However, neither language supports several of the features needed for whole-cell modeling including large, sparsely occupied state spaces and multi-algorithm simulations. 
@@ -167,7 +172,7 @@ SBGN is a standard language for describing visual representations of models. SBG
 Taken together, further work is needed to expand the capabilities of the current systems biology standard languages to support whole-cell modeling.
 
 We organized the 2015 Whole-Cell Modeling Summer School to train students in whole-cell modeling and assess the limitations of the current systems biology standards for whole-cell modeling. 
-The first and foremost goal of the school was to train young researchers how to build whole-cell models, including how to develop sub-models of individual cellular pathways using different mathematical formalisms; how to assemble sub-models into a single model; and how to encode models using SBML, simulate models using SED-ML, visualize models using SBGN, and link model entities to semantic annotations in controlled systems biology vocabularies \cite{courtot2011a}. 
+The first and foremost goal of the school was to train young researchers how to build whole-cell models, including how to develop sub-models of individual cellular pathways using different mathematical formalisms; how to assemble sub-models into a single model; and how to encode models using SBML, simulate models using SED-ML, visualize models using SBGN, and link model entities with semantic annotations to controlled systems biology vocabularies \cite{courtot2011a}. 
 The second goal of the school was to identify how the SBML, SED-ML, and SBGN languages must be expanded to support whole-cell and other state-of-the-art modeling.
 The third goal of the school was to reimplement the \textit{M. genitalium} whole-cell model using SBML.
 
@@ -181,7 +186,7 @@ Lastly, we outline a path toward expanding the SBML, SED-ML, and SBGN standards 
 
 \section{The 2015 Whole-Cell Modeling Summer School}
 The goal of the summer school was to teach students how to build models and encode models using COMBINE standards through encoding the \textit{M. genitalium} model using only standard representation formats and open-source software. 
-To achieve this goal, we devoted most of the five-day school to hands-on active learning sessions in which ten groups of 4-5 students, each led by one tutor, were tasked with encoding parts of the \textit{M. genitalium} model using COMBINE standards. 
+To achieve this goal, we devoted most of the five-day school to hands-on active learning sessions in which nine groups of 4-5 students, each led by one tutor, were tasked with encoding parts of the \textit{M. genitalium} model using COMBINE standards. 
 Prior to the school, we assigned students, tutors, and sub-models to groups based on a survey of the students' backgrounds and interests. 
 The groups also began meeting online using Google Hangouts and encoding sub-models prior to the school. 
 Jonathan Karr also worked with all of the groups to teach students about cell modeling. 
@@ -215,7 +220,7 @@ We organized several social activities to facilitate student networking. On the 
 \section{Results}
 
 \subsection{Educating young systems biologists}
-The primary goal of the summer school was to educate young scientists on how to build and apply whole-cell models. Because the students came from a variety of backgrounds ranging from computer science to biology, the tutors provided students one-on-one instruction on molecular cell biology; common dynamical modeling methods including ODEs, FBA, and BRs; model integration; and the SBML, SED-ML, and SBGN systems biology standards.
+The primary goal of the summer school was to educate young scientists on how to build and apply whole-cell models. Because the students came from a variety of backgrounds ranging from computer science to biology, the tutors provided students one-on-one instruction on molecular cell biology; common dynamical modeling methods including ODEs, FBA, and BRs; model integration; and the SBML, SED-ML, and SBGN standards.
 
 %\comment{
 Following the summer school, most of the students reported that they gained deeper knowledge of whole-cell modeling. 
@@ -247,9 +252,9 @@ Since the course, the project groups have continued to meet online to complete t
 We plan to complete the encoding and integration of the advanced sub-models into a single model in a two-days satellite meeting to the COMBINE meeting in October 2015. 
 %into a single model within the next few months.
 
-The sub-models and integrated model will be COMBINE-compliant, and simulatable with open-source software tools such as COPASI, BioUML, and iBioSim~\cite{Stevens2013}.
-The sub-models and integrated model will be available open-source at \url{http://github.com/whole-cell-tutors/wholecell} and the BioModels database.
-We believe the sub-models and integrated model will be a valuable community resource which will enable other scientists to develop, expand, and apply whole-cell models to their own research.
+The sub-models and the integrated model will be COMBINE-compliant, and simulatable with open-source software tools such as COPASI, BioUML, and iBioSim~\cite{Stevens2013}.
+The sub-models and the integrated model will be available open-source at \url{http://github.com/whole-cell-tutors/wholecell} and the BioModels database.
+We believe the sub-models and the integrated model will be a valuable community resource which will enable other scientists to develop, expand, and apply whole-cell models to their own research.
 
 \section{Lessons learned}
 
@@ -282,7 +287,7 @@ Lastly, we found that summer schools must have generous financial support. This 
 
 \section{Future steps}
 
-The summer school made significant strides toward expanding the whole-cell modeling field by educating 45 young scientists in multi-algorithm modeling. 
+The summer school made significant strides toward expanding the whole-cell modeling field by educating 45 young scientists in multi-formalism modeling. 
 The students had two introductory lectures which outlined the whole-cell modeling field and the existing systems biology standards; three discussions on model integration and how to efficiently represent large state spaces; and three full days of hands-on active learning exercises to recode sub-models using SBML. 
 We are organizing a second meeting in conjunction with the 2015 COMBINE meeting in Salt Lake City, USA to finish recoding and testing the sub-models.
 In addition, Jonathan Karr, Luis Serrano, Maria Lluch-Senar, and Javier Carrera are organizing a second whole-cell modeling summer course in Barcelona in April 2016 which will focus on the theory of whole-cell modeling. 
@@ -479,8 +484,8 @@ Integration            & Paulo Eduardo Pinto Burke        & Federal University o
                        & Chris J. Myers                   & University of Utah, USA\\
 		               & Thawfeek Mohamed Varusai         & University College Dublin, Ireland\\
 		               & Argyris Zardilis                 & University of Edinburgh, UK\\\hline
-Visualization and      & Christian Kn\"upfer              & University of Jena, Germany\\
-documentation          & Falk Schreiber                   & Monash University, Australia\\
+Visualization, Annotation      & Christian Kn\"upfer              & University of Jena, Germany\\
+and documentation          & Falk Schreiber                   & Monash University, Australia\\
                        & Tom Theile                       & University of Rostock, Germany\\\hline
 Modeling tutor         & Jonathan R. Karr                 & Icahn School of Medicine at Mount Sinai, USA\\\hline
 \end{tabularx}
