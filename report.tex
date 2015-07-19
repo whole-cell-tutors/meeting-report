@@ -68,13 +68,15 @@
 		Ilya Kiselev\IEEEauthorrefmark{23},
         Vincent Knight-Schrijver\IEEEauthorrefmark{16},\\
 		Christian Kn\"{u}pfer\IEEEauthorrefmark{24},
+                Matthias K\"{o}nig\IEEEauthorrefmark{30},
 		Nikita Mandrik\IEEEauthorrefmark{25},
-        Sucheendra K. Palaniappan\IEEEauthorrefmark{26},
+                J Kyle Medley\IEEEauthorrefmark{31},
+        Sucheendra K. Palaniappan\IEEEauthorrefmark{26}, \\
         Martin Scharm\IEEEauthorrefmark{1},
-        Kieran Smallbone\IEEEauthorrefmark{27},\\
+        Kieran Smallbone\IEEEauthorrefmark{27},
 		Je-Hoon Song\IEEEauthorrefmark{28},
 		Tom Theile\IEEEauthorrefmark{1},
-        Namrata Tomar\IEEEauthorrefmark{29},
+        Namrata Tomar\IEEEauthorrefmark{29},\\
         Jannis Uhlendorf\IEEEauthorrefmark{10} and
         Markus Wolfien\IEEEauthorrefmark{1}
 %        2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
@@ -120,8 +122,12 @@
 	\IEEEauthorblockA{\IEEEauthorrefmark{28}Department of Bio and Brain Engineering, Korea Advanced Institute of Science and Technology}
 	% (KAIST),\\ 291 Daehak-ro, Yuseong-gu, Daejeon 305-701, Republic of Korea	
     \IEEEauthorblockA{\IEEEauthorrefmark{29}Department of Dermatology, University Medicine, University of Erlangen-Nuremberg}
-	%\\ Hartmannstraße 14, 91052 Erlangen, Germany
+    %\\ Hartmannstraße 14, 91052 Erlangen, Germany
+    \IEEEauthorblockA{\IEEEauthorrefmark{30}Department of Computational Systems Biochemistry, University Medicine Charit\'{e} Berlin, 10117 Berlin, Germany}
+    \IEEEauthorblockA{\IEEEauthorrefmark{31}Department of Bioengineering, University of Washington, Seattle, WA 98195, USA}
+    
 
+    
 	\thanks{Corresponding author email: \href{mailto:dagmar.waltemath@uni-rostock.de}{dagmar.waltemath@uni-rostock.de}}
 }
 
@@ -145,13 +151,14 @@
 
 \section{Introduction}
 
-\IEEEPARstart{O}{ver} the past twenty years, computational modeling has become an essential and powerful tool for biological research, bioengineering, and medicine to analyze high-throughput molecular measurements and understand the molecular details of complex biological systems. Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, to add metabolic pathways to bacteria~\cite{Lee2012}, to and identify potential new antimicrobial drug targets~\cite{Lee2009}. Computational models also have the potential to enable bioengineers to design new microorganisms for industrial applications such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to tailor therapy to individual patients. Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype, as well as standardized methods for exchanging models, simulation experiments, and model visualizations~\cite{Macklin2014,Karr2015,hucka2015promoting,Klipp07}.
+\IEEEPARstart{O}{ver} the past twenty years, computational modeling has become an essential and powerful tool for biological research, bioengineering, and medicine to analyze high-throughput molecular measurements and understand the molecular details of complex biological systems. Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, to add metabolic pathways to bacteria~\cite{Lee2012}, to and identify potential new antimicrobial drug targets~\cite{Lee2009}.
+Computational models also have the potential to enable bioengineers to design new microorganisms for industrial applications such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to tailor therapy to individual patients. Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype, as well as standardized methods for exchanging models, simulation experiments, and model visualizations~\cite{Macklin2014,Karr2015,hucka2015promoting,Klipp07}.
 
 Recently, researchers at Stanford University developed the first whole-cell model of the gram-positive bacterium \textit{Mycoplasma genitalium}~\cite{Karr2012}. The model represents the life cycle of a single Mycoplasma cell including the copy number dynamics of each metabolite, RNA, and protein species and accounts for every known gene function. The model is composed of 28 sub-models, each of which is implemented using different mathematical representations including ordinary differential equations (\emph{ODE}s), flux balance analysis (\emph{FBA}), and Boolean rules (\emph{BR}s), and trained using different experimental data.
 
 The \textit{M. genitalium} whole-cell model was implemented in MATLAB, is available open-source under the MIT license, and is extensively documented. This has enabled other researchers to use the model for their own research. 
 
-However, the \textit{M. genitalium} whole-cell model software is not transparent or reusable. The \textit{M. genitalium} whole-cell model software is also not user-friendly, computationally efficient, or easily maintainable. Consequently, significant domain expertise is required to use the \textit{M. genitalium} model or construct new whole-cell models. New whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and simulate their own whole-cell models. Such standards and software tools would accelerate whole-cell modeling. They would enable researchers to develop models more quickly, to explore models more deeply, and to evaluate models more rigorously. Furthermore, standards would simplify the submission process to model repositories such as BioModels~\cite{li2010biomodels}. In turn, this would make models more searchable, retrievable, reusable, and comparable.
+However, the \textit{M. genitalium} whole-cell model software is not transparent or reusable. The \textit{M. genitalium} whole-cell model software is also not user-friendly, computationally efficient, or easily maintainable. Consequently, significant domain expertise is required to use the \textit{M. genitalium} model or construct new whole-cell models. New whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and simulate their own whole-cell models. Such standards and software tools would accelerate whole-cell modeling. They would enable researchers to develop models more quickly, to explore models more deeply, and to evaluate models more rigorously. Furthermore, standards would simplify the submission process to model repositories such as BioModels~\cite{juty2015biomodels,chelliah2015biomodels}. In turn, this would make models more searchable, retrievable, reusable, and comparable.
 
 Several systems biology standards have already been developed by the COmputational Modeling in BIology NEtwork (\emph{COMBINE})~\cite{le2011meeting} including the Systems Biology Markup Language (\emph{SBML})~\cite{hucka2003}, the Cell Markup Language (\emph{CellML})~\cite{hedley_2001b}, the Simulation Experiment Description Markup Language (\emph{SED-ML})~\cite{sedml2011}, and the Systems Biology Graphical Notation (\emph{SBGN})~\cite{LeNovereHMMSS09}. SBML and CellML are languages for describing mathematical models including ODE, logical, and FBA models. Both have been used to build thousands of models of various intracellular pathways. SED-ML is a language for describing computational experiments. SED-ML enables scientists to reproducibly simulate models by completely describing simulation setups, including the simulation algorithm and every parameter value. SBGN includes three languages for describing visual representations of models. None of these standards have been used to construct, simulate, or visualize models as complex as the \textit{M. genitalium} whole-cell model.
 
@@ -217,7 +224,7 @@ The students produced preliminary SBML and SBGN-ML versions of many of the \text
 \subsection{Future steps}
 We hope to finish encoding the \textit{M. genitalium} sub-models into SBML and integrate the SBML-encoded sub-models into a single model simulatable by open-source software tools such as COPASI, BioUML, and iBioSim. Several students and instructors have continued to keep working and meeting online. Several students and instructors also plan to participate in a second meeting in October 2015 which will be held at the University of Utah, USA immediately prior to the 2015 COMBINE Forum.
 
-Going forward, we plan to publish SBML-encoded versions of each of the \textit{M. genitalium} sub-models to the BioModels database, along with SED-ML tests, SBGN maps, and textual documentations. This would make the sub-models searchable, retrievable, and reusable by other scientists. We believe this would be a valuable community resource. It would demonstrate how to build a whole-cell model and enable other researchers to build upon the \textit{M. genitalium} sub-models. Ultimately, SBML and the SBML simulation software tools also need to be extended to facilitate whole-cell modeling.
+Going forward, we plan to publish SBML-encoded versions of each of the \textit{M. genitalium} sub-models to BioModels, along with SED-ML tests, SBGN maps, and textual documentations. This would make the sub-models searchable, retrievable, and reusable by other scientists. We believe this would be a valuable community resource. It would demonstrate how to build a whole-cell model and enable other researchers to build upon the \textit{M. genitalium} sub-models. Ultimately, SBML and the SBML simulation software tools also need to be extended to facilitate whole-cell modeling.
 
 
 \section{Toward SBML-, SED-ML-, and SBGN-based standards for whole-cell modeling}
@@ -248,7 +255,7 @@ Together, these SBML, SBGN, and software expansions would enable more researcher
 \section{Conclusion}
 The 2016 Whole-Cell Modeling Summer School provided 45 young scientists hands-on training in whole-cell and multi-algorithm modeling through attempting to encode the \textit{M. genitalium} whole-cell model into SBML. Additional summer schools and courses are needed to provide students deeper theoretical training in dynamical modeling, multi-algorithm modeling, model reduction, and parameter estimation, as well as practical training in model construction including data curation, model building, numerical optimization, model testing, and model analysis.
 
-The summer school also made significant strides toward encoding the \textit{M. genitalium} whole-cell model using SBML for simulation by open-source software. The students developed preliminary SBML versions of all of the sub-models of the \textit{M. genitalium} model. Since the summer school, several students have continued to encode the \textit{M. genitalium} model, and several of the students and instructors are participating in a second meeting prior to 2015 COMBINE Forum at the University of Utah in Salt Lake City, USA. Ultimately, we hope to publish an SBML-encoded version of the model to the BioModels database. 
+The summer school also made significant strides toward encoding the \textit{M. genitalium} whole-cell model using SBML for simulation by open-source software. The students developed preliminary SBML versions of all of the sub-models of the \textit{M. genitalium} model. Since the summer school, several students have continued to encode the \textit{M. genitalium} model, and several of the students and instructors are participating in a second meeting prior to 2015 COMBINE Forum at the University of Utah in Salt Lake City, USA. Ultimately, we hope to publish an SBML-encoded version of the model to BioModels. 
 
 However, significant work remains to complete, test, integrate, simulate, and document the SBML-encoded version of the \textit{M. genitalium} model. Currently, SBML cannot represent whole-cell models, there is no simulation software program which could efficiently simulate an SBML-encoded whole-cell model, and there is no graphical editor which is capable of constructing, editing, or visualizing an SBML-encoded whole-cell model. SBML must be expanded to support multi-algorithm modeling, template reactions, particle-based state representation, and arrays and an efficient simulation software program and a user-friendly model editor must be developed to enable modelers to easily construct and simulate whole-cell models. New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for scientific research. SBGN and the SBGN viewers must also be expanded to support hybrid diagrams, automatic graph layout, automatic graph reduction, and contextual zooming.
 
