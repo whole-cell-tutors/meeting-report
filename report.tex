@@ -64,10 +64,18 @@
         Yin Hoon Chew\IEEEauthorrefmark{18},\\
         Rafael S. Costa\IEEEauthorrefmark{19},
         Muhammad Haseeb\IEEEauthorrefmark{20},
+		Denis Kazakiewic\IEEEauthorrefmark{21,22},
+		Ilya Kiselev\IEEEauthorrefmark{23},
         Vincent Knight-Schrijver\IEEEauthorrefmark{16},
-        Sucheendra K. Palaniappan\IEEEauthorrefmark{21},\\
+		Christian Kn\"{u}pfer\IEEEauthorrefmark{24},
+		Nikita Mandrik\IEEEauthorrefmark{25},
+        Sucheendra K. Palaniappan\IEEEauthorrefmark{26},\\
         Martin Scharm\IEEEauthorrefmark{1},
-        Kieran Smallbone\IEEEauthorrefmark{22} and
+        Kieran Smallbone\IEEEauthorrefmark{27} and
+		Je-Hoon Song\IEEEauthorrefmark{28},\\
+		Tom Theile\IEEEauthorrefmark{1},
+        Namrata Tomar\IEEEauthorrefmark{29},
+        Jannis Uhlendorf\IEEEauthorrefmark{10},
         Markus Wolfien\IEEEauthorrefmark{1}
 %        2015 Whole-Cell Modeling Summer School Consortium\IEEEauthorrefmark{5} 
         }
@@ -86,7 +94,7 @@
 %    \IEEEauthorblockA{\IEEEauthorrefmark{8}Centre for Organismal Studies, University of Heidelberg} 
 %    \IEEEauthorblockA{\IEEEauthorrefmark{9}European Molecular Biology Laboratory, European Bioinformatics Institute} 
         %Wellcome Trust Genome Campus, Hinxton, Cambridge CB10 1SD, UK viji@ebi.ac.uk.
-%    \IEEEauthorblockA{\IEEEauthorrefmark{10}Department of Biology, Humboldt University of Berlin} 
+    \IEEEauthorblockA{\IEEEauthorrefmark{10}Department of Biology, Humboldt University of Berlin} 
         %Berlin, Germany
 %    \IEEEauthorblockA{\IEEEauthorrefmark{11}Institute of Biochemistry, Charit\'e Medical University of Berlin} 
         %10117 Berlin, Germany
@@ -96,22 +104,31 @@
 %    \IEEEauthorblockA{\IEEEauthorrefmark{15}Department of Cell Biology, University of Connecticut Health Center}
         %131 Princess Street, Manchester, M1 7DN, UK. pedro.mendes@manchester.ac.uk
         %Farmington, Connecticut, USA
-%    \IEEEauthorblockA{\IEEEauthorrefmark{16}Babraham Institute}
+    \IEEEauthorblockA{\IEEEauthorrefmark{16}Babraham Institute}
     \IEEEauthorblockA{\IEEEauthorrefmark{17}Department of Chemical Engineering, Bo\v{g}azi\c{c}i University}
     \IEEEauthorblockA{\IEEEauthorrefmark{18}Centre for Synthetic and Systems Biology, University of Edinburgh}
     \IEEEauthorblockA{\IEEEauthorrefmark{19}Instituto Superior T\'ecnico, University of Lisbon}
     \IEEEauthorblockA{\IEEEauthorrefmark{20}Department of Bioinformatics, Mohammad Ali Jinnah University}
-    \IEEEauthorblockA{\IEEEauthorrefmark{21}Rennes - Bretagne Atlantique Research Centre, Institute for Research in Computer Science and Automation}
-    \IEEEauthorblockA{\IEEEauthorrefmark{22}Manchester Centre for Integrative Systems Biology, University of Manchester}    
-    %\IEEEauthorblockA{\IEEEauthorrefmark{5}Membership of the 2015 Whole-Cell Modeling Summer School Consortium is listed in Table~SI}
-    %
+	\IEEEauthorblockA{\IEEEauthorrefmark{21}Center for Statistics, Universiteit Hasselt, Hasselt BE3500, Belgium}
+    \IEEEauthorblockA{\IEEEauthorrefmark{22}Center for Innovative Research, Medical University of Bialystok, Bialystok 15-089, Poland}
+	\IEEEauthorblockA{\IEEEauthorrefmark{23}Design Technological Institute of Digital Techniques of the Siberian Branch of the Russian Academy of Sciences, Novosibirsk}
+	\IEEEauthorblockA{\IEEEauthorrefmark{24}Institut f\"ur Informatik, University of Jena}
+	\IEEEauthorblockA{\IEEEauthorrefmark{25}Sobolev Institute of Mathematics, Siberian Branch of the Russian Academy of Sciences, Novosibirsk}	
+    \IEEEauthorblockA{\IEEEauthorrefmark{26}Rennes - Bretagne Atlantique Research Centre, Institute for Research in Computer Science and Automation}	
+    \IEEEauthorblockA{\IEEEauthorrefmark{27}Manchester Centre for Integrative Systems Biology, University of Manchester}    
+	
+	\IEEEauthorblockA{\IEEEauthorrefmark{28}Department of Bio and Brain Engineering, Korea Advanced Institute of Science and Technology}
+	% (KAIST),\\ 291 Daehak-ro, Yuseong-gu, Daejeon 305-701, Republic of Korea	
+    \IEEEauthorblockA{\IEEEauthorrefmark{29}Department of Dermatology, University Medicine, University of Erlangen-Nuremberg}
+	%\\ Hartmannstraße 14, 91052 Erlangen, Germany
+
 	\thanks{Corresponding author email: \href{mailto:dagmar.waltemath@uni-rostock.de}{dagmar.waltemath@uni-rostock.de}}
 }
 
 \IEEEtitleabstractindextext{
 	\begin{abstract}
 	Whole-cell models are promising tools for biological research, bioengineering, and medicine. 
-	However, significant work remains to achieve fully complete and accurate whole-cell models, including developing a strong theoretical understanding of multi-algorithm modeling, a standardized whole-cell modeling language, and an efficient general-purpose simulator.
+	However, significant work remains to achieve complete and accurate whole-cell models, including developing a strong theoretical understanding of multi-algorithm modeling, a standardized whole-cell modeling language, and an efficient general-purpose simulator.
 	We organized the 2015 Whole-Cell Modeling Summer School to teach whole-cell modeling, as well as to evaluate the need for new whole-cell modeling standards by attempting to encode a recently published whole-cell model into SBML.
     We propose three SBML extensions to support transparent, reproducible whole-cell modeling: support for multi-algorithm models, support for particle-based state representation, and support for template reactions. In addition, we describe several new software tools which are needed to enable researchers to encode and simulate whole-cell models including a user-friendly graphical model editor and a parallelized simulator. We also propose several new SGBN extensions.
 	Together these new standards and software tools would accelerate whole-cell modeling.
@@ -128,13 +145,13 @@
 
 \section{Introduction}
 
-\IEEEPARstart{O}{ver} the past twenty years, computational modeling has become an essential and powerful tool for biological research, bioengineering, and medicine to analyze high-throughput molecular measurements and understand the molecular details of complex biological systems. Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, add metabolic pathways to bacteria~\cite{Lee2009}, and identify potential new antimicrobial drug targets~\cite{Lee2012}. Computational models also have the potential to enable bioengineers to design new microorganisms for industrial applications such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to tailor therapy to individual patients. Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype, as well as standardized methods for exchanging models, simulation experiments, and model visualizations~\cite{Macklin2014,Karr2015,hucka2015promoting,Klipp07}.
+\IEEEPARstart{O}{ver} the past twenty years, computational modeling has become an essential and powerful tool for biological research, bioengineering, and medicine to analyze high-throughput molecular measurements and understand the molecular details of complex biological systems. Computational modeling has already been used to identify new metabolic genes~\cite{Reed2006}, to add metabolic pathways to bacteria~\cite{Lee2009}, to and identify potential new antimicrobial drug targets~\cite{Lee2012}. Computational models also have the potential to enable bioengineers to design new microorganisms for industrial applications such as chemical synthesis, biofuel production, and waste decontamination, as well as to enable clinicians to tailor therapy to individual patients. Realizing this potential requires more comprehensive and accurate computational models which are capable of predicting cellular behavior from genotype, as well as standardized methods for exchanging models, simulation experiments, and model visualizations~\cite{Macklin2014,Karr2015,hucka2015promoting,Klipp07}.
 
 Recently, researchers at Stanford University developed the first whole-cell model of the gram-positive bacterium \textit{Mycoplasma genitalium}~\cite{Karr2012}. The model represents the life cycle of a single Mycoplasma cell including the copy number dynamics of each metabolite, RNA, and protein species and accounts for every known gene function. The model is composed of 28 sub-models, each of which is implemented using different mathematical representations including ordinary differential equations (\emph{ODE}s), flux balance analysis (\emph{FBA}), and Boolean rules (\emph{BR}s), and trained using different experimental data.
 
 The \textit{M. genitalium} whole-cell model was implemented in MATLAB, is available open-source under the MIT license, and is extensively documented. This has enabled other researchers to use the model for their own research. 
 
-However, the \textit{M. genitalium} whole-cell model software is not transparent or reusable. The \textit{M. genitalium} whole-cell model software is also not user-friendly, computationally efficient, or easily maintainable. Consequently, significant domain expertise is required to use the model or construct new whole-cell models. New whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and simulate their own whole-cell models. Such standards and software tools would accelerate whole-cell modeling. They would enable researchers to develop models more quickly, explore models more deeply, and evaluate models more rigorously. Furthermore, a whole-cell modeling standard would make models more searchable, retrievable, reusable, and comparable.
+However, the \textit{M. genitalium} whole-cell model software is not transparent or reusable. The \textit{M. genitalium} whole-cell model software is also not user-friendly, computationally efficient, or easily maintainable. Consequently, significant domain expertise is required to use the \textit{M. genitalium} model or construct new whole-cell models. New whole-cell modeling standards and simulation tools are needed to enable more researchers to develop and simulate their own whole-cell models. Such standards and software tools would accelerate whole-cell modeling. They would enable researchers to develop models more quickly, to explore models more deeply, and to evaluate models more rigorously. Furthermore, standards would simplify the submission process to model repositories such as BioModels~\cite{li2010biomodels}. In turn, this would make models more searchable, retrievable, reusable, and comparable.
 
 Several systems biology standards have already been developed by the COmputational Modeling in BIology NEtwork (\emph{COMBINE})~\cite{le2011meeting} including the Systems Biology Markup Language (\emph{SBML})~\cite{hucka2003}, the Cell Markup Language (\emph{CellML})~\cite{hedley_2001b}, the Simulation Experiment Description Markup Language (\emph{SED-ML})~\cite{sedml2011}, and the Systems Biology Graphical Notation (\emph{SBGN})~\cite{LeNovereHMMSS09}. SBML and CellML are languages for describing mathematical models including ODE, logical, and FBA models. Both have been used to build thousands of models of various intracellular pathways. SED-ML is a language for describing computational experiments. SED-ML enables scientists to reproducibly simulate models by completely describing simulation setups, including the simulation algorithm and every parameter value. SBGN includes three languages for describing visual representations of models. None of these standards have been used to construct, simulate, or visualize models as complex as the \textit{M. genitalium} whole-cell model.
 
@@ -287,62 +304,62 @@ The school was supported by a grant from the Volkswagen Foundation to DW and FS.
 \begin{table*}[ht!]
 \caption{2015 Whole-Cell Modeling Summer School Consortium members.}
 \begin{tabularx}{\textwidth}{l||l||X}\hline
-\bfseries Group        & \bfseries Participant            & \bfseries Affiliation\\\hline\hline
-Cytokinesis            & Naveen Kumar Aranganathan        & University Paris-Sud, France\\
-                       & Daniel Alejandro Priego Espinosa & National Autonomous University of Mexico, Mexico\\
-                       & Ilya Kiselev                     & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
-                       & Wolfram Liebermeister            & Charit\'e Medical University of Berlin, Germany\\
-                       & Yan Zhu                          & Monash University, Australia\\\hline
-DNA repair             & Arne Bittig                      & University of Rostock, Germany\\
-                       & Vijayalakshmi Chelliah           & European Bioinformatics Institute, UK\\
-                       & Audald Lloret-Vilas              & European Bioinformatics Institute, UK\\
-                       & Mahesh Sharma                    & National Institute of Pharmaceutical Education and Research, India\\
-                       & Namrata Tomar                    & Friedrich-Alexander University of Erlangen-N\"urnberg, Germany\\\hline
-Metabolism             & Kambiz Baghalian                 & University of Oxford, UK\\
-                       & Frank T. Bergmann                & California Institute of Technology, USA\\
-                       & Rafeal Sousa Costa               & University of Lisbon, Portugal\\
-                       & Matthias K\"onig                 & Charit\'e Medical University of Berlin, Germany\\
-                       & Kieran Smallbone                 & University of Manchester, UK\\
-                       & Milenko Tokic                    & Swiss Federal Institute of Technology in Lausanne, Switzerland\\\hline
-Protein                & Begum Alaybeyoglu                & Bo\v{g}azi\c{c}i University, Turkey\\
-                       & Matteo Cantarelli                & OpenWorm, UK\\
-                       & Yin Hoon Chew                    & University of Edinburgh, UK\\
-                       & Marcus Krantz                    & Humboldt University of Berlin, Germany\\
-                       & Daewon Lee                       & KAIST, South Korea\\\hline
-Replication            & Vincent Knight-Schrijver         & Babraham Institute, UK\\
-                       & Je-Hoon Song                     & KAIST, South Korea\\
-                       & Jannis Uhlendorf                 & Humboldt University of Berlin, Germany\\
-                       & Dagmar Waltemath                 & University of Rostock, Germany\\
-                       & James Yurkovich                  & University of California, San Diego, USA\\
-                       & Anna Zhukova                     & University of Bordeaux, France\\\hline
-Replication initiation & Harold Gomez                     & Boston University, USA\\
-                       & Jens Hahn                        & Humboldt University of Berlin, Germany\\
-                       & Michael Hucka                    & California Institute of Technology, USA\\
-                       & Nikita Mandrik                   & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
-                       & Martin Scharm                    & University of Rostock, Germany\\
-                       & Florian Wendland                 & University of Rostock, Germany\\\hline
-RNA                    & Tuure Hameri                     & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
-                       & Jesse Kyle Medley                & University of Washington, USA\\
-                       & Sucheendra Kumar Palaniappan     & Institute for Research in Computer Science and Automation, France\\
-                       & Pinar Pir                        & Babraham Institute, UK\\
-                       & Natalie Stanford                 & University of Manchester, UK\\
-                       & Markus Wolfien                   & University of Rostock, Germany\\\hline
-Translation            & Joseph Cursons                   & University of Melbourne, Australia\\
-                       & Muhammad Haseeb                  & Mohammad Ali Jinnah University, Pakistan\\
-                       & Daniel Hernandez                 & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
-                       & Denis Kazakiewicz                & University of Hasselt, Belgium\\
-                       & Pedro Mendes                     & University of Manchester, UK\\
-                       & Hojjat Naderi Meshkin            & Academic Center for Education, Culture and Research, Iran\\\hline
-Integration            & Paulo Eduardo Pinto Burke        & Federal University of S\~ao Paulo, Brazil\\
-                       & Tobias Czauderna                 & Monash University, Australia\\
-                       & Bertrand Moreau                  & CoSMo Company, France\\
-                       & Chris J. Myers                   & University of Utah, USA\\
-		               & Thawfeek Mohamed Varusai         & University College Dublin, Ireland\\
-		               & Argyris Zardilis                 & University of Edinburgh, UK\\\hline
-Visualization and      & Christian Kn\"upfer              & University of Jena, Germany\\
-documentation          & Falk Schreiber                   & Monash University, Australia\\
-                       & Tom Theile                       & University of Rostock, Germany\\\hline
-Modeling instructor    & Jonathan R. Karr                 & Icahn School of Medicine at Mount Sinai, USA\\\hline
+\bfseries Group           & \bfseries Participant            & \bfseries Affiliation\\\hline\hline
+Cytokinesis               & Naveen Kumar Aranganathan        & University Paris-Sud, France\\
+                          & Daniel Alejandro Priego Espinosa & National Autonomous University of Mexico, Mexico\\
+                          & Ilya Kiselev                     & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
+                          & Wolfram Liebermeister            & Charit\'e Medical University of Berlin, Germany\\
+                          & Yan Zhu                          & Monash University, Australia\\\hline
+DNA repair                & Arne Bittig                      & University of Rostock, Germany\\
+                          & Vijayalakshmi Chelliah           & European Bioinformatics Institute, UK\\
+                          & Audald Lloret-Vilas              & European Bioinformatics Institute, UK\\
+                          & Mahesh Sharma                    & National Institute of Pharmaceutical Education and Research, India\\
+                          & Namrata Tomar                    & Friedrich-Alexander University of Erlangen-N\"urnberg, Germany\\\hline
+Metabolism                & Kambiz Baghalian                 & University of Oxford, UK\\
+                          & Frank T. Bergmann                & California Institute of Technology, USA\\
+                          & Rafeal Sousa Costa               & University of Lisbon, Portugal\\
+                          & Matthias K\"onig                 & Charit\'e Medical University of Berlin, Germany\\
+                          & Kieran Smallbone                 & University of Manchester, UK\\
+                          & Milenko Tokic                    & Swiss Federal Institute of Technology in Lausanne, Switzerland\\\hline
+Protein                   & Begum Alaybeyoglu                & Bo\v{g}azi\c{c}i University, Turkey\\
+                          & Matteo Cantarelli                & OpenWorm, UK\\
+                          & Yin Hoon Chew                    & University of Edinburgh, UK\\
+                          & Marcus Krantz                    & Humboldt University of Berlin, Germany\\
+                          & Daewon Lee                       & KAIST, South Korea\\\hline
+Replication               & Vincent Knight-Schrijver         & Babraham Institute, UK\\
+                          & Je-Hoon Song                     & KAIST, South Korea\\
+                          & Jannis Uhlendorf                 & Humboldt University of Berlin, Germany\\
+                          & Dagmar Waltemath                 & University of Rostock, Germany\\
+                          & James Yurkovich                  & University of California, San Diego, USA\\
+                          & Anna Zhukova                     & University of Bordeaux, France\\\hline
+Replication initiation    & Harold Gomez                     & Boston University, USA\\
+                          & Jens Hahn                        & Humboldt University of Berlin, Germany\\
+                          & Michael Hucka                    & California Institute of Technology, USA\\
+                          & Nikita Mandrik                   & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
+                          & Martin Scharm                    & University of Rostock, Germany\\
+                          & Florian Wendland                 & University of Rostock, Germany\\\hline
+RNA                       & Tuure Hameri                     & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
+                          & Jesse Kyle Medley                & University of Washington, USA\\
+                          & Sucheendra Kumar Palaniappan     & Institute for Research in Computer Science and Automation, France\\
+                          & Pinar Pir                        & Babraham Institute, UK\\
+                          & Natalie Stanford                 & University of Manchester, UK\\
+                          & Markus Wolfien                   & University of Rostock, Germany\\\hline
+Translation               & Joseph Cursons                   & University of Melbourne, Australia\\
+                          & Muhammad Haseeb                  & Mohammad Ali Jinnah University, Pakistan\\
+                          & Daniel Hernandez                 & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
+                          & Denis Kazakiewicz                & University of Hasselt, Belgium\\
+                          & Pedro Mendes                     & University of Manchester, UK\\
+                          & Hojjat Naderi Meshkin            & Academic Center for Education, Culture and Research, Iran\\\hline
+Integration               & Paulo Eduardo Pinto Burke        & Federal University of S\~ao Paulo, Brazil\\
+                          & Tobias Czauderna                 & Monash University, Australia\\
+                          & Bertrand Moreau                  & CoSMo Company, France\\
+                          & Chris J. Myers                   & University of Utah, USA\\
+		                  & Thawfeek Mohamed Varusai         & University College Dublin, Ireland\\
+		                  & Argyris Zardilis                 & University of Edinburgh, UK\\\hline
+Visualization, annotation & Christian Kn\"upfer              & University of Jena, Germany\\
+and documentation         & Falk Schreiber                   & Monash University, Australia\\
+                          & Tom Theile                       & University of Rostock, Germany\\\hline
+Modeling instructor       & Jonathan R. Karr                 & Icahn School of Medicine at Mount Sinai, USA\\\hline
 \end{tabularx}
 \end{table*}
 
