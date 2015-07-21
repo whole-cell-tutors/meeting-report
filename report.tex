@@ -227,6 +227,12 @@ The main visualization problem encountered by the documentation group was that w
 \subsection{Progress}
 The students produced preliminary SBML and SBGN-ML versions of many of the \textit{M. genitalium} whole-cell model sub-models. However, significant work remains to finish encoding the sub-models, integrate the sub-models into a single model, and test the sub-models and the combined model. Complete drafts are only available for a few of the simplest sub-models. The current drafts of most of the more complex sub-models are also greatly simplified compared to their MATLAB versions. For example, the transcription and translation sub-models drafts do not represent the polymerization of individual bases and the DNA sub-models do not account for the protein occupancy of the chromosome. In addition, none of the SBML-encoded sub-models have been thoroughly tested by replicating the unit tests from the MATLAB implementation. Furthermore, none of the SBML sub-models have been thoroughly documented and complete SBGN maps are not yet available for any of the sub-models.
 
+\begin{figure*}[bt!]
+\centering
+\includegraphics[width=\textwidth]{figure1/figure1.pdf}
+\caption{\label{fig:1} Whole-cell modeling pipeline. First, researchers will assemble experimental data into pathway/genome databases. Second, researchers will use pathway/genome databases to construct sub-models. Third, researchers will use multi-algorithm simulators to conduct in silico experiments. Lastly, researchers will analyze in silico experiments to learn new biology.}
+\end{figure*}
+
 \subsection{Future steps}
 We hope to finish encoding the \textit{M. genitalium} sub-models into SBML and integrate the SBML-encoded sub-models into a single model simulatable by open-source software tools such as COPASI, libRoadRunner, BioUML, and iBioSim. Several students and instructors have continued to keep working and meeting online. Several students and instructors also plan to participate in a second meeting in October 2015 which will be held at the University of Utah, USA immediately prior to the 2015 COMBINE Forum.
 
@@ -235,12 +241,6 @@ Going forward, we plan to publish SBML-encoded versions of each of the \textit{M
 
 \section{Toward SBML-, SED-ML-, and SBGN-based standards for whole-cell modeling}
 Prior to the school, SBML, SED-ML, and SBGN had never been used to represent whole-cell or similarly complex models. Consequently, not surprisingly, the summer school revealed several limitations of SBML, SBGN, and the existing simulation software for large models. Importantly, the summer school facilitated discussions among modelers, tool developers, and model curators about how to best expand the existing standards and software tools to overcome these limitations.
-
-%\begin{figure*}
-%\centering
-%\includegraphics[width=\textwidth]{figure1.pdf}
-%\caption{\the\textwidth}
-%\end{figure*}
 
 \subsection{Current limitations}
 As discussed above, SBML does not support multi-algorithm modeling, particle-based state representation, or arbitrary random number generation and the current SBML simulators have limited support for arrays. Consequently, SBML cannot efficiently simulate models with large, combinatorial state spaces; represent arbitrary stochastic models; or efficiently simulate arbitrary mathematical models involving matrix algebra operations. State spaces must be enumerated, stochastic models must be described using a ratio time scale and simulated using the Gillespie or other approximate algorithm, and matrix algebra operations must be expanded. For the \textit{M. genitalium} whole-cell model this would result in large, unmanageable XML files and millions of variables.
@@ -263,6 +263,9 @@ New user-friendly graphical editors must also be developed to enable researchers
 In addition, our molecular biology databases such as ChEBI must be expanded to enable researchers to rigorously define whole-cell models in terms of external entities. SBGN must also be expanded to support hybrid diagrams and the SBGN viewers must be expanded to support more automatic layout algorithms, automatic model reduction, and contextual zooming. These features would enable researchers to use SBGN to map whole-cell and other large models.
 
 Together, these SBML, SBGN, software, and database expansions would enable more researchers to more easily build, manage, simulate, and reproduce whole-cell models and simulations. These new standards and software tools would also enable researchers to build more comprehensive and more accurate models, including of human cells. Ultimately, these new standards and software would enable whole-cell modeling to support rational biological design and personalized medicine.
+
+\subsection{The whole-cell modeling pipeline}
+We anticipate that such expanded standards and tools will enable a four step approach to whole-cell model-driven discovery (Figure~\ref{fig:1}). First, researchers will assemble experimental data from numerous sources including databases such as SABIO-RK~\cite{Wittig2012} and UniProt~\cite{UniProt2015} into pathway/genome databases using software tools such as Pathway Tools~\cite{Karp2010} and WholeCellKB. Second, researchers will use pathway/genome databases and graphical modeling tools such as BioUML, COPASI, and iBioSim to build sub-models and encode them using transparent languages such as SBML. Third, multi-algorithm simulators will be used to conduct in silico experiments. Lastly, software tools such as WholeCellSimDB and WholeCellViz will be used to discover new biology through exploring, visualizing, and analyzing in silico experiments.
 
 \section{Conclusion}
 The 2016 Whole-Cell Modeling Summer School provided 45 young scientists hands-on training in whole-cell and multi-algorithm modeling through attempting to encode the \textit{M. genitalium} whole-cell model into SBML. Additional summer schools and courses are needed to provide students with deeper theoretical training in dynamical modeling, multi-algorithm modeling, model reduction, and parameter estimation, as well as practical training in model construction including data curation, model building, numerical optimization, model testing, and model analysis.
