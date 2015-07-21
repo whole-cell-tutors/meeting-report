@@ -32,7 +32,9 @@
 \usepackage[english]{babel}
 
 % Correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor ana-ly-tics}
+\hyphenation{}
+
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
 
 \usepackage{pdfcomment}
 \newcommand{\comment}[3]{\pdfmarkupcomment[markup=Highlight,color=yellow,author={#2}]{#1}{#3}}
@@ -48,108 +50,87 @@
 \title{Toward standards for tomorrow's whole-cell models}
 
 \author{
-	\IEEEauthorblockN{
-		Dagmar Waltemath\IEEEauthorrefmark{1},
-		Falk Schreiber\IEEEauthorrefmark{2,3}, 
-		Jonathan R. Karr\IEEEauthorrefmark{4}, 
-		Chris J. Myers\IEEEauthorrefmark{5},
-%        Michael Hucka\IEEEauthorrefmark{6},       
-		Frank T. Bergmann\IEEEauthorrefmark{7},\\
-        Vijayalakshmi Chelliah\IEEEauthorrefmark{9},
-%        Marcus Krantz\IEEEauthorrefmark{10},
-        Wolfram Liebermeister\IEEEauthorrefmark{11},
-%        Pedro Mendes\IEEEauthorrefmark{12--15},
-%        Pinar Pir\IEEEauthorrefmark{16},
-        Begum Alaybeyoglu\IEEEauthorrefmark{17},
-        Arne T. Bittig\IEEEauthorrefmark{18},
-        Yin Hoon Chew\IEEEauthorrefmark{19},\\
-        Rafael S. Costa\IEEEauthorrefmark{20},
-        Muhammad Haseeb\IEEEauthorrefmark{21},
-		Denis Kazakiewic\IEEEauthorrefmark{22,23},
-		Ilya Kiselev\IEEEauthorrefmark{24},
-        Vincent Knight-Schrijver\IEEEauthorrefmark{16},\\
-		Christian Kn\"{u}pfer\IEEEauthorrefmark{25},
-        Matthias K\"{o}nig\IEEEauthorrefmark{11},
-		Nikita Mandrik\IEEEauthorrefmark{26},
-        J. Kyle Medley\IEEEauthorrefmark{27},
-        Sucheendra K. Palaniappan\IEEEauthorrefmark{28}, \\
-        Martin Scharm\IEEEauthorrefmark{1},
-        Mahesh Sharma\IEEEauthorrefmark{33},
-        Kieran Smallbone\IEEEauthorrefmark{29},
-		Je-Hoon Song\IEEEauthorrefmark{30},
-		Tom Theile\IEEEauthorrefmark{1},
-        Namrata Tomar\IEEEauthorrefmark{31},\\
-        Jannis Uhlendorf\IEEEauthorrefmark{10},
-        Markus Wolfien\IEEEauthorrefmark{1} and
-        Yan Zhu\IEEEauthorrefmark{32}
-        }
-	
-	\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Systems Biology and Bioinformatics, University of Rostock}
-	\IEEEauthorblockA{\IEEEauthorrefmark{2}Clayton School of Information Technology, Monash University}
-    \IEEEauthorblockA{\IEEEauthorrefmark{3}Institute of Computer Science, Martin Luther University Halle-Wittenberg}    
-	\IEEEauthorblockA{\IEEEauthorrefmark{4}Department of Genetics \& Genomic Sciences, Icahn School of Medicine at Mount Sinai} 
-        %New York, NY 10029 USA\\Email: \href{mailto:karr@mssm.edu}{karr@mssm.edu}
-    \IEEEauthorblockA{\IEEEauthorrefmark{6}Department of Electrical and Computer Engineering, University of Utah} 
-        %Salt Lake City, Utah 84112, USA
-%    \IEEEauthorblockA{\IEEEauthorrefmark{5}Department of Computing and Mathematical Sciences, California Institute of Technology} 
-        %1200 East California Boulevard, Pasadena, CA 91125, USA
-    \IEEEauthorblockA{\IEEEauthorrefmark{7}BioQuant, University of Heidelberg} 
-        %Heidelberg , Germany
-%    \IEEEauthorblockA{\IEEEauthorrefmark{8}Centre for Organismal Studies, University of Heidelberg} 
-    \IEEEauthorblockA{\IEEEauthorrefmark{9}European Molecular Biology Laboratory, European Bioinformatics Institute} 
-        %Wellcome Trust Genome Campus, Hinxton, Cambridge CB10 1SD, UK viji@ebi.ac.uk.
-    \IEEEauthorblockA{\IEEEauthorrefmark{10}Department of Biology, Humboldt University of Berlin} 
-        %Berlin, Germany
-    \IEEEauthorblockA{\IEEEauthorrefmark{11}Institute of Biochemistry, University Medicine Charit\'{e} Berlin, 10117 Berlin, Germany}
-        %10117 Berlin, Germany
-%    \IEEEauthorblockA{\IEEEauthorrefmark{12}Manchester Institute of Biotechnology, University of Manchester} 
-%    \IEEEauthorblockA{\IEEEauthorrefmark{13}School of Computer Science, University of Manchester}     
-%    \IEEEauthorblockA{\IEEEauthorrefmark{14}Center for Quantitative Medicine, University of Connecticut Health Center}
-%    \IEEEauthorblockA{\IEEEauthorrefmark{15}Department of Cell Biology, University of Connecticut Health Center}
-        %131 Princess Street, Manchester, M1 7DN, UK. pedro.mendes@manchester.ac.uk
-        %Farmington, Connecticut, USA
-    \IEEEauthorblockA{\IEEEauthorrefmark{16}Babraham Institute}
-    \IEEEauthorblockA{\IEEEauthorrefmark{17}Department of Chemical Engineering, Bo\v{g}azi\c{c}i University}
-	\IEEEauthorblockA{\IEEEauthorrefmark{18}Modeling and Simulation Group, Institute of Computer Science, University of Rostock}	
-    \IEEEauthorblockA{\IEEEauthorrefmark{19}Centre for Synthetic and Systems Biology, University of Edinburgh}
-    \IEEEauthorblockA{\IEEEauthorrefmark{20}Instituto Superior T\'ecnico, University of Lisbon}
-    \IEEEauthorblockA{\IEEEauthorrefmark{21}Department of Bioinformatics, Mohammad Ali Jinnah University}
-	\IEEEauthorblockA{\IEEEauthorrefmark{22}Center for Statistics, Universiteit Hasselt, Hasselt BE3500, Belgium}
-    \IEEEauthorblockA{\IEEEauthorrefmark{23}Center for Innovative Research, Medical University of Bialystok, Bialystok 15-089, Poland}
-	\IEEEauthorblockA{\IEEEauthorrefmark{24}Design Technological Institute of Digital Techniques of the \\ Siberian Branch of the Russian Academy of Sciences, Novosibirsk}
-	\IEEEauthorblockA{\IEEEauthorrefmark{25}Institut f\"ur Informatik, University of Jena}
-	\IEEEauthorblockA{\IEEEauthorrefmark{26}Sobolev Institute of Mathematics, Siberian Branch of the Russian Academy of Sciences, Novosibirsk}	
-	\IEEEauthorblockA{\IEEEauthorrefmark{27}Department of Bioengineering, University of Washington, Seattle, WA 98195, USA}	
-    \IEEEauthorblockA{\IEEEauthorrefmark{28}Rennes - Bretagne Atlantique Research Centre, Institute for Research in Computer Science and Automation}	
-    \IEEEauthorblockA{\IEEEauthorrefmark{29}Manchester Centre for Integrative Systems Biology, University of Manchester}    	
-	\IEEEauthorblockA{\IEEEauthorrefmark{30}Department of Bio and Brain Engineering, Korea Advanced Institute of Science and Technology}
-	% (KAIST),\\ 291 Daehak-ro, Yuseong-gu, Daejeon 305-701, Republic of Korea	
-    \IEEEauthorblockA{\IEEEauthorrefmark{31}Department of Dermatology, University Medicine, University of Erlangen-Nuremberg}
-    %\\ Hartmannstraße 14, 91052 Erlangen, Germany
-    \IEEEauthorblockA{\IEEEauthorrefmark{32}Monash Institute of Pharmaceutical Sciences, Monash University}
-    \IEEEauthorblockA{\IEEEauthorrefmark{33}Department of Pharmacoinformatics, National Institute of Pharmaceutical Education and Research (NIPER),\\ Sector 67, S.A.S. Nagar-160 062, Punjab, India}
-
-
-    
-	\thanks{Corresponding author email: \href{mailto:dagmar.waltemath@uni-rostock.de}{dagmar.waltemath@uni-rostock.de}}
-}
-
-\IEEEtitleabstractindextext{
-	\begin{abstract}
-	Whole-cell models are promising tools for biological research, bioengineering, and medicine. 
-	However, significant work remains to achieve complete and accurate whole-cell models, including developing a strong theoretical understanding of multi-algorithm modeling, a standardized whole-cell modeling language, and an efficient general-purpose simulator.
-	We organized the 2015 Whole-Cell Modeling Summer School to teach whole-cell modeling, as well as to evaluate the need for new whole-cell modeling standards by attempting to encode a recently published whole-cell model into SBML.
-    We propose three SBML extensions to support transparent, reproducible whole-cell modeling: support for multi-algorithm models, support for particle-based state representation, and support for template reactions. In addition, we describe several new software tools which are needed to enable researchers to encode and simulate whole-cell models including a user-friendly graphical model editor and a parallelized simulator. We also propose several new SGBN extensions.
-	Together these new standards and software tools would accelerate whole-cell modeling.
-	\end{abstract}
-	
-	\begin{IEEEkeywords}
-	Whole-cell modeling, Systems biology, Computational biology, Mathematical modeling, Simulation, Standards, Education
-	\end{IEEEkeywords}
+    Dagmar Waltemath$^*$,
+    Falk Schreiber, 
+    Jonathan R. Karr, 
+    Chris J. Myers,
+%   Michael Hucka,       
+    Frank T. Bergmann,
+    Vijayalakshmi Chelliah,\\
+%   Marcus Krantz,
+    Wolfram Liebermeister,
+%   Pedro Mendes,
+%   Pinar Pir,
+    Begum Alaybeyoglu,
+    Arne T. Bittig,
+    Yin Hoon Chew,
+    Rafael S. Costa,\\
+    Muhammad Haseeb,
+    Denis Kazakiewic,
+    Ilya Kiselev,
+    Vincent Knight-Schrijver,
+    Christian Kn\"{u}pfer,\\
+    Matthias K\"{o}nig,
+    Nikita Mandrik,
+    J. Kyle Medley,
+    Sucheendra K. Palaniappan, 
+    Martin Scharm,\\
+    Mahesh Sharma,
+    Kieran Smallbone,
+    Je-Hoon Song,
+    Tom Theile,
+    Namrata Tomar,
+    Jannis Uhlendorf,\\
+    Markus Wolfien, and
+    Yan Zhu
+    \thanks{
+        Manuscript received XXX XX, 2015; revised XXX XX, 201X; accepted XXX XX, 201X. Date of publication XXX XX, 201X; date of current version XXX XX, 201X.
+        This work was supported in part by the Volkswagen Foundation (Grant to D. W. and F. S.) and the James S. McDonnell Foundation (Postdoctoral Fellowship Award in Studying Complex Systems to J. R. K.).
+        \textit{Asterisk indicates corresponding author.}
+    }
+    \thanks{D. Waltemath, A. T. Bitting, M. Scharm, T. Theile, and M. Wolfien are with the Institute of Computer Science, University of Rostock, 18051 Rostock, Germany (e-mail: \email{dagmar.waltemath@uni-rostock.de}; \email{arne.bittig@uni-rostock.de}; \email{martin.scharm@uni-rostock.de}; \email{tom.theile@uni-rostock.de}; \email{markus.wolfien@uni-rostock.de}).}
+    \thanks{F. Schreiber is with the Clayton School of Information Technology, Monash University, Clayton, VIC 3800, Australia and also with the Institute of Computer Science, Martin Luther University Halle-Wittenberg, 06108 Halle, Germany (e-mail: \email{falk.schreiber@monash.edu}).}
+    \thanks{J. R. Karr is with the Department of Genetics \& Genomic Sciences, Icahn School of Medicine at Mount Sinai, New York, NY 10029 USA (e-mail: \email{karr@mssm.edu}).}
+    \thanks{C. J. Myers is with the Department of Electrical and Computer Engineering, University of Utah, Salt Lake City, Utah 84112, USA (e-mail: \email{myers@ece.utah.edu}).}
+    %\thanks{M. Hucka is with the Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, CA 91125, USA (e-mail: \email{mhucka@caltech.edu}).}
+    \thanks{F. T. Bergmann is with BioQuant, University of Heidelberg, 69120 Heidelberg, Germany (e-mail: \email{fbergman@caltech.edu}).} 
+    \thanks{V. Chelliah is with the European Bioinformatics Institute, European Molecular Biology Laboratory, Cambridge CB10 1SD, UK (e-mail: \email{viji@ebi.ac.uk}).} 
+    \thanks{M. Krantz and J. Uhlendorf are with the Department of Biology, Humboldt University of Berlin, 10115 Berlin, Germany (e-mail: \email{marcus.krantz@biologie.hu-berlin.de}; \email{jannis.uhlendorf@hu-berlin.de}).}
+    \thanks{W. Liebermeister and M. K\"{o}nig are with the Institute of Biochemistry, University Medicine Charit\'{e} Berlin, 10117 Berlin, Germany (e-mail: \email{wolfram.liebermeister@gmail.com}; \email{matthias.koenig@charite.de}).}
+    %\thanks{P. Mendes is with the Manchester Institute of Biotechnology and the School of Computer Science, University of Manchester, Manchester M1 7DN, UK and also with the Center for Quantitative Medicine and the Department of Cell Biology, University of Connecticut Health Center, Farmington, CT 06030, USA (e-mail: \email{pedro.mendes@manchester.ac.uk}).}
+    \thanks{P. Pir and V. Knight-Schrijver are with the Babraham Institute, Cambridge CB22 3AT, UK (e-mail: \email{pinar.pir@babraham.ac.uk}).}
+    \thanks{B. Alaybeyoglu is with the Department of Chemical Engineering, Bo\v{g}azi\c{c}i University, Bebek 34342, Turkey (e-mail: \email{begum.alaybeyoglu@boun.edu.tr}).}
+    \thanks{Y. H. Chew is with the Centre for Synthetic and Systems Biology, University of Edinburgh, Edinburgh EH9 3BF, UK (e-mail: \email{yinhoon.chew@ed.ac.uk}).}
+    \thanks{R. S. Costa is with the Instituto Superior T\'ecnico, University of Lisbon, 1049-001 Lisboa, Portugal (e-mail: \email{rafael.s.costa@tecnico.ulisboa.pt}).}
+    \thanks{M. Haseeb is with the Department of Bioinformatics, Mohammad Ali Jinnah University, Islamabad, Pakistan.}
+    \thanks{D. Kazakiewic is with the Center for Statistics, Universiteit Hasselt, Hasselt BE3500, Belgium, and also with the Center for Innovative Research, Medical University of Białystok, Białystok 15-089, Poland (e-mail: \email{dzianis.kazakevich@uhasselt.be}).}
+    \thanks{I. Kiselev is with the Design Technological Institute of Digital Techniques, Siberian Branch of the Russian Academy of Sciences, Novosibirsk 630090, Russia.}
+    \thanks{C. Kn\"{u}pfer is with the Institut f\"ur Informatik, University of Jena, 07743 Jena, Germany (e-mail: \email{christian.knuepfer@uni-jena.de}).}
+    \thanks{N. Mandrik is with the Sobolev Institute of Mathematics, Siberian Branch of the Russian Academy of Sciences, Novosibirsk 630090, Russia (e-mail: \email{manikitos@gmail.com}).}
+    \thanks{J. K. Medley is with the Department of Bioengineering, University of Washington, Seattle, WA 98195, USA (e-mail: \email{medjk@comcast.net}).}
+    \thanks{S. K. Palaniappan is with the Rennes - Bretagne Atlantique Research Centre, Institute for Research in Computer Science and Automation, 35042 Rennes Cedex, France.}
+    \thanks{M. Sharma is with the Department of Pharmacoinformatics, National Institute of Pharmaceutical Education and Research, Punjab 160062, India.}
+    \thanks{K. Smallbone is with the Manchester Centre for Integrative Systems Biology, University of Manchester, Manchester M1 7DN, UK (e-mail: \email{kieran.smallbone@manchester.ac.uk}).}
+    \thanks{J.-H. Song is with the Department of Bio and Brain Engineering, Korea Advanced Institute of Science and Technology, Daejeon 305-701, Republic of Korea (e-mail: \email{song.je-hoon@kaist.ac.kr}).}
+    \thanks{N. Tomar is with the Department of Dermatology, University Medicine, University of Erlangen-Nuremberg, 91052 Erlangen, Germany.}
+    \thanks{Y. Zhu is with Monash Institute of Pharmaceutical Sciences, Monash University, Parkville, VIC 3052, Australia.}
+    \thanks{Digital Object Identifier 10.1109/TBME.XXXX.XXXXXXX}
 }
 
 \maketitle
-\IEEEdisplaynontitleabstractindextext
+
+\begin{abstract}
+Whole-cell models are promising tools for biological research, bioengineering, and medicine. 
+However, significant work remains to achieve complete and accurate whole-cell models, including developing a strong theoretical understanding of multi-algorithm modeling, a standardized whole-cell modeling language, and an efficient general-purpose simulator.
+We organized the 2015 Whole-Cell Modeling Summer School to teach whole-cell modeling, as well as to evaluate the need for new whole-cell modeling standards by attempting to encode a recently published whole-cell model into SBML.
+We propose three SBML extensions to support transparent, reproducible whole-cell modeling: support for multi-algorithm models, support for particle-based state representation, and support for template reactions. In addition, we describe several new software tools which are needed to enable researchers to encode and simulate whole-cell models including a user-friendly graphical model editor and a parallelized simulator. We also propose several new SGBN extensions.
+Together these new standards and software tools would accelerate whole-cell modeling.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Whole-cell modeling, Systems biology, Computational biology, Mathematical modeling, Simulation, Standards, Education
+\end{IEEEkeywords}
+
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
@@ -265,9 +246,6 @@ The summer school also made significant strides toward encoding the \textit{M. g
 However, significant work remains to complete, test, integrate, simulate, and document the SBML-encoded version of the \textit{M. genitalium} model. Currently, SBML cannot represent whole-cell models, there is no simulation software program which could efficiently simulate an SBML-encoded whole-cell model, and there is no graphical editor which is capable of constructing, editing, or visualizing an SBML-encoded whole-cell model. SBML must be expanded to support multi-algorithm modeling, template reactions, particle-based state representation, and arrays and an efficient simulation software program and a user-friendly model editor must be developed to enable modelers to easily construct and simulate whole-cell models. New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for scientific research. SBGN and the SBGN viewers must also be expanded to support hybrid diagrams, automatic graph layout, automatic graph reduction, and contextual zooming.
 
 In summary, we believe that whole-cell modeling has the potential to be an important tool for biological discovery, bioengineering, and medicine. Achieving this potential requires improved standards for describing whole-cell models, as well as new general-purpose simulation software for reproducibly simulating whole-cell models. In turn, this requires expanding the whole-cell modeling field including training additional young researchers.
-
-\section*{Acknowledgments}
-The school was supported by a grant from the Volkswagen Foundation to DW and FS. JRK was supported by a James S. McDonnell Foundation Postdoctoral Fellowship Award in Studying Complex Systems.
 
 \ifCLASSOPTIONcaptionsoff
   \newpage
