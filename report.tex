@@ -85,7 +85,11 @@ Joseph Cursons,
     Namrata Tomar,
     Jannis Uhlendorf,\\
     Markus Wolfien,
+<<<<<<< HEAD
     James T. Yurkovich, 
+=======
+    James T. Yurkovich,
+>>>>>>> ab7345806e02e2cdc1c9f6901a80aca3914d880a
     Yan Zhu, and
     Anna Zhukova
     \thanks{
@@ -120,7 +124,11 @@ Joseph Cursons,
     \thanks{K. Smallbone is with the Manchester Centre for Integrative Systems Biology, University of Manchester, Manchester M1 7DN, UK (e-mail: \email{kieran.smallbone@manchester.ac.uk}).}
     \thanks{J.-H. Song is with the Department of Bio and Brain Engineering, Korea Advanced Institute of Science and Technology, Daejeon 305-701, Republic of Korea (e-mail: \email{song.je-hoon@kaist.ac.kr}).}
     \thanks{N. Tomar is with the Department of Dermatology, University Medicine, Friedrich-Alexander University of Erlangen-N\"urnberg, 91052 Erlangen, Germany.}
+<<<<<<< HEAD
  \thanks{J.~T. Yurkovich is with the Department of Bioengineering, University of California, San Diego, La Jolla, CA 92093, USA.}    
+=======
+    \thanks{J. T. Yurkovich is with the Department of Bioengineering, University of California, San Diego, La Jolla, CA 92093, USA (e-mail: \email{jyurkovich@ucsd.edu}).}
+>>>>>>> ab7345806e02e2cdc1c9f6901a80aca3914d880a
     \thanks{Y. Zhu is with Monash Institute of Pharmaceutical Sciences, Monash University, Parkville, VIC 3052, Australia.}
     \thanks{A. Zhukova is with the Institut de Biochimie et Génétique Cellulaires, National Center for Scientific Research, and also with the University of Bordeaux, France, 33077 Bordeaux Cedex, France (e-mail: \email{zhutchok@gmail.com}).}
     \thanks{Digital Object Identifier 10.1109/TBME.XXXX.XXXXXXX}
@@ -218,8 +226,8 @@ The documentation group was responsible for annotating the model.
 The goal was to annotate every model entity with a cross reference to an external database such as ChEBI~\cite{Hastings2013} as in the case of small molecules and/or in terms of other model entities as in the case of chemical reactions.
 The group wrote scripts to search molecular biology databases such as ChEBI for every entity contained in the \textit{M. genitalium} model.
 The main problem faced by the documentation group was that many model entities are not currently represented by any molecular biology database.
-This shortcoming can, however, easily be overcome by proposing new ontology terms to the  databases.
-However, this problem highlights the need for expanded molecular biology databases to aggregate data on more biological molecules and interactions. 
+This shortcoming can easily be overcome by proposing new ontology terms to the databases.
+This problem highlights the need for expanded molecular biology databases to aggregate data on more biological molecules and interactions. 
 
 The documentation group also helped the other groups map their sub-models by providing advice on SBGN and SBGN-compatible drawing tools such as VANTED~\cite{Rohn2012}.
 The main visualization problem encountered by the documentation group was that whole-cell models require large maps which must be manually arranged to produce intuitive diagrams.
@@ -235,6 +243,12 @@ Going forward, we plan to publish SBML-encoded versions of each of the \textit{M
 
 \section{Toward SBML-, SED-ML-, and SBGN-based standards for whole-cell modeling}
 Prior to the school, SBML, SED-ML, and SBGN had never been used to represent whole-cell or similarly complex models. Consequently, not surprisingly, the summer school revealed several limitations of SBML, SBGN, and the existing simulation software for large models. Importantly, the summer school facilitated discussions among modelers, tool developers, and model curators about how to best expand the existing standards and software tools to overcome these limitations.
+
+%\begin{figure*}
+%\centering
+%\includegraphics[width=\textwidth]{figure1.pdf}
+%\caption{\the\textwidth}
+%\end{figure*}
 
 \subsection{Current limitations}
 As discussed above, SBML does not support multi-algorithm modeling, particle-based state representation, or arbitrary random number generation and the current SBML simulators have limited support for arrays. Consequently, SBML cannot efficiently simulate models with large, combinatorial state spaces; represent arbitrary stochastic models; or efficiently simulate arbitrary mathematical models involving matrix algebra operations. State spaces must be enumerated, stochastic models must be described using a ratio time scale and simulated using the Gillespie or other approximate algorithm, and matrix algebra operations must be expanded. For the \textit{M. genitalium} whole-cell model this would result in large, unmanageable XML files and millions of variables.
@@ -340,7 +354,11 @@ Replication               & Vincent Knight-Schrijver         & Babraham Institut
                           & Je-Hoon Song                     & Korea Advanced Institute of Science and Technology, Republic of Korea\\
                           & Jannis Uhlendorf                 & Humboldt University of Berlin, Germany\\
                           & Dagmar Waltemath                 & University of Rostock, Germany\\
+<<<<<<< HEAD
                           & James T. Yurkovich                  & University of California, San Diego, USA\\
+=======
+                          & James T. Yurkovich               & University of California, San Diego, USA\\
+>>>>>>> ab7345806e02e2cdc1c9f6901a80aca3914d880a
                           & Anna Zhukova                     & National Center for Scientific Research and University of Bordeaux, France\\\hline
 Replication initiation    & Harold Gomez                     & Boston University, USA\\
                           & Jens Hahn                        & Humboldt University of Berlin, Germany\\
