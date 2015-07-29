@@ -90,7 +90,8 @@
     Markus Wolfien,
     James T. Yurkovich,
     Yan Zhu, 
-    Anna Zhukova \\and
+    Argyris Zardilis, 
+    Anna Zhukova \\ and
     Falk Schreiber$^+$
     \thanks{
         Manuscript received XXX XX, 2015; revised XXX XX, 201X; accepted XXX XX, 201X. Date of publication XXX XX, 201X; date of current version XXX XX, 201X.
@@ -128,6 +129,7 @@
 %    \thanks{J. Uhlendorf is with the Department of Biology, Humboldt University of Berlin, 10115 Berlin, Germany (e-mail: \email{jannis.uhlendorf@hu-berlin.de}).}
     \thanks{J. T. Yurkovich is with the Department of Bioengineering, University of California, San Diego, La Jolla, CA 92093, USA (e-mail: \email{jyurkovich@ucsd.edu}).}
     \thanks{Y. Zhu is with Monash Institute of Pharmaceutical Sciences, Monash University, Parkville, VIC 3052, Australia.}
+    \thanks{A. Zardilis is with the Centre for Synthetic and Systems Biology, University of Edinburgh, UK.} 
     \thanks{A. Zhukova is with the Institut de Biochimie et G\'en\'etique Cellulaires, National Center for Scientific Research, and also with the University of Bordeaux, France, 33077 Bordeaux Cedex, France (e-mail: \email{zhutchok@gmail.com}).}
     \thanks{Digital Object Identifier 10.1109/TBME.XXXX.XXXXXXX}
 }
@@ -205,7 +207,7 @@ To encode many of the submodels in SBML, the groups also had to either enumerate
 
 The lack of SBML simulator support for arrays was another challenge to encoding submodels in SBML. All of the groups overcame the lack of array support by enumerating individual array elements and all matrix algebra computations. This created verbose SBML files that are difficult to interpret, maintain, and edit. Enumerating the matrix algebra computations also increases the computational cost of simulation.
 
-Combine, we found it difficult to encode most of the MATLAB submodels in SBML. As discussed below, future progress in whole-cell modeling would be facilitated by expanded support for the SBML Multistate and Multicomponent Species~\cite{SBMLMulti} and SBML Arrays~\cite{SBMLArrays} packages.
+Combined, we found it difficult to encode most of the MATLAB submodels in SBML. As discussed below, future progress in whole-cell modeling would be facilitated by expanded support for the SBML Multistate and Multicomponent Species~\cite{SBMLMulti} and SBML Arrays~\cite{SBMLArrays} packages.
 
 \subsection{Model integration}
 The integration group was responsible for assembling the submodels into a single model. This included devising a scheme for representing global state variables, defining the interfaces exposed by the submodels to the global state variables, and developing a method to manage concurrent writing of shared state variables by multiple submodels. The integration group defined the global state variables as the union of all state variables shared by at least two submodels rather than by explicitly defining a set of global state variables as done by the original MATLAB-based simulation. The advantages of this approach are that submodel developers are not also required to develop global state variables and that it minimizes the number of global state variables. The disadvantages of this approach are that the total set of variables is less transparent and that it requires users to learn all of the submodels and their naming conventions to analyze model simulations.
