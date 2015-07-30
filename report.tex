@@ -57,9 +57,9 @@
     Frank T. Bergmann,
     Vijayalakshmi Chelliah,
     Michael Hucka,\\
-   Marcus Krantz,
+    Marcus Krantz,
     Wolfram Liebermeister,
-   Pedro Mendes,
+    Pedro Mendes,
     Chris J. Myers,~\IEEEmembership{Senior~Member,~IEEE,}
     Pinar Pir,\\
     %%%%%%%%%%%%%%%%%%%
@@ -81,7 +81,7 @@
     J. Kyle Medley,
     Bertrand Moreau, \\
     Sucheendra K. Palaniappan,
-   Daniel Priego-Espinosa, 
+    Daniel Priego-Espinosa, 
     Martin Scharm,
     Mahesh Sharma,
     Kieran Smallbone,\\
@@ -248,26 +248,26 @@ The documentation group also helped the other groups visualize submodels by prov
 The main visualization problem encountered by the documentation group was that whole-cell models require large diagrams that must be manually arranged to produce intuitive visualizations.
 
 \subsection{Progress}
-We produced preliminary SBML and SBGN versions of most of the \textit{M. genitalium} submodels and finished SBML and SBGN versions for the cytokinesis submodel. Significant work remains to finish encoding the model. We must finish encoding the submodels, expand software tools such as iBioSim to support multi-algorithm modeling, rigorously test the SBML model by reproducing all of the MATLAB model tests, and thoroughly diagram and document the SBML model.
+We produced preliminary SBML and SBGN versions of most of the \textit{M. genitalium} submodels and finished SBML and SBGN versions for the cytokinesis submodel. Significant work remains to finish encoding the model. We must finish encoding the submodels, expand software tools such as iBioSim to support multi-algorithm modeling, rigorously test the entire SBML model by reproducing all of the MATLAB model tests, and thoroughly diagram and document the SBML model.
 
 \subsection{Future steps}
-We hope to finish encoding the \textit{M. genitalium} submodels in SBML and integrating the SBML-encoded submodels into a single model that can be simulated by open-source software tools such as BioUML, COPASI, iBioSim, and libRoadRunner. Several students and instructors have continued to work and meet online. Many also plan to participate in a second meeting in October, 2015, that will be held at the University of Utah, USA, immediately prior to the 2015 COMBINE Forum.
+We hope to finish encoding the \textit{M. genitalium} submodels in SBML and integrating the SBML-encoded submodels into a single model that can be simulated by open-source software tools such as BioUML, COPASI, iBioSim, and libRoadRunner. Several students and instructors have continued to work and meet online. Many also plan to participate in a second meeting in October, 2015, that will be held at the University of Utah, USA, immediately prior to the 2015 COMBINE Forum (\url{http://co.mbine.org/events/COMBINE_2015}).
 
 Going forward, we hope to publish SBML-encoded versions of each of the \textit{M. genitalium} submodels to BioModels, along with SED-ML tests, SBGN diagrams, and textual documentations. This would make the submodels searchable, retrievable, and reusable by other scientists. We believe this would be a valuable community resource. It would demonstrate how to build a whole-cell model and enable other researchers to build upon the \textit{M. genitalium} submodels.
 
 \section{Toward SBML-, SED-ML-, and SBGN-based standards for whole-cell modeling}
-The school was the first attempt to encode a whole-cell model using open standards. It is thus unsurprising that it revealed limitations with currently-available formats, but it also generated ideas for how existing standards and tools can be expanded to better support large, heterogeneous models.
+The school was the first attempt to encode a whole-cell model using open standards. Thus we were not surprised to learn several limitations with currently-available formats. More importantly, the school generated ideas for how our existing standards and tools can be expanded to better support large, heterogeneous models.
 
 \subsection{Standard extensions}
 Several enhancements to simulation software tools and databases are needed to facilitate whole-cell modeling. First, more SBML simulators must support multi-algorithm simulations. This will require research to determine the best way to integrate heterogeneous submodels, including rigorously evaluating the schemes proposed by the integration group. Significant effort will also be needed to develop an efficient, parallelized, multi-algorithm simulator.
 
-Second, more SBML simulators must implement the SBML Multistate and Multicomponent Species package to support hybrid population/particle-based state representation such as that used by BioNetGen \cite{Hlavacek2006, Hogg2014} and NFSim \cite{Sneddon2011}. This would enable more succinct model descriptions, making models much easier to understand, edit, and expand. For example, translation could be described using a single reaction pattern and arrays of mRNA-specific translation initiation rates and codon-specific elongation rates rather than by enumerating each reaction. By separating mathematical descriptions from quantitative parameter values, reaction patterns would also make the connection between dynamical models and the experimental data used to inform their parameters more transparent. Implementing the SBML Multistate and Multicomponent Species package would also enable modelers to efficiently simulate models with large, combinatorial state spaces.
+Second, more SBML simulators must implement the SBML Multistate and Multicomponent Species package to support hybrid population/particle-based state representation such as that used by BioNetGen \cite{Hlavacek2006, Hogg2014} and NFSim \cite{Sneddon2011}. This would enable more succinct model descriptions, making models much easier to understand, edit, and expand. For example, translation could be described using a single reaction pattern and parameterized by arrays of mRNA-specific translation initiation rates and codon-specific elongation rates rather than by enumerating each reaction. By separating mathematical descriptions from quantitative parameter values, reaction patterns would also make the connection between dynamical models and the experimental data used to inform their parameters more transparent. Implementing the SBML Multistate and Multicomponent Species package would also enable modelers to efficiently simulate models with large, combinatorial state spaces.
 
 New user-friendly graphical editors must also be developed to enable researchers to easily build SBML files with these new features. These graphical editors must also allow researchers to transparently map model parameters onto experimental data organized in pathway/genome databases.
 
-In addition, our molecular biology databases such as ChEBI must be expanded to enable researchers to concretely define whole-cell models in terms of external entities. 
+In addition, molecular biology databases such as ChEBI must be expanded to enable researchers to concretely define whole-cell models in terms of external entities. 
 
-SBGN must also be expanded in several ways. SBGN must be expanded to support hybrid diagrams which contain Process Descriptions, Entity Relationships, and Activity Flow maps. The SBGN viewers must also be expanded to provide layout algorithms suitable for large visualizations and automatically display diagrams at multiple levels of granularity using contextual zooming and model reduction. 
+SBGN must also be expanded in several ways. SBGN must be expanded to support hybrid diagrams which contain Process Descriptions, Entity Relationships, and Activity Flow nodes. The SBGN viewers must also be expanded to provide layout algorithms suitable for large visualizations and automatically display diagrams at multiple levels of granularity using contextual zooming and model reduction. 
 
 Together, these software, database, and SBGN expansions would enable more researchers to more easily build, manage, simulate, and reproduce whole-cell models and simulations. These new standards and tools would also enable researchers to build more comprehensive and more accurate models. Ultimately, this would enable whole-cell modeling to support bioengineering and personalized medicine.
 
@@ -283,7 +283,7 @@ In addition, the summer school generated clear goals for expanding the existing 
 
 New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for research. In addition, our molecular biology databases must be expanded to facilitate whole-cell model annotation. Furthermore, SBGN and the SBGN viewers must be expanded to support hybrid diagrams, automatic graph layout, automatic graph reduction, and contextual zooming. CellML should also be rigorously evaluated as another potential whole-cell modeling standard.
 
-In summary, we believe that whole-cell modeling has the potential to be an important tool for biological discovery, bioengineering, and medicine. Achieving this potential requires new simulation software for simulating whole-cell models. In turn, this requires expanding the whole-cell modeling field including training additional young researchers.
+In summary, we believe that whole-cell modeling has the potential to be an important tool for biological discovery, bioengineering, and medicine. Achieving this potential requires new simulation software for simulating whole-cell models. In turn, this requires expanding the whole-cell modeling field including training young researchers.
 
 \ifCLASSOPTIONcaptionsoff
   \newpage
