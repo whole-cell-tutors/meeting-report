@@ -54,8 +54,8 @@
 \author{
     Dagmar Waltemath$^{*,+}$,
     Jonathan R. Karr$^+$, 
-    Chris J. Myers,~\IEEEmembership{Senior~Member,~IEEE,} \\
-    Michael Hucka,
+    Chris J. Myers,~\IEEEmembership{Senior~Member,~IEEE,}
+    Michael Hucka,\\
     Frank T. Bergmann,
     Vijayalakshmi Chelliah,
    Marcus Krantz,
@@ -73,26 +73,27 @@
 %    Muhammad Haseeb,
     Denis Kazakiewic, 
     Ilya Kiselev,
-    Vincent Knight-Schrijver,\\
+    Vincent Knight-Schrijver,
     Christian Kn\"{u}pfer,
-    Matthias K\"{o}nig,
+    Matthias K\"{o}nig,\\
     Nikita Mandrik,
     J. Kyle Medley,
-    Sucheendra K. Palaniappan,\\
+    Sucheendra K. Palaniappan,
     Daniel Priego-Espinosa, 
-    Martin Scharm,
+    Martin Scharm,\\
     Mahesh Sharma,
     Kieran Smallbone,
     Je-Hoon Song,
-    Tom Theile,\\
+    Tom Theile,
     Namrata Tomar, 
-    Jannis Uhlendorf,
+    Jannis Uhlendorf,\\
     Markus Wolfien,
     James T. Yurkovich,
     Yan Zhu, 
     Argyris Zardilis, 
-    Anna Zhukova \\ and
-    Falk Schreiber$^+$
+    Anna Zhukova, and
+    Falk Schreiber$^+$\\
+	
     \thanks{
         Manuscript received XXX XX, 2015; revised XXX XX, 201X; accepted XXX XX, 201X. Date of publication XXX XX, 201X; date of current version XXX XX, 201X.
         This work was supported in part by the Volkswagen Foundation (Grant to D. W. and F. S.) and the James S. McDonnell Foundation (Postdoctoral Fellowship Award in Studying Complex Systems to J. R. K.).
@@ -165,7 +166,7 @@ Covert and colleagues developed the WholeCellKB~\cite{Karr2013}, WholeCellSimDB~
 
 Several software-agnostic systems biology standards have already been developed by the \emph{COmputational Modeling in BIology NEtwork} (COMBINE)~\cite{le2011meeting}, including the \emph{Systems Biology Markup Language} (SBML)~\cite{hucka2003}, the \emph{Cell Markup Language} (CellML)~\cite{hedley_2001b}, the \emph{Simulation Experiment Description Markup Language} (SED-ML)~\cite{sedml2011}, and the \emph{Systems Biology Graphical Notation} (SBGN)~\cite{LeNovereHMMSS09}. SBML and CellML are languages for representing mathematical models. CellML focuses on modularly encoding mathematical models, while SBML focuses on describing biological processes. Both support several modeling formalisms including ODEs and FBA. SED-ML is a language for describing computational experiments, including the simulation algorithm and parameter values. SED-ML enables scientists to reproduce simulations. SBGN is a visual notation for describing biological processes. To date, none of these open standards have been used with models as complex as the \textit{M. genitalium} model.
 
-We organized the 2015 Whole-Cell Modeling Summer School to train students in whole-cell modeling, as well as to evaluate the need for new standards and tools for whole-cell modeling. The majority of the school focused on encoding the \textit{M. genitalium} model using SBML, visualizing it with SBGN, and simulating it with SED-ML. This was both a learning exercise, as well as a tool for evaluating standard representations capabilities for encoding whole-cell models. The ultimate goal of the school was to encode an open-source whole-cell model in SBML, visualize the model using SBGN, simulate the model using open-source software, and use the model to conduct \textit{in silico} experiments encoded in SED-ML.
+We organized the 2015 Whole-Cell Modeling Summer School to train students in whole-cell modeling, as well as to evaluate the need for new standards and tools for whole-cell modeling. The majority of the school focused on encoding the \textit{M. genitalium} model using SBML, visualizing it with SBGN, and simulating it with SED-ML. This was both a learning exercise, as well as a tool for evaluating standard representations capabilities for encoding whole-cell models. The ultimate goal of the school was to encode an open-source whole-cell model in SBML, visualize the model using SBGN, simulate the model using open-source software, and use the model to conduct \textit{in silico} experiments encoded in SED-ML. We chose to focus the course on SBML because there was insufficient time to evaluate both SBML and CellML.
 
 Here, we describe the summer school, outline our progress encoding the \textit{M. genitalium} model using standards, and describe several standard extensions and software tools that we believe are needed to support efficient whole-cell modeling.
 
@@ -271,7 +272,7 @@ The summer school also made valuable strides toward encoding the \textit{M. geni
 
 In addition, the summer school generated clear goals for expanding the existing SBML software tools to support whole-cell modeling. The SBML simulators must be expanded to support all of the Hierarchical Model Composition, Multistate and Multicomponent Species, Arrays, and Flux Balance Constraints packages to efficiently simulate whole-cell models. Furthermore, the school unified modelers, software developers, and standards developers to develop standardized, open-source tools for whole-cell and other large models.
 
-New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for research. In addition, our molecular biology databases must be expanded to facilitate whole-cell model annotation. Furthermore, SBGN and the SBGN viewers must also be expanded to support hybrid diagrams, automatic graph layout, automatic graph reduction, and contextual zooming.
+New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for research. In addition, our molecular biology databases must be expanded to facilitate whole-cell model annotation. Furthermore, SBGN and the SBGN viewers must be expanded to support hybrid diagrams, automatic graph layout, automatic graph reduction, and contextual zooming. CellML should also be rigorously evaluated as another potential whole-cell modeling standard.
 
 In summary, we believe that whole-cell modeling has the potential to be an important tool for biological discovery, bioengineering, and medicine. Achieving this potential requires new simulation software for simulating whole-cell models. In turn, this requires expanding the whole-cell modeling field including training additional young researchers.
 
