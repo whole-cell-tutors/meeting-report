@@ -175,7 +175,20 @@ Despite extensive documentation, this whole-cell model software is difficult to 
 
 Covert and colleagues developed the WholeCellKB~\cite{Karr2013}, WholeCellSimDB~\cite{Karr2014}, and WholeCellViz~\cite{Lee2013} software tools to provide user-friendly interfaces to their modeling software. However, significant domain expertise is still required to use their modeling software, particularly to construct new models. Alternative approaches are needed to enable more researchers to develop and simulate their own whole-cell models. Software-independent standards and other open-source software tools have the potential to enable researchers to develop such models more quickly, to explore them more deeply, and to evaluate them more rigorously. Furthermore, standards would make whole-cell models more reusable and comparable, as well as more searchable and retrievable through model repositories such as BioModels~\cite{juty2015biomodels,chelliah2015biomodels}.
 
-Several software-agnostic systems biology standards have already been developed by the \emph{COmputational Modeling in BIology NEtwork} (COMBINE)~\cite{le2011meeting}, including the \emph{Systems Biology Markup Language} (SBML)~\cite{hucka2003}, the \emph{Cell Markup Language} (CellML)~\cite{hedley_2001b}, the \emph{Simulation Experiment Description Markup Language} (SED-ML)~\cite{sedml2011}, and the \emph{Systems Biology Graphical Notation} (SBGN)~\cite{LeNovereHMMSS09}. SBML and CellML are languages for representing mathematical models. CellML focuses on modularly encoding mathematical models, while SBML focuses on describing biological processes. Both support several modeling formalisms including ODEs and FBA. SED-ML is a language for describing computational experiments, including the simulation algorithm and parameter values. SED-ML enables scientists to reproduce simulations. SBGN is a visual notation for describing biological processes. To date, none of these open standards have been used with models as complex as the \textit{M. genitalium} model.
+Several software-agnostic systems biology standards have already been developed by the \emph{COmputational Modeling in BIology NEtwork} (COMBINE)~\cite{le2011meeting}, including the \emph{Systems Biology Markup Language} (SBML)~\cite{hucka2003}, the \emph{Cell Markup Language} (CellML)~\cite{hedley_2001b}, the \emph{Simulation Experiment Description Markup Language} (SED-ML)~\cite{sedml2011}, and the \emph{Systems Biology Graphical Notation} (SBGN)~\cite{LeNovereHMMSS09} (Table~\ref{tab:standards}). SBML and CellML are languages for representing mathematical models. CellML focuses on modularly encoding mathematical models, while SBML focuses on describing biological processes. Both support several modeling formalisms including ODEs and FBA. SED-ML is a language for describing computational experiments, including the simulation algorithm and parameter values. SED-ML enables scientists to reproduce simulations. SBGN is a visual notation for describing biological processes. To date, none of these open standards have been used with models as complex as the \textit{M. genitalium} model.
+
+\begin{table*}[tb!]
+\caption{\label{tab:standards} Existing systems biology standards and related organizations.}
+\begin{tabularx}{\textwidth}{llX}\toprule
+\textbf{Acronym} & \textbf{Name} & \textbf{Description}\\\midrule
+CellML  & Cell Markup Language                              & Standard for describing dynamical models in terms of mathematical relationships\\
+COMBINE & COmputational Modeling in BIology NEtwork         & Community dedicated to developing standards and associated software tools\\
+SBGN    & Systems Biology Graphical Notation                & Standard for describing biochemical pathway diagrams \\
+SBML    & Systems Biology Markup Language                   & Standard for describing dynamical models in terms of biochemical processes \\
+SED-ML  & Simulation Experiment Description Markup Language & Standard for describing computational experiments\\
+\bottomrule
+\end{tabularx}
+\end{table*}
 
 We organized the 2015 Whole-Cell Modeling Summer School to train students in whole-cell modeling, as well as to evaluate the need for new standards and tools for whole-cell modeling. The majority of the school focused on encoding the \textit{M. genitalium} model using SBML, visualizing it with SBGN, and simulating it with SED-ML. This was both a learning exercise, as well as a tool for evaluating standard representations capabilities for encoding whole-cell models. The ultimate goal of the school was to encode an open-source whole-cell model in SBML, visualize the model using SBGN, simulate the model using open-source software, and use the model to conduct \textit{in silico} experiments encoded in SED-ML. We chose to focus the course on SBML because there was insufficient time to evaluate both SBML and CellML.
 
@@ -219,7 +232,20 @@ To encode many of the submodels in SBML, the groups also had to either enumerate
 
 The lack of SBML simulator support for arrays was another challenge to encoding submodels in SBML. All of the groups overcame the lack of array support by enumerating individual array elements and all matrix algebra computations. This created verbose SBML files that are difficult to interpret, maintain, and edit. Enumerating the matrix algebra computations also increases the computational cost of simulation.
 
-Combined, we found it difficult to encode most of the MATLAB submodels in SBML. As discussed below, future progress in whole-cell modeling would be facilitated by expanded support for the SBML Multistate and Multicomponent Species~\cite{SBMLMulti} and SBML Arrays~\cite{SBMLArrays} packages.
+Combined, we found it difficult to encode most of the MATLAB submodels in SBML. As discussed below, future progress in whole-cell modeling would be facilitated by expanded support for the SBML Hierarchical Model Composition, Multistate and Multicomponent Species~\cite{SBMLMulti} and Arrays~\cite{SBMLArrays} packages.
+
+\begin{table*}[tb!]
+\caption{\label{tab:new-standards} New and expanded tools needed to facilitate whole-cell modeling.}
+\begin{tabularx}{\textwidth}{llX}\toprule
+\textbf{Type} & \textbf{Description}\\\midrule
+Database & Expanded molecular biological databases such as ChEBI \\
+Software & Efficient, parallelized multi-algorithm simulator which supports the SBML Hierarchical Model Composition package \\
+Software & Hybrid population/particle simulator which supports the SBML Multistate and Multicomponent Species package \\
+Software & Graphical model editor which transparently build models from pathway/genome databases\\
+Standard & SBGN support for hybrid maps containing Process Description, Entity Relationship, and Activity Flow nodes \\
+\bottomrule
+\end{tabularx}
+\end{table*}
 
 \subsection{Model integration}
 The integration group was responsible for assembling the submodels into a single model. This included devising a scheme for representing global state variables, defining the interfaces exposed by the submodels to the global state variables, and developing a method to manage concurrent writing of shared state variables by multiple submodels. The integration group defined the global state variables as the union of all state variables shared by at least two submodels rather than by explicitly defining a set of global state variables as done by the original MATLAB-based simulation. The advantages of this approach are that submodel developers are not also required to develop global state variables and that it minimizes the number of global state variables. The disadvantages of this approach are that the total set of variables is less transparent and that it requires users to learn all of the submodels and their naming conventions to analyze model simulations.
@@ -233,12 +259,6 @@ The integration group also explored several more complex solutions that would en
 The integration group implemented their strategies using SBML and SED-ML.  In particular, the group wrote Python scripts to create SBML and SED-ML files automatically from the variable usage information provided by the other teams.  The first script created template SBML models for each process to ensure consistent interfaces.  The second script created a SED-ML file to implement the coordinated execution of all the current processes and share the variables using the schemes described above.  The third script created a hierarchical SBML model that connected the processes in one global top-level file, and it also included separate models to implement variable sharing between the processes.  The SED-ML and hierarchical SBML approaches are two alternatives that we decided to explore in parallel.  Which one is ultimately used depends on whether one feels the description of the execution of the parallel processes is part of the model or the simulation strategy.
 
 The integration group tested their strategies using iBioSim because iBioSim is one of the few simulators that supports model composition.  Another challenge to integrating the submodels was the lack of a multi-algorithm simulator. The integration group plans to overcome this limitation by adding support for multi-algorithm simulation to iBioSim.
-
-\begin{figure*}[bt!]
-\centering
-\includegraphics[width=\textwidth]{figure1/figure1.pdf}
-\caption{\label{fig:1} Whole-cell modeling pipeline. First, researchers will assemble experimental data into pathway/genome databases. Second, researchers will use pathway/genome databases to construct submodels. Third, researchers will use multi-algorithm simulators to conduct \textit{in silico} experiments. Lastly, researchers will analyze in silico experiments to learn new biology.}
-\end{figure*}
 
 \subsection{Annotation, documentation, and visualization}
 The documentation group was responsible for annotating the model.
@@ -263,7 +283,14 @@ Going forward, we hope to publish SBML-encoded versions of each of the \textit{M
 The school was the first attempt to encode a whole-cell model using open standards. Thus we were not surprised to learn several limitations with currently-available formats. More importantly, the school generated ideas for how our existing standards and tools can be expanded to better support large, heterogeneous models.
 
 \subsection{Standard extensions}
-Several enhancements to simulation software tools and databases are needed to facilitate whole-cell modeling. First, more SBML simulators must support multi-algorithm simulations. This will require research to determine the best way to integrate heterogeneous submodels, including rigorously evaluating the schemes proposed by the integration group. Significant effort will also be needed to develop an efficient, parallelized, multi-algorithm simulator.
+Several enhancements to simulation software tools and databases are needed to facilitate whole-cell modeling (Table~\ref{tab:new-standards}). First, more SBML simulators must support multi-algorithm simulations. This will require research to determine the best way to integrate heterogeneous submodels, including rigorously evaluating the schemes proposed by the integration group. Significant effort will also be needed to develop an efficient, parallelized, multi-algorithm simulator.
+
+\begin{figure*}[bt!]
+\centering
+\includegraphics[width=\textwidth]{figure1/figure1.pdf}
+\caption{\label{fig:1} Whole-cell modeling pipeline. First, researchers will assemble experimental data into pathway/genome databases. Second, researchers will use pathway/genome databases to construct submodels. Third, researchers will use multi-algorithm simulators to conduct \textit{in silico} experiments. Lastly, researchers will analyze in silico experiments to learn new biology.}
+\end{figure*}
+
 
 Second, more SBML simulators must implement the SBML Multistate and Multicomponent Species package to support hybrid population/particle-based state representation such as that used by BioNetGen \cite{Hlavacek2006, Hogg2014} and NFSim \cite{Sneddon2011}. This would enable more succinct model descriptions, making models much easier to understand, edit, and expand. For example, translation could be described using a single reaction pattern and parameterized by arrays of mRNA-specific translation initiation rates and codon-specific elongation rates rather than by enumerating each reaction. By separating mathematical descriptions from quantitative parameter values, reaction patterns would also make the connection between dynamical models and the experimental data used to inform their parameters more transparent. Implementing the SBML Multistate and Multicomponent Species package would also enable modelers to efficiently simulate models with large, combinatorial state spaces.
 
@@ -271,7 +298,7 @@ New user-friendly graphical editors must also be developed to enable researchers
 
 In addition, molecular biology databases such as ChEBI must be expanded to enable researchers to concretely define whole-cell models in terms of external entities. 
 
-SBGN must also be expanded in several ways. SBGN must be expanded to support hybrid diagrams which contain Process Descriptions, Entity Relationships, and Activity Flow nodes. The SBGN viewers must also be expanded to provide layout algorithms suitable for large visualizations and automatically display diagrams at multiple levels of granularity using contextual zooming and model reduction. 
+SBGN must also be expanded in several ways. SBGN must be expanded to support hybrid diagrams which contain Process Description, Entity Relationship, and Activity Flow nodes. The SBGN viewers must also be expanded to provide layout algorithms suitable for large visualizations and automatically display diagrams at multiple levels of granularity using contextual zooming and model reduction. 
 
 Together, these software, database, and SBGN expansions would enable more researchers to more easily build, manage, simulate, and reproduce whole-cell models and simulations. These new standards and tools would also enable researchers to build more comprehensive and more accurate models. Ultimately, this would enable whole-cell modeling to support bioengineering and personalized medicine.
 
