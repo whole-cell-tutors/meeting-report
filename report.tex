@@ -192,7 +192,7 @@
 \begin{abstract}
 Whole-cell modeling is a promising tool for biological research, bioengineering, and medicine. 
 However, substantial work remains to create complete, accurate, and reproducible models.
-Among the advances needed are a strong theoretical understanding of multi-algorithm modeling, standardized modeling languages, and an efficient general-purpose simulator.
+Among the advances needed are a strong theoretical understanding of multi-algorithm modeling, standardized modeling languages, and efficient general-purpose simulators.
 We organized the 2015 Whole-Cell Modeling Summer School to teach whole-cell modeling, as well as to evaluate the need for new modeling standards and tools by encoding a recently published whole-cell model in SBML.
 We describe several standards extensions, software tools, and databases which are needed to facilitate reproducible whole-cell modeling, including a graphical model editor, a multi-algorithm simulator, and several SBGN extensions.
 Together these new standard extensions and software tools could accelerate whole-cell modeling.
@@ -212,7 +212,7 @@ Computational models also have the potential to enable bioengineers to design ne
 Recently, researchers at Stanford University developed the first whole-cell model of the gram-positive bacterium \textit{Mycoplasma genitalium}~\cite{Karr2012}. The model represents the life cycle of a single Mycoplasma cell including the copy number dynamics of each metabolite, RNA, and protein species and accounts for every known gene function. The model is composed of 28 submodels, each of which is implemented using different mathematical formalisms including \emph{ordinary differential equations} (ODEs), \emph{flux balance analysis} (FBA), and \emph{Boolean rules} (BRs), and trained using different experimental data. 
 The model is implemented in MATLAB, is available open-source under the MIT license~\cite{wholeCell}, and is extensively documented. This has enabled other researchers to use the model to conduct \textit{in silico} experiments~\cite{Sanghvi2013, Purcell2013, Kazakiewicz2015}. 
 
-Despite extensive documentation, this whole-cell model software is difficult to use. The software is large, complex, and time-consuming to learn. The software also cannot easily be reused to simulate other models because many of the model details are intertwined with the software. In addition, many academic researchers and many software developers cannot use the model software because MATLAB is proprietary and expensive. Compared to other languages with larger development communities such as Python, MATLAB has also few packages and development tools. In particular, MATLAB has limited support for object-oriented programming. Furthermore, the model software is not optimally efficient because MATLAB is just-in-time compiled and dynamically typed.
+Despite extensive documentation, this whole-cell model software is difficult to use. The software is large, complex, and time-consuming to learn. The software also cannot easily be reused to simulate other models because many of the model details are intertwined with the software. In addition, many academic researchers and many software developers cannot use the model software because MATLAB is proprietary and expensive. Compared to other languages with larger development communities such as Python, MATLAB has also few packages and development tools. In particular, MATLAB has limited support for object-oriented programming. Furthermore, the model software is not optimally efficient because \mbox{MATLAB} is just-in-time compiled and dynamically typed.
 
 Covert and colleagues developed the WholeCellKB~\cite{Karr2013}, WholeCellSimDB~\cite{Karr2014}, and WholeCellViz~\cite{Lee2013} software tools to provide user-friendly interfaces to their modeling software. However, significant domain expertise is still required to use their modeling software, particularly to construct new models. Alternative approaches are needed to enable more researchers to develop and simulate their own whole-cell models. Software-independent standards and other open-source software tools have the potential to enable researchers to develop such models more quickly, to explore them more deeply, and to evaluate them more rigorously. Furthermore, standards would make whole-cell models more reusable and comparable, as well as more searchable and retrievable through model repositories such as BioModels~\cite{juty2015biomodels,chelliah2015biomodels}.
 
@@ -223,14 +223,14 @@ Several software-agnostic systems biology standards have already been developed 
 \begin{tabularx}{\textwidth}{llX}\toprule
 \textbf{Acronym} & \textbf{Name} & \textbf{Description}\\\midrule
 %CellML  & Cell Markup Language                              & Standard for describing dynamical models in terms of mathematical relationships\\
-COMBINE 			& COmputational Modeling in BIology NEtwork         		& Community dedicated to developing standards and associated software tools\\
-\hline
+COMBINE 			& COmputational Modeling in BIology NEtwork         		& Community dedicated to developing standards and associated software\\
+\midrule
 SBGN    				& Systems Biology Graphical Notation               	 		& Standard for describing biochemical pathway diagrams \\
 SBML Level 3 Core    	& Systems Biology Markup Language                   		& Standard for describing dynamical models in terms of biochemical processes \\
 SBML Comp 			& SBML Package: Hierarchical Model Composition 		&   Definition of how a model is composed from other models \cite{smith2013sbml}\\
 SBML FBC 			& SBML Package: Flux Balance Constraints 			&   Definition of constraint based models \cite{olivier2013sbml}\\
-SBML Multi  			& SBML Package: Multistate and Multicomponent Species & Representation of entity pools with multiple states and composed of multiple components \cite{waltemath2014meeting}\\
-SBML Arrays 			& SBML Package: Arrays 							& Support for expressing arrays of things \cite{waltemath2014meeting} \\
+SBML Multi  			& SBML Package: Multistate and Multicomponent Species & Representation of entity pools with multiple states and composed of multiple components \cite{SBMLMulti}\\
+SBML Arrays 			& SBML Package: Arrays 							& Support for expressing arrays of things \cite{SBMLArrays} \\
 SED-ML  				& Simulation Experiment Description Markup Language	& Standard for describing computational experiments\\
 \bottomrule
 \end{tabularx}
@@ -413,7 +413,7 @@ In summary, we believe that whole-cell modeling has the potential to be an impor
 \toprule
 \textbf{Group}           & \textbf{Participant}            & \textbf{Affiliation}\\
 \midrule
-Cytokinesis               & Naveen Kumar Aranganathan        & European Bioinformatics Institute , UK\\
+Cytokinesis               & Naveen Kumar Aranganathan        & European Bioinformatics Institute, UK\\
                           & Daniel Priego-Espinosa           & National Autonomous University of Mexico, Mexico\\
                           & Ilya Kiselev                     & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
                           & Wolfram Liebermeister            & Charit\'e Medical University of Berlin, Germany\\
