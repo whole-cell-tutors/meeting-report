@@ -245,7 +245,7 @@ Here, we describe the summer school, outline our progress encoding the \textit{M
 We organized the summer school to teach students how to build and encode models using COMBINE standards by encoding the \textit{M. genitalium} model using software-independent, standard representation formats.
 
 \subsection{Organization}
-The Whole-Cell Modeling Summer School was held March 9-13, 2015 at the University of Rostock, Germany. The school was organized by Dagmar Waltemath and Falk Schreiber and supported by the Volkswagen Foundation. The school included 45 students, nine instructors, and two organizers.
+The Whole-Cell Modeling Summer School was held March 9-13, 2015 at the University of Rostock, Germany. The school was organized by Dagmar Waltemath and Falk Schreiber and supported by the Volkswagen Foundation. The school included 43 students, nine instructors, and two organizers.
 
 The school began with two introductory lectures on modeling and modeling standards. Jonathan Karr from the Icahn School of Medicine at Mount Sinai, USA, presented an overview of whole-cell and multi-algorithm modeling. Michael Hucka from the California Institute of Technology, USA, presented an overview of the SBML, SED-ML, and SBGN standards; open-source software tools that support these standards; and the COMBINE initiative. We also organized three discussions on model composition, particle-based state representation, and stochastic modeling. 
 
@@ -264,7 +264,7 @@ Second, we found that students greatly enjoy learning through open research prob
 Third, we found that open-ended project-based schools require a high teacher-to-student ratio, a flexible schedule, and multidisciplinary project teams. A high teacher to student ratio allows students to get feedback and iterate through potential solutions quickly. A flexible schedule enables impromptu lectures and discussions. Multidisciplinary teams enable students to work through difficult problems by drawing on perspectives from multiple fields. 
 
 \section{Toward an SBML-encoded whole-cell model}
-The second goal of the school was to encode the \textit{M. genitalium} whole-cell model in SBML. To achieve this goal, most of the course was devoted to active learning sessions in which students were challenged to encode submodels of the \textit{M. genitalium} in SBML, integrate submodels into a single model, and simulate models using SED-ML. During these sessions, the students and instructors were divided into nine groups. Eight of the groups were tasked with encoding one or more submodels. The ninth group was tasked with developing a standards-compliant scheme to integrate the submodels into a single model. In addition, three instructors helped all of the groups annotate and visualize their submodels and one instructor helped all of the groups encode their submodels in SBML. Table~SI lists the nine groups and all of the students and instructors. 
+The second goal of the school was to encode the \textit{M. genitalium} whole-cell model in SBML. To achieve this goal, most of the course was devoted to active learning sessions in which students were challenged to encode submodels of the \textit{M. genitalium} in SBML, integrate submodels into a single model, and simulate models using SED-ML. During these sessions, the students and instructors were divided into nine groups. Eight of the groups were tasked with encoding one or more submodels. The ninth group was tasked with developing a standards-compliant scheme to integrate the submodels into a single model. In addition, three instructors helped all of the groups annotate and visualize their submodels and one instructor helped all of the groups encode their submodels in SBML. Table~SI in the supplemental material lists the nine groups and all of the students and instructors. 
 
 \subsection{Submodel encoding}
 The eight submodel encoding groups pursued various strategies to encode submodels in SBML. Several of the groups encoded submodels by first reading the submodel documentation, then drawing pathway diagrams using software tools such as CellDesigner~\cite{funahashi2008celldesigner} and VANTED~\cite{Rohn2012}, and finally writing scripts to generate SBML models from their diagrams using libSBML~\cite{bornstein_2008}. Other groups used modeling software tools such as Antimony~\cite{Smith2009}, BioUML~\cite{Kolpakov2006}, COBRApy~\cite{ebrahim2013cobrapy}, COPASI~\cite{Mendes2009}, iBioSim~\cite{Madsen2012}, and libRoadRunner~\cite{Somogyi17062015} to encode submodels based on their documentation. A few of the groups encoded submodels by converting the MATLAB code to SBML. These groups then generated SBGN diagrams from their SBML to better understand their submodels.
@@ -353,7 +353,7 @@ Together, these software, database, and SBGN expansions would enable more resear
 We anticipate that such expanded standards and tools will enable a four step approach to whole-cell model-driven discovery (Fig.~\ref{fig:1}). First, researchers will assemble experimental data from numerous sources including databases such as SABIO-RK~\cite{Wittig2012} and UniProt~\cite{UniProt2015} into pathway/genome databases using software tools such as Pathway Tools~\cite{Karp2010} and WholeCellKB. Second, researchers will use pathway/genome databases and graphical modeling tools such as BioUML, COPASI, and iBioSim to build submodels and encode them using transparent languages such as SBML. Third, multi-algorithm simulators will be used to conduct \textit{in silico} experiments. Lastly, software tools such as WholeCellSimDB and WholeCellViz will be used to discover new biology through exploring, visualizing, and analyzing in silico experiments.
 
 \section{Conclusion}
-The 2015 Whole-Cell Modeling Summer School provided 45 young scientists training in whole-cell and multi-algorithm modeling by encoding the \textit{M. genitalium} whole-cell model in SBML. Additional courses are needed to provide students with deeper theoretical training in dynamical modeling, multi-algorithm modeling, model reduction, and parameter estimation, as well as practical training in model construction including data curation, model building, numerical optimization, model testing, and model analysis.
+The 2015 Whole-Cell Modeling Summer School provided 43 young scientists training in whole-cell and multi-algorithm modeling by encoding the \textit{M. genitalium} whole-cell model in SBML. Additional courses are needed to provide students with deeper theoretical training in dynamical modeling, multi-algorithm modeling, model reduction, and parameter estimation, as well as practical training in model construction including data curation, model building, numerical optimization, model testing, and model analysis.
 
 Significant strides were made toward implementing the \textit{M. genitalium} whole-cell model using SBML. 
 We developed preliminary SBML versions of all of the submodels of the \textit{M. genitalium} model. We have continued to encode the \textit{M. genitalium} model since the school. Ultimately, we hope to publish an SBML-encoded version of the model to BioModels. 
@@ -389,7 +389,7 @@ In summary, we believe that whole-cell modeling has the potential to be an impor
 ~\\
 ~\\
 ~\\
-\textbf{2015 Whole-Cell Modeling Summer School} included the 56 participants listed in Table~SI.
+\textbf{2015 Whole-Cell Modeling Summer School} included the 54 participants listed in Table~SI in the supplemental material.
 \end{IEEEbiography}
 
 
@@ -404,82 +404,9 @@ In summary, we believe that whole-cell modeling has the potential to be an impor
 % ..........................................................................
 % End.
 
-\clearpage
-\setcounter{table}{0}
-\renewcommand{\thetable}{S\Roman{table}}
-
-\begin{table*}[ht!]
-\caption{2015 Whole-Cell Modeling Summer School participants.}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Group}           & \textbf{Participant}            & \textbf{Affiliation}\\
-\midrule
-Cytokinesis               & Naveen Kumar Aranganathan        & European Bioinformatics Institute , UK\\
-                          & Daniel Priego-Espinosa           & National Autonomous University of Mexico, Mexico\\
-                          & Ilya Kiselev                     & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
-                          & Wolfram Liebermeister            & Charit\'e Medical University of Berlin, Germany\\
-                          & Yan Zhu                          & Monash University, Australia\\
-\midrule
-DNA repair                & Arne Bittig                      & University of Rostock, Germany\\
-                          & Vijayalakshmi Chelliah           & European Bioinformatics Institute, UK\\
-                          & Audald Lloret-Vilas              & European Bioinformatics Institute, UK\\
-                          & Mahesh Sharma                    & National Institute of Pharmaceutical Education and Research, India\\
-                          & Namrata Tomar                    & Friedrich-Alexander University of Erlangen-N\"urnberg, Germany\\
-\midrule
-Metabolism                & Kambiz Baghalian                 & University of Oxford, UK\\
-                          & Frank T. Bergmann                & University of Heidelberg, Germany\\
-                          & Rafael Sousa Costa               & University of Lisbon, Portugal\\
-                          & Matthias K\"onig                 & Charit\'e Medical University of Berlin, Germany\\
-                          & Kieran Smallbone                 & University of Manchester, UK\\
-                          & Milenko Tokic                    & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
-\midrule
-Protein                   & Begum Alaybeyoglu                & Bo\v{g}azi\c{c}i University, Turkey\\
-                          & Matteo Cantarelli                & OpenWorm, UK\\
-                          & Yin Hoon Chew                    & University of Edinburgh, UK\\
-                          & Marcus Krantz                    & Humboldt University of Berlin, Germany\\
-                          & Daewon Lee                       & Korea Advanced Institute of Science and Technology, Republic of Korea\\
-\midrule
-Replication               & Vincent Knight-Schrijver         & Babraham Institute, UK\\
-                          & Je-Hoon Song                     & Korea Advanced Institute of Science and Technology, Republic of Korea\\
-                          & Jannis Uhlendorf                 & Humboldt University of Berlin, Germany\\
-                          & Dagmar Waltemath                 & University of Rostock, Germany\\
-                          & James T. Yurkovich                  & University of California, San Diego, USA\\
-                          & Anna Zhukova                     & National Center for Scientific Research and University of Bordeaux, France\\
-\midrule
-Replication initiation    & Harold F. Gomez                     & Boston University, USA\\
-                          & Jens Hahn                        & Humboldt University of Berlin, Germany\\
-                          & Michael Hucka                    & California Institute of Technology, USA\\
-                          & Nikita Mandrik                   & Siberian Branch of the Russian Academy of Sciences Novosibirsk, Russia\\
-                          & Martin Scharm                    & University of Rostock, Germany\\
-                          & Florian Wendland                 & University of Rostock, Germany\\
-\midrule
-RNA                       & Tuure Hameri                     & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
-                          & J. Kyle Medley                   & University of Washington, USA\\
-                          & Sucheendra Kumar Palaniappan     & Institute for Research in Computer Science and Automation, France\\
-                          & Pinar Pir                        & Babraham Institute, UK\\
-                          & Natalie Stanford                 & University of Manchester, UK\\
-                          & Markus Wolfien                   & University of Rostock, Germany\\
-\midrule
-Translation               & Joseph Cursons                   & University of Melbourne, Australia\\
-                          & Daniel Hernandez                 & Swiss Federal Institute of Technology in Lausanne, Switzerland\\
-                          & Denis Kazakiewicz                & University of Hasselt, Belgium and Medical University of Bia\l{}ystok, Poland\\
-                          & Pedro Mendes                     & University of Manchester, UK\\
-                          & Hojjat Naderi Meshkin            & Academic Center for Education, Culture and Research, Iran\\
-\midrule
-Integration               & Paulo Eduardo Pinto Burke        & Federal University of S\~ao Paulo, Brazil\\
-                          & Tobias Czauderna                 & Monash University, Australia\\
-                          & Bertrand Moreau                  & CoSMo Company, France\\
-                          & Chris J. Myers                   & University of Utah, USA\\
-                          & Thawfeek Mohamed Varusai         & University College Dublin, Ireland\\
-                          & Argyris Zardilis                 & University of Edinburgh, UK\\
-\midrule
-Annotation, documentation & Christian Kn\"upfer              & University of Jena, Germany\\
-and visualization         & Falk Schreiber                   & Monash University, Australia\\
-                          & Tom Theile                       & University of Rostock, Germany\\
-\midrule
-Modeling instructor       & Jonathan R. Karr                 & Icahn School of Medicine at Mount Sinai, USA\\
-\bottomrule
-\end{tabularx}
-\end{table*}
+%\clearpage
+%\setcounter{table}{0}
+%\renewcommand{\thetable}{S\Roman{table}}
+% Moved into supplemental due to page limitations
 
 \end{document}
