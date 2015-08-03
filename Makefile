@@ -40,7 +40,7 @@ update:;
 	date > $(CONSOLE_LOG)
 	make $(pdf_file) >> $(CONSOLE_LOG) 2>&1
 	md5sum $(pdf_file) > $(md5_file)
-	git add $(pdf_file) $(md5_file)
+	git add -f $(pdf_file) $(md5_file)
 	-git add -f $(CONSOLE_LOG)
 	-git add index.html js css
 	-git commit -m "Latest build."
