@@ -80,30 +80,30 @@
     Denis Kazakiewicz, 
     Ilya Kiselev,
     Vincent Knight-Schrijver,
-    Christian Kn\"{u}pfer,
-    Matthias K\"{o}nig,\\
+    Christian Kn\"{u}pfer, \\
+    Matthias K\"{o}nig,
     Audald Lloret-Villas,
     Nikita Mandrik,
     J. Kyle Medley,
-    Bertrand Moreau,
-    Hojjat Naderi-Meshkin,\\
+    Bertrand Moreau, \\
+    Hojjat Naderi-Meshkin,
     Sucheendra K. Palaniappan,
     Daniel Priego-Espinosa, 
-    Martin Scharm,
-    Mahesh Sharma,
-    Kieran Smallbone,\\
+    Martin Scharm, \\
+    Mahesh Sharma, 
+    Kieran Smallbone,
     Natalie Stanford,
     Je-Hoon Song,
-    Tom Theile,
-    Milenko Tokic, 
+    Tom Theile, 
+    Milenko Tokic, \\
     Namrata Tomar, 
-    Jannis Uhlendorf, \\
-    Thawfeek M Varusai,
+    Jannis Uhlendorf, 
+    Thawfeek M Varusai, 
     Florian Wendland, 
-    Markus Wolfien,
+    Markus Wolfien, \\
     James T. Yurkovich,
     Yan Zhu, 
-    Argyris Zardilis, \\
+    Argyris Zardilis, 
     Anna Zhukova, and
     Falk Schreiber$^+$\\
 	
@@ -145,7 +145,7 @@
       .}
     \thanks{J. Cursons is with the Department of Biomedical Engineering, School of Engineering, University of Melbourne, Parkville, VIC 3010, Australia% (e-mail: \email{joseph.cursons@unimelb.edu.au})
       .}
-    \thanks{T. Czauderna and F. Schreiber are with the Faculty of Information Technology, Monash University, Clayton, VIC 3800, Australia and also with the Institute of Computer Science, Martin Luther University Halle-Wittenberg, 06108 Halle, Germany% (e-mail: \email{tobias.czauderna@monash.edu}; \email{falk.schreiber@monash.edu})
+    \thanks{T. Czauderna is with the Faculty of Information Technology, Monash University, Clayton, VIC 3800, Australia% (e-mail: \email{tobias.czauderna@monash.edu})
       .}
     \thanks{H.~F. G{\'o}mez is with the Department of Biosystems Science and Engineering, ETH Z{\"u}rich, Basel, Switzerland% (e-mail: \email{harold.gomez@bsse.ethz.ch}
       .}    
@@ -181,6 +181,9 @@
     \thanks{A. Zardilis is with the Centre for Synthetic and Systems Biology, University of Edinburgh, UK.} 
     \thanks{A. Zhukova is with the Institut de Biochimie et G\'en\'etique Cellulaires, National Center for Scientific Research, and also with the University of Bordeaux, France, 33077 Bordeaux Cedex, France% (e-mail: \email{zhutchok@gmail.com})
       .}
+    \thanks{F. Schreiber is with the Faculty of Information Technology, Monash University, Clayton, VIC 3800, Australia and also with the Institute of Computer Science, Martin Luther University Halle-Wittenberg, 06108 Halle, Germany% (e-mail: \email{falk.schreiber@monash.edu})
+      .}
+
     \thanks{Digital Object Identifier 10.1109/TBME.XXXX.XXXXXXX}
 }
 
@@ -213,22 +216,22 @@ Despite extensive documentation, this whole-cell model software is difficult to 
 
 Covert and colleagues developed the WholeCellKB~\cite{Karr2013}, WholeCellSimDB~\cite{Karr2014}, and WholeCellViz~\cite{Lee2013} software tools to provide user-friendly interfaces to their modeling software. However, significant domain expertise is still required to use their modeling software, particularly to construct new models. Alternative approaches are needed to enable more researchers to develop and simulate their own whole-cell models. Software-independent standards and other open-source software tools have the potential to enable researchers to develop such models more quickly, to explore them more deeply, and to evaluate them more rigorously. Furthermore, standards would make whole-cell models more reusable and comparable, as well as more searchable and retrievable through model repositories such as BioModels~\cite{juty2015biomodels,chelliah2015biomodels}.
 
-Several software-agnostic systems biology standards have already been developed by the \emph{COmputational Modeling in BIology NEtwork} (COMBINE)~\cite{le2011meeting}, including the \emph{Systems Biology Markup Language} (SBML)~\cite{hucka2003}, the \emph{Cell Markup Language} (CellML)~\cite{hedley_2001b}, the \emph{Simulation Experiment Description Markup Language} (SED-ML)~\cite{sedml2011}, and the \emph{Systems Biology Graphical Notation} (SBGN)~\cite{LeNovereHMMSS09} (Table~\ref{tab:standards}). SBML and CellML are languages for representing mathematical models. CellML focuses on modularly encoding mathematical models, while SBML focuses on describing biological processes. Both support several modeling formalisms including ODEs and FBA. SED-ML is a language for describing computational experiments, including the simulation algorithm and parameter values. SED-ML enables scientists to reproduce simulations. SBGN is a visual notation for describing biological processes. To date, none of these open standards have been used with models as complex as the \textit{M. genitalium} model.
+Several software-agnostic systems biology standards have already been developed by the \emph{COmputational Modeling in BIology NEtwork} (COMBINE)~\cite{le2011meeting}, including the \emph{Systems Biology Markup Language} (SBML)~\cite{hucka2003}, the \emph{Cell Markup Language} (CellML)~\cite{hedley_2001b}, the \emph{Simulation Experiment Description Markup Language} (SED-ML)~\cite{sedml2011}, and the \emph{Systems Biology Graphical Notation} (SBGN)~\cite{LeNovereHMMSS09} (see Table~\ref{tab:standards}). SBML and CellML are languages for representing mathematical models. CellML focuses on modularly encoding mathematical models, while SBML focuses on describing biological processes. Both support several modeling formalisms including ODEs and FBA. SED-ML is a language for describing computational experiments, including the simulation algorithm and parameter values. SED-ML enables scientists to reproduce simulations. SBGN is a visual notation for describing biological processes. To date, none of these open standards have been used with models as complex as the \textit{M. genitalium} model.
 
 \begin{table*}[tb!]
 \caption{\label{tab:standards}  Standards and infrastructure used during the summer school.}
 \begin{tabularx}{\textwidth}{llX}\toprule
 \textbf{Acronym} & \textbf{Name} & \textbf{Description}\\\midrule
 %CellML  & Cell Markup Language                              & Standard for describing dynamical models in terms of mathematical relationships\\
-COMBINE & COmputational Modeling in BIology NEtwork         & Community dedicated to developing standards and associated software tools\\
+COMBINE 			& COmputational Modeling in BIology NEtwork         		& Community dedicated to developing standards and associated software tools\\
 \hline
-SBGN    & Systems Biology Graphical Notation                & Standard for describing biochemical pathway diagrams \\
-SBML Level 3 Core    & Systems Biology Markup Language                   & Standard for describing dynamical models in terms of biochemical processes \\
-SBML Comp & SBML Package: Hierarchical Model Composition &   Definition of how a model is composed from other models \cite{smith2013sbml}\\
-SBML FBC & SBML Package: Flux Balance Constraints &   Definition of constraint based models \cite{olivier2013sbml}\\
-SBML Multi  & SBML Package: Multistate and Multicomponent Species & representation of entity pools with multiple states and composed of multiple components \cite{waltemath2014meeting}\\
-SBML Arrays & SBML Package: Arrays & Support for expressing arrays of things \cite{waltemath2014meeting} \\
-SED-ML  & Simulation Experiment Description Markup Language & Standard for describing computational experiments\\
+SBGN    				& Systems Biology Graphical Notation               	 		& Standard for describing biochemical pathway diagrams \\
+SBML Level 3 Core    	& Systems Biology Markup Language                   		& Standard for describing dynamical models in terms of biochemical processes \\
+SBML Comp 			& SBML Package: Hierarchical Model Composition 		&   Definition of how a model is composed from other models \cite{smith2013sbml}\\
+SBML FBC 			& SBML Package: Flux Balance Constraints 			&   Definition of constraint based models \cite{olivier2013sbml}\\
+SBML Multi  			& SBML Package: Multistate and Multicomponent Species & Representation of entity pools with multiple states and composed of multiple components \cite{waltemath2014meeting}\\
+SBML Arrays 			& SBML Package: Arrays 							& Support for expressing arrays of things \cite{waltemath2014meeting} \\
+SED-ML  				& Simulation Experiment Description Markup Language	& Standard for describing computational experiments\\
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -285,7 +288,7 @@ Database & Expanded molecular biological databases such as ChEBI \\
 Software & Efficient, parallelized multi-algorithm simulator which supports the SBML Hierarchical Model Composition package \\
 Software & Hybrid population/particle simulator which supports the SBML Multistate and Multicomponent Species package \\
 Software & Graphical model editor which transparently build models from pathway/genome databases\\
-Standard & SBGN support for hybrid maps containing Process Description, Entity Relationship, and Activity Flow nodes \\
+Standard and software & SBGN standard and tool support for hybrid maps containing Process Description, Entity Relationship, and Activity Flow nodes \\
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -304,7 +307,7 @@ The integration group implemented their strategies using SBML and SED-ML.  In pa
 The integration group tested their strategies using iBioSim because iBioSim is one of the few simulators that supports model composition.  Another challenge to integrating the submodels was the lack of a multi-algorithm simulator. The integration group plans to overcome this limitation by adding support for multi-algorithm simulation to iBioSim.
 
 \subsection{Annotation, documentation, and visualization}
-The documentation group was responsible for annotating the model.
+The annotation, documentation and visualization group was responsible for annotating the model.
 The goal was to annotate every model entity with a cross reference to an external database such as ChEBI~\cite{Hastings2013}, as in the case of small molecules, and/or in terms of other model entities, as in the case of chemical reactions.
 The group wrote scripts to search molecular biology databases for every entity contained in the \textit{M. genitalium} model.
 The main problem faced by the documentation group was that many model entities are not currently represented by any molecular biology database.
@@ -312,7 +315,7 @@ This shortcoming can easily be overcome by proposing new ontology terms to the d
 This problem highlights the need to expand the molecular biology databases to aggregate data on more biological molecules and interactions. 
 
 The documentation group also helped the other groups visualize submodels by providing advice on SBGN and diagramming tools such as VANTED~\cite{Rohn2012}.
-The main visualization problem encountered by the documentation group was that whole-cell models require large diagrams that must be manually arranged to produce intuitive visualizations.
+The main visualization problem encountered by the group was that whole-cell models require large diagrams that must be manually arranged to produce intuitive visualizations.
 
 \subsection{Progress}
 We produced preliminary SBML and SBGN versions of most of the \textit{M. genitalium} submodels and finished SBML and SBGN versions for the cytokinesis submodel. Significant work remains to finish encoding the model. We must finish encoding the submodels, expand software tools such as iBioSim to support multi-algorithm modeling, rigorously test the entire SBML model by reproducing all of the MATLAB model tests, and thoroughly diagram and document the SBML model.
@@ -341,7 +344,7 @@ New user-friendly graphical editors must also be developed to enable researchers
 
 In addition, molecular biology databases such as ChEBI must be expanded to enable researchers to concretely define whole-cell models in terms of external entities. 
 
-SBGN must also be expanded in several ways. SBGN must be expanded to support hybrid diagrams which contain Process Description, Entity Relationship, and Activity Flow nodes. The SBGN viewers must also be expanded to provide layout algorithms suitable for large visualizations and automatically display diagrams at multiple levels of granularity using contextual zooming and model reduction. 
+SBGN must also be expanded in several ways. SBGN should support hybrid diagrams which contain elements from Process Description, Entity Relationship, and Activity Flow. It also needs to support generic reactions to reduce the size of a diagram and the amount of repetitive reaction chains with simple modifications of reactions partners, such as fatty acid synthesis. The SBGN viewers must also be expanded to provide advanced layout algorithms suitable for large visualizations and automatically display diagrams at multiple levels of granularity using contextual zooming and model reduction. 
 
 Together, these software, database, and SBGN expansions would enable more researchers to more easily build, manage, simulate, and reproduce whole-cell models and simulations. These new standards and tools would also enable researchers to build more comprehensive and more accurate models. Ultimately, this would enable whole-cell modeling to support bioengineering and personalized medicine.
 
@@ -356,7 +359,7 @@ We developed preliminary SBML versions of all of the submodels of the \textit{M.
 
 In addition, the summer school generated clear goals for expanding the existing SBML software tools to support whole-cell modeling. The SBML simulators must be expanded to support all of the Hierarchical Model Composition, Multistate and Multicomponent Species, Arrays, and Flux Balance Constraints packages to efficiently simulate whole-cell models. Furthermore, the school unified modelers, software developers, and standards developers to develop standardized, open-source tools for whole-cell and other large models.
 
-New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for research. In addition, our molecular biology databases must be expanded to facilitate whole-cell model annotation. Furthermore, SBGN and the SBGN viewers must be expanded to support hybrid diagrams, automatic graph layout, automatic graph reduction, and contextual zooming. CellML should also be rigorously evaluated as another potential whole-cell modeling standard.
+New parameter estimation, model testing, and visual analysis tools must also be developed to enable researchers to effectively use SBML-encoded whole-cell models for research. In addition, our molecular biology databases must be expanded to facilitate whole-cell model annotation. Furthermore, SBGN and the SBGN viewers must be expanded to support hybrid diagrams, advanced automatic graph layout, automatic graph reduction, and contextual zooming. CellML should also be rigorously evaluated as another potential whole-cell modeling standard.
 
 In summary, we believe that whole-cell modeling has the potential to be an important tool for biological discovery, bioengineering, and medicine. Achieving this potential requires new simulation software for simulating whole-cell models. In turn, this requires expanding the whole-cell modeling field including training young researchers.
 
